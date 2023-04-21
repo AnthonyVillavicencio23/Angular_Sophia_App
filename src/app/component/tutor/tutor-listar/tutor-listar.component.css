@@ -1,0 +1,35 @@
+/* Este es el encabezado de la tabla*/
+.container{
+  background-color:rgb(25, 238, 113);
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+  width: 50%;
+}
+th {
+  font-size: 100%;
+  overflow: hidden;
+  border: 2px solid black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+
+
+}
+.mat-elevation-z8{
+  background-color: rgb(27, 206, 102);
+  font-size: 18px;
+}
+
+/* Estas son las celdas*/
+
+td {
+  font-size: 140%;
+  border: 2px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color:cornsilk;
+  text-align: center;
+}
+
+

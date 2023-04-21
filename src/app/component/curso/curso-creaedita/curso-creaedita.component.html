@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div style="text-align: center;" class="container">
+
+          <br>
+          <h1>Registro de Cursos</h1>
+          <br>
+          <br>
+
+
+      <form [formGroup]="Form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>id del curso</mat-label>
+          <input matInput required placeholder="Código" formControlName="id">
+        </mat-form-field>
+        <br>
+
+
+        <mat-form-field class="example-full-width">
+          <mat-label>nombre del curso</mat-label>
+          <input matInput required placeholder="Nombre_Curso" formControlName="nombreCurso">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>cantidad de modulos</mat-label>
+          <input matInput required placeholder="Nombre_Curso" formControlName="cantidadModulos">
+        </mat-form-field>
+        <br>
+
+
+
+        <br>
+        <br>
+        <br>
+
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+        &nbsp; &nbsp; &nbsp;
+        <button mat-raised-button color="warn" routerLink="/Curso/Listar">Cancelar</button>
+        <br>
+
+        <p>{{mensaje}}</p>
+
+      </form>
+      <br>
+      <br>
+  </div>
+
+ </body>
+</html>

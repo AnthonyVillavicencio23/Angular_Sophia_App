@@ -1,0 +1,33 @@
+mat-form-field
+{
+
+  width: 40%;
+  font-size: 140%;
+  background-color: blanchedalmond;
+
+  }
+
+  .container
+  {
+    width: 40%;
+    background-color: aqua;
+  }
+
+
+/* etiqueta esa*/
+
+h1
+{
+  background-color: black;
+  color: aliceblue;
+  font-style:normal;
+  font-size: 200%;
+}
+
+button
+{
+  border: 2px solid black;
+}
+
+
+

@@ -1,0 +1,25 @@
+.container
+{
+  width: 40%;
+  background-color:linen;
+}
+
+
+/* etiqueta esa*/
+
+h1
+{
+  background-color: black;
+  color: aliceblue;
+  font-style:normal;
+  font-size: 200%;
+  text-align: center;
+}
+
+button
+{
+  color: aliceblue;
+  width: 50%;
+  border: 2px solid black;
+
+}

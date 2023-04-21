@@ -1,0 +1,44 @@
+
+/* Container, lo que encapusala todo */
+
+.container
+{
+  width: 40%;
+  background-color: aqua;
+}
+
+
+/* etiqueta esa*/
+
+h1
+{
+  background-color: black;
+  color: aliceblue;
+  font-style:normal;
+  font-size: 200%;
+}
+
+
+/* Este es el encabezado de la tabla*/
+th {
+  font-size: 150%;
+  overflow: hidden;
+  border: 2px solid black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+/* Estas son las celdas*/
+
+td {
+  font-size: 170%;
+  border: 2px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color:cornsilk;
+  text-align: center;
+}
+
+

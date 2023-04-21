@@ -1,0 +1,75 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div style="text-align: center;" class="container">
+
+
+          <h1>Registro de Psicologos</h1>
+          <br><br>
+
+
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input matInput required placeholder="Código" formControlName="id">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre de Psicologo</mat-label>
+          <input matInput required placeholder="Nombre" formControlName="nombrePsico">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Apellido Paterno</mat-label>
+          <input matInput required placeholder="Apellido paterno" formControlName="apPatPsicologo">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Apellido Materno</mat-label>
+          <input matInput required placeholder="Apellido materno" formControlName="apMatPsicologo">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento"[max]="maxFecha">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Especialidad</mat-label>
+          <input matInput required placeholder="Especialidad" formControlName="especialidad">
+        </mat-form-field>
+        <br>
+
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/Psicologo/Listar">Cancelar</button>
+        <br>
+
+        <p>{{mensaje}}</p>
+
+      </form>
+
+
+      <br><br>
+  </div>
+
+ </body>
+</html>
