@@ -24,7 +24,13 @@ module.exports = function () {
         nameAuthor: "Juana Pérez Reyes",
         birthDateAuthor: "2000-09-10",
         emailAuthor:"jperez@gmail.com123",
-	}
+      },
+      {
+        id:5,
+        nameAuthor: "Juana Prueba",
+        birthDateAuthor: "2020-08-08",
+        emailAuthor:"Corre prueba",
+}
     ],
     books:[
       {
