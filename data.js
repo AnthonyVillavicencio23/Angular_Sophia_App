@@ -173,6 +173,16 @@ Tutores: [
     telefono:"910 358 782",
     email:"u20201b461@upc.edu.pe",
     tipopersona:"Natural",
+},
+{
+    idtutor_Legal:6,
+    nombreTutor: "Stefano ",
+    apellidoPatTutor: "asd",
+    apellidoMatTutor:"Zeasdla",
+    dniTutor:"76819043",
+    telefono:"9ads782",
+    email:"u20dse",
+    tipopersona:"Nasdal",
 }
     ],
 catCita: [
