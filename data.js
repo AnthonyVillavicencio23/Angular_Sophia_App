@@ -179,7 +179,7 @@ Tutores: [
 catCita: [
       {
         id:1,
-        nombreCita: "Examen de Inicio",
+        nombreCita: "Examen de Inicio 0355",
         descripcionCita: "Examen academico bajo supervición psicologica para determinar los modulos de cursos a los cuales el usuario se podrá matricular",
       },
       {
