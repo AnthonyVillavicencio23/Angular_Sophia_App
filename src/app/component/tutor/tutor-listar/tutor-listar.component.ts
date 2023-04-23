@@ -10,14 +10,24 @@ import { TutorService } from 'src/app/service/tutor.service';
 export class TutorListarComponent implements OnInit {
  lista:Tutor[]=[]
  dataSource:MatTableDataSource<Tutor>=new MatTableDataSource();
- displayedColumns:string[]=['id','nombre','Apellido_Paterno','Apellido_Materno','DNI','telefono','Email','Tipo_de_persona']
- constructor(private as:TutorService){
+
+ displayedColumns:string[]=['id','nombre','Apellido_Paterno','Apellido_Materno','DNI','telefono','Email','Tipo_de_persona','accion01']
+
+ constructor(private aS:TutorService){
 
  }
   ngOnInit(): void {
-this.as.list().subscribe(data=>{
+this.aS.list().subscribe(data=>{
   this.dataSource=new MatTableDataSource(data);
 })
- }
 
+this.aS.getList().subscribe(data=>{
+  this.dataSource=new MatTableDataSource(data);
+})
+}
+
+
+ filtrar(e:any){
+  this.dataSource.filter=e.target.value.trim();
+}
 }

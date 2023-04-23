@@ -2,14 +2,34 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Tutor } from '../model/tutor';
-const base_url=environment.base
+import { Subject } from 'rxjs';
+const base_url = environment.base;
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TutorService {
-private url=`${base_url}/Tutores`
-  constructor(private http:HttpClient) { }
-  list(){
+  private url = `${base_url}/tutores`
+
+  private listaCambio = new Subject<Tutor[]>();
+
+  constructor(private http: HttpClient) {}
+  list() {
     return this.http.get<Tutor[]>(this.url);
   }
+  insert(tutor: Tutor) {
+    return this.http.post(this.url, tutor);
+  }
+  setList(listaNueva: Tutor[]) {
+    this.listaCambio.next(listaNueva);
+  }
+  getList() {
+    return this.listaCambio.asObservable();
+  }
+  listId(id: number) {
+    return this.http.get<Tutor>(`${this.url}/${id}`);
+  }
+  update(aut: Tutor) {
+    return this.http.put(this.url + '/' + aut.id, aut);
+  }
+  //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
 }

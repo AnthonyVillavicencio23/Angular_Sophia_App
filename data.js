@@ -125,7 +125,7 @@ module.exports = function () {
       ],
 Tutores: [
       {
-        idtutor_Legal:1,
+        id:1,
         nombreTutor: "Aaron Moises",
         apellidoPatTutor: "Cosquillo",
         apellidoMatTutor:"Gara",
@@ -135,7 +135,7 @@ Tutores: [
         tipopersona:"Natural",
       },
       {
-        idtutor_Legal:2,
+        id:2,
         nombreTutor: "Eliane Marifer",
         apellidoPatTutor: "Ramirez",
         apellidoMatTutor:"Guzman",
@@ -145,7 +145,7 @@ Tutores: [
         tipopersona:"Natural",
       },
       {
-        idtutor_Legal:3,
+        id:3,
         nombreTutor: "Pablo Daniel",
         apellidoPatTutor: "Madalengoitia",
         apellidoMatTutor:"Alayo",
@@ -155,7 +155,7 @@ Tutores: [
         tipopersona:"Natural",
       },
       {
-        idtutor_Legal:4,
+        id:4,
         nombreTutor: "Anthony Daniel",
         apellidoPatTutor: "Villavicencio",
         apellidoMatTutor:"Aguilar",
@@ -165,7 +165,7 @@ Tutores: [
         tipopersona:"Natural",
 	},
   {
-    idtutor_Legal:5,
+    id:5,
     nombreTutor: "Stefano Giovanni",
     apellidoPatTutor: "Roca",
     apellidoMatTutor:"Zela",
@@ -174,16 +174,7 @@ Tutores: [
     email:"u20201b461@upc.edu.pe",
     tipopersona:"Natural",
 },
-{
-    idtutor_Legal:6,
-    nombreTutor: "Stefano ",
-    apellidoPatTutor: "asd",
-    apellidoMatTutor:"Zeasdla",
-    dniTutor:"76819043",
-    telefono:"9ads782",
-    email:"u20dse",
-    tipopersona:"Nasdal",
-}
+
     ],
 catCita: [
       {

@@ -1,5 +1,5 @@
 export class Tutor{
-  idtutor_Legal:number=0
+  id:number=0
   nombreTutor: string= ""
   apellidoPatTutor: string=""
   apellidoMatTutor: string=""

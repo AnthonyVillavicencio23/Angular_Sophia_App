@@ -13,6 +13,7 @@ import { PsicologoCreaeditaComponent } from './component/psicologo/psicologo-cre
 import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
 import { TutorComponent } from './component/tutor/tutor.component';
 import { TutorListarComponent } from './component/tutor/tutor-listar/tutor-listar.component';
+import { TutorCreaeditaComponent } from './component/tutor/tutor-creaedita/tutor-creaedita.component';
 import { CategoriaComponent } from './component/Categoria/categoria.component';
 import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
@@ -67,6 +68,13 @@ const routes: Routes =
     path:'Tutor',component:TutorComponent, children:
     [
       { path: 'Listar', component:TutorListarComponent}
+    ]
+  },
+  {
+    path:'Tutor',component:TutorComponent, children:
+    [
+      { path: 'Agregar', component:TutorCreaeditaComponent },
+      { path: 'Listar/edicion/:id', component:TutorCreaeditaComponent}
     ]
   },
   {
