@@ -17,6 +17,7 @@ import { TutorCreaeditaComponent } from './component/tutor/tutor-creaedita/tutor
 import { CategoriaComponent } from './component/Categoria/categoria.component';
 import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
+import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
 
 const routes: Routes =
 [
