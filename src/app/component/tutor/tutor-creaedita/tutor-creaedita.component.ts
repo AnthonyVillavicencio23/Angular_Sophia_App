@@ -75,7 +75,7 @@ edicion: boolean=false;
         })
       }
 
-      this.router.navigate(['Tutor']);
+      this.router.navigate(['Tutor/Listar']);
     } else {
       this.mensaje = "Complete los campos requeridos!!!";
     }
