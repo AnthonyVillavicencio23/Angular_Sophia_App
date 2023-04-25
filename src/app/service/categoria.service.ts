@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { catCita } from '../model/catCita';
 import { Subject } from 'rxjs';
+import { Estado } from '../model/estado';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ const base_url = environment.base;
 export class CategoriaService {
   private url = `${base_url}/catCita`;
   private listaCambio = new Subject<catCita[]>();
+  private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http: HttpClient) {}
   list() {
     return this.http.get<catCita[]>(this.url);
@@ -29,5 +31,17 @@ export class CategoriaService {
   }
   update(cate: catCita) {
     return this.http.put(this.url + '/' + cate.id, cate);
+  }
+
+  delete(id:number){
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+
+  setconfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
   }
 }

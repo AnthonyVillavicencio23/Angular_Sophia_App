@@ -36,7 +36,7 @@ import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-c
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dialogo/curso-dialogo.component'
-
+import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
 
 
 
@@ -61,7 +61,8 @@ import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dial
     CategoriaComponent,
     CatListarComponent,
     CatCreaeditaComponent,
-    CursoDialogoComponent
+    CursoDialogoComponent,
+    CatDiialogComponent
   ],
   imports: [
     BrowserModule,
