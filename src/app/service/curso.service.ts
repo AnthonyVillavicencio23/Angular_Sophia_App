@@ -15,6 +15,8 @@ export class cursoService
 
   private listacam = new Subject<curso[]>()
 
+  private confirmarEliminacion = new Subject<Boolean>()
+
 
   private url=`${base_url}/curso`
   constructor(private http:HttpClient) { }
@@ -48,5 +50,15 @@ export class cursoService
     return this.http.put(this.url + "/" + cur.id, cur)
   }
 
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
+  }
 
 }
