@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { curso } from 'src/app/model/curso';
 import { MatTableDataSource } from '@angular/material/table';
 import { cursoService } from 'src/app/service/curso.service';
+import { MatDialog } from '@angular/material/dialog'
+import { CursoDialogoComponent } from './curso-dialogo/curso-dialogo.component';
 
 
 @Component({
@@ -15,9 +17,11 @@ export class cursoListarComponent implements OnInit
   lista:curso[] = []
   dataSource:MatTableDataSource<curso>=new MatTableDataSource();
 
-  displayedColumns:string[]=['id','nombreCurso','CantCurso','accion01']
+  idMayor: number = 0
 
-    constructor(private as:cursoService)
+  displayedColumns:string[]=['id','nombreCurso','CantCurso','accion01','acciones2']
+
+    constructor(private as:cursoService, private dialog: MatDialog)
     {
 
     }
@@ -32,9 +36,27 @@ export class cursoListarComponent implements OnInit
         this.as.getList().subscribe(data=>{
 
           this.dataSource=new MatTableDataSource(data);
+        })
 
+        this.as.getConfirmDelete().subscribe(data => {
+          data == true ? this.eliminar(this.idMayor) : false;
         })
     }
+
+    confirm(id: number)
+    {
+      this.idMayor = id;
+      this.dialog.open(CursoDialogoComponent);
+    }
+    eliminar(id: number)
+    {
+      this.as.delete(id).subscribe(() => {
+        this.as.list().subscribe(data => {
+          this.as.setList(data);
+        })
+      })
+    }
+
 
     filtrar(e:any)
     {
