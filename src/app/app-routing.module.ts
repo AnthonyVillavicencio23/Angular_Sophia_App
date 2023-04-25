@@ -86,7 +86,8 @@ const routes: Routes =
   {
     path:'Citas',component:CategoriaComponent, children:
     [
-      { path: 'Agregar', component:CatCreaeditaComponent}
+      { path: 'Agregar', component:CatCreaeditaComponent},
+      { path: 'Listar/edicion/:id', component: CatCreaeditaComponent}
     ]
   }
 

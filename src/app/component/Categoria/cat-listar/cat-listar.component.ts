@@ -13,7 +13,7 @@ export class CatListarComponent implements OnInit {
 
   lista: catCita[] = []
   dataSource:MatTableDataSource<catCita>=new MatTableDataSource();
-  displayedColumns: String[] = ['id','nombreCita','descripcionCita']
+  displayedColumns: String[] = ['id','nombreCita','descripcionCita','accionCat']
   constructor (private cat:CategoriaService)
   {
 
@@ -29,5 +29,9 @@ export class CatListarComponent implements OnInit {
       {
         this.dataSource = new MatTableDataSource(data);
       })
+  }
+
+  filtrar(e:any){
+    this.dataSource.filter=e.target.value.trim();
   }
 }
