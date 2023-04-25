@@ -1,5 +1,6 @@
 .container
 {
+
   width: 40%;
   background-color:linen;
 }
@@ -22,4 +23,9 @@ button
   width: 50%;
   border: 2px solid black;
 
+}
+
+body
+{
+  background: linear-gradient(150deg, #a6d4c7, #7284d4);
 }

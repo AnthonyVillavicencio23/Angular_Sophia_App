@@ -1,16 +1,9 @@
-mat-form-field
-{
 
-  width: 40%;
-  font-size: 140%;
-  background-color: blanchedalmond;
-
-  }
 
   .container
   {
     width: 40%;
-    background-color: aqua;
+    background-color:linen;
   }
 
 
@@ -31,3 +24,7 @@ button
 
 
 
+body
+{
+  background: linear-gradient(150deg, #a6d4c7, #7284d4);
+}

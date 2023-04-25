@@ -15,3 +15,8 @@ h1
   font-size: 200%;
   text-align: center;
 }
+
+body
+{
+  background: linear-gradient(150deg, #a6d4c7, #7284d4);
+}

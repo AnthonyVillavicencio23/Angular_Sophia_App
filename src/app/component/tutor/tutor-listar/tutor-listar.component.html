@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="./tutor-listar.component.css" />
   </head>
   <body>
+
+
     <div class="container">
       <div style="text-align: center">
         <h1></h1>
         <h1>Lista de Tutores</h1>
       </div>
-    </div>
+
 
     <div style="text-align: right">
       <button mat-raised-button color="primary" routerLink="/Tutor/Agregar">
@@ -112,5 +114,14 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
+
+
+    <br><br>
+  </div>
+
+  <br>
   </body>
+
+
 </html>

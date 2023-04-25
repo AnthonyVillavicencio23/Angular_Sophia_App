@@ -2,6 +2,9 @@
 {
   width: 40%;
   background-color:linen;
+  font-style: bold;
+  font-weight: bold;
+  font-family: 'Gill Sans';
 }
 
 
@@ -14,4 +17,34 @@ h1
   font-style:normal;
   font-size: 200%;
   text-align: center;
+}
+
+td {
+  font-size: 120%;
+  border: 2px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color:white;
+  text-align: center;
+}
+
+th {
+  font-size: 100%;
+  overflow: hidden;
+  border: 2px solid black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+
+body
+{
+  background: linear-gradient(150deg, #a6d4c7, #7284d4);
+}
+
+.mat-elevation-z8
+{
+  background-color: rgb(123, 225, 243);
 }
