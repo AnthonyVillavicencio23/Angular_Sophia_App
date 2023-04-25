@@ -37,8 +37,7 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dialogo/curso-dialogo.component'
 import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
-
-
+import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
 
 
 @NgModule({
@@ -58,6 +57,7 @@ import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialo
     TutorComponent,
     TutorListarComponent,
     TutorCreaeditaComponent,
+    TutorDialogoComponent,
     CategoriaComponent,
     CatListarComponent,
     CatCreaeditaComponent,
