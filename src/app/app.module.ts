@@ -34,6 +34,8 @@ import { CategoriaComponent } from './component/Categoria/categoria.component';
 import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
 
 
 
@@ -57,7 +59,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     TutorCreaeditaComponent,
     CategoriaComponent,
     CatListarComponent,
-    CatCreaeditaComponent
+    CatCreaeditaComponent,
+    CatDiialogComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     MatNativeDateModule,
     MatButtonModule,
     RouterModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
