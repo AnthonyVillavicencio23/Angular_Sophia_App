@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog'
 
 import { EstadoComponent } from './component/estado/estado.component';
 import { EstadoListarComponent } from './component/estado/estado-listar/estado-listar.component'
@@ -27,6 +28,7 @@ import { CursoCreaeditaComponent } from './component/curso/curso-creaedita/curso
 import { PsicologoComponent } from './component/psicologo/psicologo.component';
 import { PsicologoCreaeditaComponent } from './component/psicologo/psicologo-creaedita/psicologo-creaedita.component';
 import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
+import { PsicologoDialogoComponent } from './component/psicologo/psicologo-listar/psicologo-dialogo/psicologo-dialogo-component';
 import { TutorComponent } from './component/tutor/tutor.component';
 import { TutorListarComponent } from './component/tutor/tutor-listar/tutor-listar.component';
 import { TutorCreaeditaComponent } from './component/tutor/tutor-creaedita/tutor-creaedita.component';
@@ -54,6 +56,7 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
     PsicologoComponent,
     PsicologoCreaeditaComponent,
     PsicologoListarComponent,
+    PsicologoDialogoComponent,
     TutorComponent,
     TutorListarComponent,
     TutorCreaeditaComponent,

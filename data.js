@@ -92,7 +92,7 @@ module.exports = function () {
       psicologos: [
         {
           id:1,
-          nombrePsico: "Luis",
+          nombrePsico: "Pedroprueba",
           apPatPsicologo: "Pérez",
           apMatPsicologo: "Reyes",
           fechaNacimiento: "2000-09-10",

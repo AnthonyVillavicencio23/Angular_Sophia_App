@@ -11,8 +11,9 @@ const base_url=environment.base
 export class PsicologoService
 {
 private url= `${base_url}/psicologos`
-
+private confirmarEliminacion = new Subject<Boolean>()
 private listaCambio = new Subject<Psicologo[]>()
+
   constructor(private http:HttpClient) { }
   list()
   {
@@ -43,5 +44,15 @@ private listaCambio = new Subject<Psicologo[]>()
     return this.http.put(this.url + "/" + aut.id, aut)
   }
 
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
+  }
 
 }
