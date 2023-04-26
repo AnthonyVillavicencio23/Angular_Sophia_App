@@ -4,7 +4,7 @@ import { Psicologo } from 'src/app/model/psicologo';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import * as moment from 'moment';
 import { PsicologoService } from 'src/app/service/psicologo.service';
-import { Route, Router } from '@angular/router';
+import { Route, Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-psicologo-creaedita',
@@ -19,13 +19,24 @@ export class PsicologoCreaeditaComponent implements OnInit
   maxFecha: Date = moment().add(-1,'days').toDate();
   id: number = 0;
   edicion: boolean = false;
-  
-  constructor(private as: PsicologoService, private router: Router)
+
+  constructor(private as: PsicologoService, private router: Router,  private route: ActivatedRoute)
   {
 
   }
 
   ngOnInit(): void {
+
+
+      this.route.params.subscribe((data: Params) =>
+      {
+        this.id=data['id'];
+        this.edicion=data['id']!=null;
+        this.init()
+      })
+
+
+
     this.form = new FormGroup({
       id: new FormControl(),
       nombrePsico: new FormControl(),
