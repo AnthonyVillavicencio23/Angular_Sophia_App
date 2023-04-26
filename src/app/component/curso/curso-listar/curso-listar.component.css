@@ -10,7 +10,10 @@
   font-family: 'Gill Sans';
 }
 
-
+body
+{
+  background-color:linen;
+}
 /* etiqueta esa*/
 
 h1
@@ -22,6 +25,16 @@ h1
   text-align: center;
 }
 
+/*
+h1
+{
+  color: black;
+  font-style:normal;
+  font-size: 350%;
+  text-align: center;
+  font-weight: bold;
+}
+*/
 
 /* Este es el encabezado de la tabla*/
 th {
@@ -31,6 +44,7 @@ th {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: center;
+  color: white;
 }
 
 /* Estas son las celdas*/
@@ -46,12 +60,8 @@ td {
 }
 
 
-body
-{
-  background: linear-gradient(150deg, #a6d4c7, #7284d4);
-}
 
 .tablagrilla{
-  background-color: rgb(123, 225, 243);
+  background-color: rgb(64, 72, 179);
   font-size: 18px;
 }

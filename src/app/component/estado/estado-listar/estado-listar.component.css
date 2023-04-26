@@ -36,15 +36,16 @@ th {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: center;
+  color:white;
 }
 
 
 body
 {
-  background: linear-gradient(150deg, #a6d4c7, #7284d4);
+  background-color:linen;
 }
 
 .mat-elevation-z8
 {
-  background-color: rgb(123, 225, 243);
+  background-color: rgb(64, 72, 179);
 }

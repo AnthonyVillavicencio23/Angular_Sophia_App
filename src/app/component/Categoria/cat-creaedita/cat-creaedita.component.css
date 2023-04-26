@@ -18,7 +18,7 @@ body
   left: 50%;
   transform: translate(-50%,-50%);
   width: 700px;
-  background-color: beige;
+  background-color:linen;
   border-radius: 30px;
   text-align: center;
 }
@@ -33,10 +33,4 @@ body
 {
   border-radius: 30px;
   background-color: whitesmoke;
-}
-.container button
-{
-  font-size: 15px;
-  font-style: bold;
-  background-color:whitesmoke ;
 }

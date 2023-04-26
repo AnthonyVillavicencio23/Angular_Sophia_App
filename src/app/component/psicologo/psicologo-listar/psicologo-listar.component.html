@@ -18,6 +18,12 @@
   <input matInput (keyup)=filter($event) placeholder="buscar"/>
   </mat-form-field>
 
+  <div style="text-align: right;">
+    <button mat-raised-button color="primary" routerLink="/"><span class="material-icons">home</span></button>
+  </div>
+  <br>
+
+
 <table mat-table [dataSource] = "datasource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="id">
@@ -69,18 +75,18 @@
    </ng-container>
 
    <ng-container matColumnDef="acciones1">
-    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <th mat-header-cell *matHeaderCellDef> Editar </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-raised-button color="primary" [routerLink]="['edicion',element.id]">Actualizar</button>
+      <button mat-raised-button color="primary" [routerLink]="['edicion',element.id]"><span class="material-icons">build</span></button>
     </td>
   </ng-container>
 
 
 
   <ng-container matColumnDef="acciones2">
-    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <th mat-header-cell *matHeaderCellDef> Eliminar </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-raised-button color="accent" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
+      <button mat-raised-button color="primary" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
     </td>
   </ng-container>
 

@@ -3,7 +3,6 @@
 
 .container{
   color: rgb(0, 0, 0);
-  border: 2px solid rgb(0, 0, 0);
   width: 90%;
   background-color:linen;
   font-style: bold;
@@ -20,11 +19,12 @@ th {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: center;
+  color:white;
 
 
 }
 .mat-elevation-z8{
-  background-color: rgb(123, 225, 243);
+  background-color: rgb(64, 72, 179);
   font-size: 18px;
 }
 
@@ -52,5 +52,5 @@ h1
 
 body
 {
-  background: linear-gradient(150deg, #a6d4c7, #7284d4);
+  background-color:linen;
 }
