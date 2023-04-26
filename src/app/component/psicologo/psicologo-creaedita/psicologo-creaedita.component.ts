@@ -17,7 +17,9 @@ export class PsicologoCreaeditaComponent implements OnInit
   psicologo: Psicologo = new Psicologo();
   mensaje: string = "";
   maxFecha: Date = moment().add(-1,'days').toDate();
-
+  id: number = 0;
+  edicion: boolean = false;
+  
   constructor(private as: PsicologoService, private router: Router)
   {
 
@@ -45,14 +47,38 @@ export class PsicologoCreaeditaComponent implements OnInit
     if (this.form.value['nombrePsico'].length>0 && this.form.value['apPatPsicologo'].length>0 &&
       this.form.value['apMatPsicologo'].length>0 &&
       this.form.value['especialidad'].length>0) {
-      this.as.insert(this.psicologo).subscribe(data => {
-        this.as.list().subscribe(data => {
-          this.as.setList(data);
-        })
-      })
+
+        if (this.edicion) {
+          this.as.update(this.psicologo).subscribe((data) => {
+            this.as.list().subscribe(data => {
+              this.as.setList(data);
+            })
+          })
+        } else {
+          this.as.insert(this.psicologo).subscribe((data)=> {
+            this.as.list().subscribe(data => {
+              this.as.setList(data);
+            })
+          })
+        }
       this.router.navigate(['Psicologo/Listar']);
     } else {
       this.mensaje = "¡Complete los campos!";
+    }
+  }
+
+  init() {
+    if (this.edicion) {
+      this.as.listID(this.id).subscribe(data => {
+        this.form = new FormGroup({
+          id: new FormControl(data.id),
+          nombrePsico: new FormControl(data.nombrePsico),
+          apPatPsicologo: new FormControl(data.apPatPsicologo),
+          apMatPsicologo: new FormControl(data.apMatPsicologo),
+          fechaNacimiento: new FormControl(data.fechaNacimiento),
+          especialidad: new FormControl(data.especialidad)
+        })
+      })
     }
   }
 }
