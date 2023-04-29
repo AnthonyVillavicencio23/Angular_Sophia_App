@@ -11,9 +11,6 @@
 <body>
 
 
-  <div style="text-align: right;">
-    <button mat-raised-button color="primary" routerLink="/Curso/Agregar">Ir a Registro de Cursos</button>
-  </div>
 
 
 
@@ -25,9 +22,17 @@
   <br>
   <br>
 
+
+  <div style="text-align: right;">
+    <button mat-raised-button color="primary" routerLink="/Curso/Agregar">Ir a Registro de Cursos</button>
+  </div>
+
+
+  <div style="text-align: left;">
   <mat-form-field>
     <input matInput (keyup)="filtrar($event)" placeholder="Buscar" >
   </mat-form-field>
+  </div>
 
 
   <div style="text-align: right;">
