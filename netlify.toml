@@ -1,6 +1,6 @@
 [build]
   command = "ng build --prod && npm run json-server"
-  publish = "dist/Sophia"
+  publish = "dist/demo-crud"
 
 [dev]
   command = "ng serve --open"

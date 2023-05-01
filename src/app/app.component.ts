@@ -14,6 +14,3 @@ export class AppComponent
   title = 'demoCrud';
 }
 
-const http = require('http');
-
-const req = http.get('http://localhost:3000/')
