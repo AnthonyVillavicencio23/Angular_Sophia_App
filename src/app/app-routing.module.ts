@@ -21,19 +21,7 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
 
 const routes: Routes =
 [
-  {
-    path:'authors',component:AuthorComponent, children:
-    [
-      { path: 'nuevo', component:AuthorCreaeditaComponent}
-    ]
 
-  },
-  {
-    path:'loco',component:AuthorComponent, children:
-    [
-      { path: 'loco2', component:AuthorListarComponent}
-    ]
-  },
   {
     path:'Estado',component:EstadoComponent, children:
     [

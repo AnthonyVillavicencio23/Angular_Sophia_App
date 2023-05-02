@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-const http = require("http");
-
 
 @Component({
   selector: 'app-root',
@@ -14,15 +12,18 @@ const http = require("http");
 export class AppComponent
 {
   title = 'demoCrud';
-  constructor(private http: HttpClient) {}
 
+  curso: any [];
 
-  ngOnInit() {
-    const url = 'http://localhost:3000/';
+  constructor(private http: HttpClient)
+  {
+    this.curso= [];
 
-    this.http.get<any[]>(url).subscribe((data) => {
+    http.get<any>(`http://localhost:3000`).subscribe(response=> {
+      this.curso= response.results;
+    }
 
-    });
+    )
   }
 
 }
