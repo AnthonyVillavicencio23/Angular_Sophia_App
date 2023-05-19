@@ -87,6 +87,11 @@ module.exports = function () {
           id:5,
           nameCurso: "Calculo Medio",
           cantCurso:"12",
+        },
+        {
+          id:6,
+          nameCurso: "EPT",
+          cantCurso:"4",
         }
       ],
       psicologos: [

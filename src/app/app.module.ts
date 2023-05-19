@@ -18,6 +18,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatToolbarModule} from '@angular/material/toolbar';
+
 
 import { EstadoComponent } from './component/estado/estado.component';
 import { EstadoListarComponent } from './component/estado/estado-listar/estado-listar.component'
@@ -80,7 +83,8 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
     MatButtonModule,
     RouterModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
