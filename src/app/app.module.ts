@@ -42,7 +42,7 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dialogo/curso-dialogo.component'
 import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
 import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
