@@ -25,6 +25,8 @@ edicion: boolean=false;
 
   }
 
+
+
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id=data['id'];

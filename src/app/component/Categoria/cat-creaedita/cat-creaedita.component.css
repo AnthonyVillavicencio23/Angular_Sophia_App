@@ -1,19 +1,14 @@
 h1
 {
-  -webkit-text-stroke: 1px black;
-  color:rgb(183, 115, 173);
+  color:white;
   font-size: 30px;
-  font-style:italic;
+  font-style:bold;
   font-weight: bold;
   font-family: 'Gill Sans';
 }
 body
 {
-   margin: 0;
-   padding: 0;
-   font-family: fantasy;
-   background: linear-gradient(150deg, #a6d4c7, #d1a6d4);
-
+  background:linen;
 }
 
 .container
@@ -23,7 +18,7 @@ body
   left: 50%;
   transform: translate(-50%,-50%);
   width: 700px;
-  background-color: beige;
+  background-color:linen;
   border-radius: 30px;
   text-align: center;
 }
@@ -31,15 +26,11 @@ body
 {
   text-align: center;
   padding: 20px 0 0 0;
+  background-color:black;
+
 }
 .container table
 {
   border-radius: 30px;
   background-color: whitesmoke;
-}
-.container button
-{
-  font-size: 15px;
-  font-style: bold;
-  background-color:whitesmoke ;
 }

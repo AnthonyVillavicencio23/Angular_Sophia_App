@@ -9,6 +9,9 @@
 </head>
 <body>
 
+
+  <br><br><br>
+
   <div style="text-align: center;" class="container">
 
           <br>
@@ -20,7 +23,7 @@
       <form [formGroup]="Form" (submit)="aceptar()">
         <mat-form-field class="example-full-width">
           <mat-label>id del curso</mat-label>
-          <input matInput required placeholder="Código" formControlName="id">
+          <input matInput required="true" placeholder="Código" formControlName="id">
         </mat-form-field>
         <br>
 
@@ -46,7 +49,7 @@
 
         <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
         &nbsp; &nbsp; &nbsp;
-        <button mat-raised-button color="warn" routerLink="/Curso/Listar">Cancelar</button>
+        <button mat-raised-button color="primary" routerLink="/Curso/Listar">Cancelar</button>
         <br>
 
         <p>{{mensaje}}</p>

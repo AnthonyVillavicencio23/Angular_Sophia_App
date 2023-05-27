@@ -17,22 +17,11 @@ import { TutorCreaeditaComponent } from './component/tutor/tutor-creaedita/tutor
 import { CategoriaComponent } from './component/Categoria/categoria.component';
 import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
+import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
 
 const routes: Routes =
 [
-  {
-    path:'authors',component:AuthorComponent, children:
-    [
-      { path: 'nuevo', component:AuthorCreaeditaComponent}
-    ]
 
-  },
-  {
-    path:'loco',component:AuthorComponent, children:
-    [
-      { path: 'loco2', component:AuthorListarComponent}
-    ]
-  },
   {
     path:'Estado',component:EstadoComponent, children:
     [
@@ -61,7 +50,8 @@ const routes: Routes =
   {
     path:'Psicologo',component:PsicologoComponent, children:
     [
-      { path: 'Agregar', component:PsicologoCreaeditaComponent}
+      { path: 'Agregar', component:PsicologoCreaeditaComponent},
+      { path: 'Listar/edicion/:id', component: PsicologoCreaeditaComponent}
     ]
   },
   {
@@ -86,7 +76,8 @@ const routes: Routes =
   {
     path:'Citas',component:CategoriaComponent, children:
     [
-      { path: 'Agregar', component:CatCreaeditaComponent}
+      { path: 'Agregar', component:CatCreaeditaComponent},
+      { path: 'Listar/edicion/:id', component: CatCreaeditaComponent}
     ]
   }
 

@@ -9,7 +9,7 @@ const base_url = environment.base;
 })
 export class TutorService {
   private url = `${base_url}/tutores`
-
+  private confirmarEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Tutor[]>();
 
   constructor(private http: HttpClient) {}
@@ -32,4 +32,14 @@ export class TutorService {
     return this.http.put(this.url + '/' + aut.id, aut);
   }
   //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
+  }
 }

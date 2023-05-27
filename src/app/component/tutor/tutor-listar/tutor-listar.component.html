@@ -8,23 +8,34 @@
     <!-- Enlace a tu archivo de estilos CSS -->
     <link rel="stylesheet" href="./tutor-listar.component.css" />
   </head>
+
+
   <body>
+
+
+
+    <br><br>
+
     <div class="container">
+
       <div style="text-align: center">
-        <h1></h1>
+        <br>
         <h1>Lista de Tutores</h1>
       </div>
-    </div>
+
 
     <div style="text-align: right">
-      <button mat-raised-button color="primary" routerLink="/Tutor/Agregar">
-        Ir a Registro
-      </button>
+      <button mat-raised-button color="primary" routerLink="/Tutor/Agregar">Ir a Registro</button>
     </div>
 
     <mat-form-field>
       <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
     </mat-form-field>
+
+    <div style="text-align: right;">
+      <button mat-raised-button color="primary" routerLink="/"><span class="material-icons">home</span></button>
+    </div>
+    <br>
 
     <!-- Contenido de tu componente -->
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -38,7 +49,7 @@
         </td>
       </ng-container>
       <!-- Nombres Column -->
-      <ng-container matColumnDef="nombre">
+     <ng-container matColumnDef="nombre">
         <th mat-header-cell *matHeaderCellDef class="header-nombre">Nombres</th>
         <td mat-cell *matCellDef="let element" class="cell-nombre">
           {{ element.nombreTutor }}
@@ -96,15 +107,35 @@
       </ng-container>
 
       <ng-container matColumnDef="accion01">
-        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <th mat-header-cell *matHeaderCellDef>Editar</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="warn" [routerLink]="['edicion',element.id]">Actualizar</button>
+          <button mat-raised-button color="primary" [routerLink]="['edicion',element.id]"><span class="material-icons">build</span></button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="accion2">
+        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
         </td>
       </ng-container>
 
-      <!-- Columnas a mostrar -->
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+       <!-- Columnas a mostrar -->
+       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+     </table>
+     <br>
+     <mat-paginator [pageSizeOptions]="[3, 6, 9]" [pageSize]="3" [length]="dataSource.data.length"></mat-paginator>
+
+
+
+
+
+
+    <br><br>
+  </div>
+
+  <br>
   </body>
+
+
 </html>

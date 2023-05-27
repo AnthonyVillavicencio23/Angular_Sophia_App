@@ -4,7 +4,7 @@ import { Psicologo } from 'src/app/model/psicologo';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import * as moment from 'moment';
 import { PsicologoService } from 'src/app/service/psicologo.service';
-import { Route, Router } from '@angular/router';
+import { Route, Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-psicologo-creaedita',
@@ -17,13 +17,26 @@ export class PsicologoCreaeditaComponent implements OnInit
   psicologo: Psicologo = new Psicologo();
   mensaje: string = "";
   maxFecha: Date = moment().add(-1,'days').toDate();
+  id: number = 0;
+  edicion: boolean = false;
 
-  constructor(private as: PsicologoService, private router: Router)
+  constructor(private as: PsicologoService, private router: Router,  private route: ActivatedRoute)
   {
 
   }
 
   ngOnInit(): void {
+
+
+      this.route.params.subscribe((data: Params) =>
+      {
+        this.id=data['id'];
+        this.edicion=data['id']!=null;
+        this.init()
+      })
+
+
+
     this.form = new FormGroup({
       id: new FormControl(),
       nombrePsico: new FormControl(),
@@ -45,14 +58,38 @@ export class PsicologoCreaeditaComponent implements OnInit
     if (this.form.value['nombrePsico'].length>0 && this.form.value['apPatPsicologo'].length>0 &&
       this.form.value['apMatPsicologo'].length>0 &&
       this.form.value['especialidad'].length>0) {
-      this.as.insert(this.psicologo).subscribe(data => {
-        this.as.list().subscribe(data => {
-          this.as.setList(data);
-        })
-      })
+
+        if (this.edicion) {
+          this.as.update(this.psicologo).subscribe((data) => {
+            this.as.list().subscribe(data => {
+              this.as.setList(data);
+            })
+          })
+        } else {
+          this.as.insert(this.psicologo).subscribe((data)=> {
+            this.as.list().subscribe(data => {
+              this.as.setList(data);
+            })
+          })
+        }
       this.router.navigate(['Psicologo/Listar']);
     } else {
       this.mensaje = "¡Complete los campos!";
+    }
+  }
+
+  init() {
+    if (this.edicion) {
+      this.as.listID(this.id).subscribe(data => {
+        this.form = new FormGroup({
+          id: new FormControl(data.id),
+          nombrePsico: new FormControl(data.nombrePsico),
+          apPatPsicologo: new FormControl(data.apPatPsicologo),
+          apMatPsicologo: new FormControl(data.apMatPsicologo),
+          fechaNacimiento: new FormControl(data.fechaNacimiento),
+          especialidad: new FormControl(data.especialidad)
+        })
+      })
     }
   }
 }

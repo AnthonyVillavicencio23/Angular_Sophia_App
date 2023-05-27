@@ -12,7 +12,7 @@
 <body>
 
   <div style="text-align: center;" class="container">
-
+    <br><br>
 
           <h1>Registro de Psicologos</h1>
           <br><br>
@@ -58,11 +58,12 @@
         </mat-form-field>
         <br>
 
-
+        <div style="text-align: center;">
         <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
-        <button mat-raised-button color="warn" routerLink="/Psicologo/Listar">Cancelar</button>
+        &nbsp;&nbsp;
+        <button mat-raised-button color="primary" routerLink="/Psicologo/Listar">Cancelar</button>
         <br>
-
+        </div>
         <p>{{mensaje}}</p>
 
       </form>

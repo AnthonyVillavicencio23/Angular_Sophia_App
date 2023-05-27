@@ -13,8 +13,9 @@
 
 
 <div class="container">
-  <h1>Añadir nuevas categorias</h1>
+  <h1>Actualizar categoria</h1>
 
+  <br>
   <form [formGroup]= "form"(submit)="aceptar()">
     <mat-form-field class="example-full-width">
       <mat-label>Código</mat-label>
@@ -34,14 +35,15 @@
     </mat-form-field>
     <br>
 
-      <button mat-stroked-button color="primary"(click)="aceptar()">Añadir</button>
-      <button mat-stroked-button color="warn" routerLink="/Citas/Listar">Cancelar</button>
+      <button mat-raised-button color="primary" (click)="aceptar()">Añadir</button>
+      &nbsp;&nbsp;
+      <button mat-raised-button color="primary" routerLink="/Citas/Listar">Cancelar</button>
       <br>
 
       <p>{{mensaje}}</p>
 
 
-
+      <br>
   </form>
 </div>
 </body>

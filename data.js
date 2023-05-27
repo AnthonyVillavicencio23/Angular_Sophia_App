@@ -87,12 +87,17 @@ module.exports = function () {
           id:5,
           nameCurso: "Calculo Medio",
           cantCurso:"12",
+        },
+        {
+          id:6,
+          nameCurso: "EPT",
+          cantCurso:"4",
         }
       ],
       psicologos: [
         {
           id:1,
-          nombrePsico: "Luis",
+          nombrePsico: "Pedroprueba",
           apPatPsicologo: "Pérez",
           apMatPsicologo: "Reyes",
           fechaNacimiento: "2000-09-10",
