@@ -21,7 +21,6 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
 
 const routes: Routes =
 [
-
   {
     path:'Estado',component:EstadoComponent, children:
     [
