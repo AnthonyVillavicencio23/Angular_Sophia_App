@@ -18,7 +18,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog'
-import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatToolbarModule} from '@angular/material/toolbar';
 
 
@@ -42,7 +41,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dialogo/curso-dialogo.component'
 import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
 import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +67,8 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
     CatListarComponent,
     CatCreaeditaComponent,
     CursoDialogoComponent,
-    CatDiialogComponent
+    CatDiialogComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -80,11 +81,13 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatPaginatorModule,
     MatButtonModule,
     RouterModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
