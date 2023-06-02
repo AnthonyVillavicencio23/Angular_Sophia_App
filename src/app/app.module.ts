@@ -42,6 +42,7 @@ import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dial
 import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
 import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CatListarComponent,
     CatCreaeditaComponent,
     CursoDialogoComponent,
-    CatDiialogComponent
+    CatDiialogComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +85,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     RouterModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

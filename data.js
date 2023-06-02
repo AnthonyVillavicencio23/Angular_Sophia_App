@@ -50,7 +50,7 @@ module.exports = function () {
     estado: [
       {
         id: 1,
-        description: "Postergado_"
+        description: "Postergado"
       },
       {
         id: 2,
