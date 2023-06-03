@@ -30,7 +30,7 @@ module.exports = function () {
         nameAuthor: "Juana Prueba",
         birthDateAuthor: "2020-08-08",
         emailAuthor:"Corre prueba",
-}
+      }
     ],
     books:[
       {
@@ -203,6 +203,27 @@ catCita: [
         descripcionCita: "Examen academico bajo supervición psicologica para determinar los avances o mejoras que ha tenido el usuario",
       },
     ],
+    estudiante:[
+      {
+        id: 1,
+        nombreEstudiante: "Juan",
+        fechaNacimientoEstudiante: "2002-09-09",
+        apPatEstudiante: "Lopez",
+        apMatEstudiante: "Aguilar",
+        dniEstudiante: "75481648",
+            Tutor:
+            {
+              id:1,
+              nombreTutor: "Aaron Moises",
+              apellidoPatTutor: "Cosquillo",
+              apellidoMatTutor:"Gara",
+              dniTutor:"12345678",
+              telefono:"992 941 621",
+              email:"u201911284@upc.edu.pe",
+              tipopersona:"Natural",
+            }
+      },
+    ]
 
 
   }

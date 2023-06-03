@@ -124,11 +124,12 @@
        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
      </table>
-     <br>
      <mat-paginator [pageSizeOptions]="[3, 6, 9]" [pageSize]="3" [length]="dataSource.data.length"></mat-paginator>
 
-
-
+     <br><br>
+     <div style="text-align: center">
+      <button mat-raised-button color="primary" routerLink="/Estudiantes/Listar">Lista de Estudiantes</button>
+    </div>
 
 
 
