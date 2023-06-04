@@ -44,6 +44,12 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavbarComponent } from './component/navbar/navbar.component';
 
+import { MatSelectModule } from '@angular/material/select';
+import { EstudianteComponent } from './component/estudiante/estudiante.component';
+import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
+import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +74,10 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     CatCreaeditaComponent,
     CursoDialogoComponent,
     CatDiialogComponent,
-    NavbarComponent
+    NavbarComponent,
+    EstudianteComponent,
+    EstudianteListarComponent,
+    EstudianteCreaeditaComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +96,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     MatFormFieldModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

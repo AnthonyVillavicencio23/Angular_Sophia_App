@@ -18,7 +18,7 @@ export class PsicologoListarComponent implements OnInit
   dataSource:MatTableDataSource<Psicologo>=new MatTableDataSource();
   idMayor: number = 0
   displayedColumns: String[]=['id','nombre','apellidopaterno','apellidomaterno','fecha','especialidad','acciones1','acciones2']
- 
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit(): void
     {
@@ -26,7 +26,7 @@ export class PsicologoListarComponent implements OnInit
       this.dataSource.paginator = this.paginator;
     })
   }
- 
+
 
   constructor(private aS:PsicologoService, private dialog: MatDialog)
  {
