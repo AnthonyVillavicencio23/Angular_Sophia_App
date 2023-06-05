@@ -16,6 +16,9 @@ import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 
 const routes: Routes =
 [
@@ -87,6 +90,18 @@ const routes: Routes =
     path:'Estudiantes',component:EstudianteComponent, children:
     [
       { path: 'Agregar', component:EstudianteCreaeditaComponent}
+    ]
+  },
+  {
+    path:'CitasProgramadas',component:CitaComponent, children:
+    [
+      { path: 'Listar', component:CitaComponent}
+    ]
+  },
+  {
+    path:'CitasProgramadas',component:CitaComponent, children:
+    [
+      { path: 'Agregar', component:CitaCreaeditaComponent}
     ]
   }
 

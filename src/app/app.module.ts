@@ -48,6 +48,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
 
 
 @NgModule({
@@ -77,7 +80,11 @@ import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-
     NavbarComponent,
     EstudianteComponent,
     EstudianteListarComponent,
-    EstudianteCreaeditaComponent
+    EstudianteCreaeditaComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaCreaeditaComponent
+
   ],
   imports: [
     BrowserModule,
