@@ -30,7 +30,7 @@ module.exports = function () {
         nameAuthor: "Juana Prueba",
         birthDateAuthor: "2020-08-08",
         emailAuthor:"Corre prueba",
-}
+      }
     ],
     books:[
       {
@@ -203,6 +203,92 @@ catCita: [
         descripcionCita: "Examen academico bajo supervición psicologica para determinar los avances o mejoras que ha tenido el usuario",
       },
     ],
+    estudiante:[
+      {
+        id: 1,
+        nombreEstudiante: "Juan",
+        fechaNacimientoEstudiante: "2002-09-09",
+        apPatEstudiante: "Lopez",
+        apMatEstudiante: "Aguilar",
+        dniEstudiante: "75481648",
+            Tutor:
+            {
+              id:1,
+              nombreTutor: "Aaron Moises",
+              apellidoPatTutor: "Cosquillo",
+              apellidoMatTutor:"Gara",
+              dniTutor:"12345678",
+              telefono:"992 941 621",
+              email:"u201911284@upc.edu.pe",
+              tipopersona:"Natural",
+            }
+      },
+    ],
+    cita:[
+      {
+        id:1,
+        disponible: "Sí",
+        fecha: "2023-06-04",
+        hora: "07:30 PM",
+        catCita:{
+          id:1,
+        nombreCita: "Examen de Inicio",
+        descripcionCita: "Examen academico bajo supervición psicologica para determinar los modulos de cursos a los cuales el usuario se podrá matricular",
+        },
+        Estudiante: {
+          id: 1,
+        nombreEstudiante: "Juan",
+        fechaNacimientoEstudiante: "2002-09-09",
+        apPatEstudiante: "Lopez",
+        apMatEstudiante: "Aguilar",
+        dniEstudiante: "75481648",
+        },
+        Psicologo: {
+          id:1,
+          nombrePsico: "Pedroprueba",
+          apPatPsicologo: "Pérez",
+          apMatPsicologo: "Reyes",
+          fechaNacimiento: "2000-09-10",
+          especialidad:"clinica",
+        },
+        Estado: {
+          id: 1,
+        description: "Postergado",
+        }
+      }
+    ],
+    evaluacion:[
+      {
+        id: 1,
+        diagnostico: "El estudiante evaluado, muestra deficit de atención, y un promedio más bajo en los cursos de Matematica, se le habilitaran los cursos del modulo 3",
+        cita:{
+          id:1,
+          disponible: "Sí",
+          fecha: "2023-06-04",
+          hora: "07:30 PM"
+        }
+      },
+      {
+        id: 2,
+        diagnostico: "Se le asignaran cursos de lenguaje del modulo 2",
+        cita:{
+          id:3,
+          disponible: "Sí",
+          fecha: "2023-04-04",
+          hora: "10:30 PM"
+        }
+      },
+      {
+        id: 3,
+        diagnostico: "El estudiante tomara cursos de nivelación secundaria",
+        cita:{
+          id:2,
+          disponible: "No",
+          fecha: "2023-06-04",
+          hora: "09:45 AM"
+        }
+      },
+    ]
 
 
   }

@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthorComponent } from './component/author/author.component';
-import { AuthorCreaeditaComponent } from './component/author/author-creaedita/author-creaedita.component';
-import { AuthorListarComponent } from './component/author/author-listar/author-listar.component';
 import { EstadoListarComponent } from './component/estado/estado-listar/estado-listar.component';
 import { EstadoComponent } from './component/estado/estado.component';
 import { cursoComponent } from './component/curso/curso.component';
@@ -17,7 +14,13 @@ import { TutorCreaeditaComponent } from './component/tutor/tutor-creaedita/tutor
 import { CategoriaComponent } from './component/Categoria/categoria.component';
 import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
-import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
+import { EstudianteComponent } from './component/estudiante/estudiante.component';
+import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { EvaluacionComponent } from './component/evaluacion/evaluacion.component';
+import { EvaluacionCreaeditaComponent } from './component/evaluacion/evaluacion-creaedita/evaluacion-creaedita.component';
 
 const routes: Routes =
 [
@@ -77,6 +80,42 @@ const routes: Routes =
     [
       { path: 'Agregar', component:CatCreaeditaComponent},
       { path: 'Listar/edicion/:id', component: CatCreaeditaComponent}
+    ]
+  },
+  {
+    path:'Estudiantes',component:EstudianteComponent, children:
+    [
+      { path: 'Listar', component:EstudianteComponent}
+    ]
+  },
+  {
+    path:'Estudiantes',component:EstudianteComponent, children:
+    [
+      { path: 'Agregar', component:EstudianteCreaeditaComponent}
+    ]
+  },
+  {
+    path:'CitasProgramadas',component:CitaComponent, children:
+    [
+      { path: 'Listar', component:CitaComponent}
+    ]
+  },
+  {
+    path:'CitasProgramadas',component:CitaComponent, children:
+    [
+      { path: 'Agregar', component:CitaCreaeditaComponent}
+    ]
+  },
+  {
+    path:'PruebaEvaluacion', component:EvaluacionComponent, children:
+    [
+      {path: 'Listar', component:EvaluacionComponent}
+    ]
+  },
+  {
+    path:'PruebaEvaluacion', component:EvaluacionComponent, children:
+    [
+      {path: 'Agregar', component:EvaluacionCreaeditaComponent}
     ]
   }
 

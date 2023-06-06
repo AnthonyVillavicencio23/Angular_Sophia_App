@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+</head>
+<body>
+
+
+      <br>
+      <div class = "container" style="text-align: center">
+
+        <div style = "text-align: center;">
+              <h1>Lista de Citas</h1>
+        </div><br>
+
+
+        <div style="text-align: right;">
+          <button mat-raised-button color="primary" routerLink="/CitasProgramadas/Agregar">Ir a Registro de Citas</button>
+        </div><br><br>
+
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id de la Cita </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="disponible">
+          <th mat-header-cell *matHeaderCellDef> Disponible </th>
+          <td mat-cell *matCellDef="let element"> {{element.disponible}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.fecha|date:'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hora">
+          <th mat-header-cell *matHeaderCellDef> Hora </th>
+          <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="catCita">
+          <th mat-header-cell *matHeaderCellDef> Categoría de Cita </th>
+          <td mat-cell *matCellDef="let element"> {{element.catCita.nombreCita}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="estudiante">
+          <th mat-header-cell *matHeaderCellDef> Estudiante </th>
+          <td mat-cell *matCellDef="let element"> {{element.Estudiante.nombreEstudiante}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="psicologo">
+          <th mat-header-cell *matHeaderCellDef> Psicologo </th>
+          <td mat-cell *matCellDef="let element"> {{element.Psicologo.nombrePsico}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let element"> {{element.Estado.description}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <br><br>
+
+
+
+    <br>
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" routerLink="/PruebaEvaluacion/Listar">Ver Pruebas de Evaluacion</button>
+    </div><br><br>
+
+    </div>
+
+
+
+
+
+</body>
+</html>
+

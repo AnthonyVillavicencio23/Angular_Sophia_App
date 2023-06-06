@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 
 }
-
-//actualizado 02/06/23 - elian
+//Stefano - 02/06/2023

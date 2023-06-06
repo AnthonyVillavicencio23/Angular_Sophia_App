@@ -44,6 +44,18 @@ import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dial
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavbarComponent } from './component/navbar/navbar.component';
 
+import { MatSelectModule } from '@angular/material/select';
+import { EstudianteComponent } from './component/estudiante/estudiante.component';
+import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
+import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
+import { EvaluacionComponent } from './component/evaluacion/evaluacion.component';
+import { EvaluacionListarComponent } from './component/evaluacion/evaluacion-listar/evaluacion-listar.component';
+import { EvaluacionCreaeditaComponent } from './component/evaluacion/evaluacion-creaedita/evaluacion-creaedita.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +80,17 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     CatCreaeditaComponent,
     CursoDialogoComponent,
     CatDiialogComponent,
-    NavbarComponent
+    NavbarComponent,
+    EstudianteComponent,
+    EstudianteListarComponent,
+    EstudianteCreaeditaComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaCreaeditaComponent,
+    EvaluacionComponent,
+    EvaluacionListarComponent,
+    EvaluacionCreaeditaComponent
+
   ],
   imports: [
     BrowserModule,
@@ -87,7 +109,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     MatFormFieldModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

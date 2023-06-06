@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div>
+    <div class="container" style="text-align: center;">
+
+      <h1>Registro de Pruebas de Evaluación</h1>
+
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id" formControlName="id">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Diagnostico</mat-label>
+        <input matInput required placeholder="diagnostico" formControlName="diagnostico">
+      </mat-form-field>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Cita</mat-label>
+        <mat-select formControlName="cita" [(value)]="idCitaSeleccionado" required>
+          <mat-option *ngFor="let c of listaCita" [value]="c.id">
+            {{c.disponible}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/PruebaEvaluacion/Listar">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
