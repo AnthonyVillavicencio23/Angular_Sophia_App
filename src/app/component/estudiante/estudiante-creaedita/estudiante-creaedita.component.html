@@ -20,7 +20,7 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Id</mat-label>
-        <input matInput placeholder="id" formControlName="id">
+        <input matInput placeholder="id" formControlName="idEstudiante">
       </mat-form-field>
 
       <br>
@@ -62,7 +62,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Tutor</mat-label>
         <mat-select formControlName="Tutor" [(value)]="idTutorSeleccionado" required>
-          <mat-option *ngFor="let a of lista" [value]="a.id">
+          <mat-option *ngFor="let a of lista" [value]="a.idTutor">
             {{a.nombreTutor}}
           </mat-option>
         </mat-select>

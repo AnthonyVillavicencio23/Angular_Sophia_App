@@ -6,6 +6,7 @@ import * as moment from 'moment'
 import { TutorService } from 'src/app/service/tutor.service';
 import { ActivatedRoute, Router, Params} from '@angular/router'
 import { Action } from 'rxjs/internal/scheduler/Action';
+
 @Component({
   selector: 'app-tutor-creaedita',
   templateUrl: './tutor-creaedita.component.html',
@@ -16,7 +17,7 @@ export class TutorCreaeditaComponent implements OnInit {
   tutor: Tutor = new Tutor();
   mensaje: string = "";
   maxFecha: Date = moment().add(-1, 'days').toDate();
-  id:number=0;
+  idTutor:number=0;
 edicion: boolean=false;
 
   constructor(private aS: TutorService,
@@ -29,12 +30,12 @@ edicion: boolean=false;
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id=data['id'];
-      this.edicion=data['id']!=null;
+      this.idTutor=data['idTutor'];
+      this.edicion=data['idTutor']!=null;
       this.init();
     })
     this.form = new FormGroup({
-      id: new FormControl(),
+      idTutor: new FormControl(),
       nombreTutor: new FormControl(),
       apellidoPatTutor: new FormControl(),
       apellidoMatTutor: new FormControl(),
@@ -46,7 +47,7 @@ edicion: boolean=false;
   }
 
   aceptar(): void {
-    this.tutor.id = this.form.value['id'];
+    this.tutor.idTutor = this.form.value['idTutor'];
     this.tutor.nombreTutor = this.form.value['nombreTutor'];
     this.tutor.apellidoPatTutor = this.form.value['apellidoPatTutor'];
     this.tutor.apellidoMatTutor = this.form.value['apellidoMatTutor'];
@@ -64,7 +65,7 @@ edicion: boolean=false;
 
       if(this.edicion){
         //actualice
-        this.aS.update(this.tutor).subscribe(()=>{
+        this.aS.update(this.tutor).subscribe((data)=>{
          this.aS.list().subscribe(data=>{
           this.aS.setList(data);
          })
@@ -85,9 +86,9 @@ edicion: boolean=false;
 
   init(){
     if(this.edicion){
-this.aS.listId(this.id).subscribe(data=> {
+this.aS.listId(this.idTutor).subscribe(data=> {
 this.form = new FormGroup({
-  id:new FormControl(data.id),
+  idTutor:new FormControl(data.idTutor),
   nombreTutor:new FormControl(data.nombreTutor),
   apellidoPatTutor:new FormControl(data.apellidoPatTutor),
   apellidoMatTutor:new FormControl(data.apellidoMatTutor),

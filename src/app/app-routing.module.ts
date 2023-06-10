@@ -61,7 +61,7 @@ const routes: Routes =
     path:'Tutor',component:TutorComponent, children:
     [
       { path: 'Agregar', component:TutorCreaeditaComponent },
-      { path: 'Listar/edicion/:id', component:TutorCreaeditaComponent}
+      { path: 'Listar/edicion/:idTutor', component:TutorCreaeditaComponent}
     ]
   },
   {
