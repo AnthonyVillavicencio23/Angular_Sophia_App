@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
+
 import { AuthorComponent } from './component/author/author.component';
 import { AuthorListarComponent } from './component/author/author-listar/author-listar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -13,6 +14,8 @@ import { MatTableModule } from '@angular/material/table';
 import { AuthorCreaeditaComponent } from './component/author/author-creaedita/author-creaedita.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -35,12 +38,17 @@ import { TutorCreaeditaComponent } from './component/tutor/tutor-creaedita/tutor
 import { CategoriaComponent } from './component/Categoria/categoria.component';
 import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
 import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dialogo/curso-dialogo.component'
 import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
 import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +74,10 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     CatCreaeditaComponent,
     CursoDialogoComponent,
     CatDiialogComponent,
-    NavbarComponent
+    NavbarComponent,
+    TarjetaComponent,
+    TarjetaListarComponent,
+    TarjetaCreaditaComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +96,10 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     MatFormFieldModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

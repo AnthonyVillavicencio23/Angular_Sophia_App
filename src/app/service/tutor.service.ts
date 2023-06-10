@@ -29,7 +29,7 @@ export class TutorService {
     return this.http.get<Tutor>(`${this.url}/${id}`);
   }
   update(aut: Tutor) {
-    return this.http.put(this.url + '/' + aut.id, aut);
+    return this.http.put(this.url, aut);
   }
   //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
   delete(id: number) {

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthorComponent } from './component/author/author.component';
 import { AuthorCreaeditaComponent } from './component/author/author-creaedita/author-creaedita.component';
@@ -18,13 +18,19 @@ import { CategoriaComponent } from './component/Categoria/categoria.component';
 import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
 import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 
 const routes: Routes =
 [
+ 
   {
-    path:'Estado',component:EstadoComponent, children:
+    path:'Tarjeta',component:TarjetaComponent, children:
     [
-      { path: 'Listar', component:EstadoListarComponent}
+      { path: 'Listar', component:TarjetaListarComponent},
+      { path: 'Agregar', component:TarjetaCreaditaComponent},
+      { path: 'Editar/:id', component:TarjetaCreaditaComponent},
     ]
   },
   {

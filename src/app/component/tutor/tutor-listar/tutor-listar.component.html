@@ -29,6 +29,8 @@
       <button mat-raised-button color="primary" routerLink="/Tutor/Agregar">Ir a Registro</button>
     </div>
 
+
+
     <mat-form-field>
       <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
     </mat-form-field>
@@ -128,7 +130,9 @@
      <mat-paginator [pageSizeOptions]="[3, 6, 9]" [pageSize]="3" [length]="dataSource.data.length"></mat-paginator>
 
 
-
+     <div style="text-align: right">
+      <button mat-raised-button color="primary" routerLink="/Tarjeta">Tarjeta</button>
+    </div>
 
 
 

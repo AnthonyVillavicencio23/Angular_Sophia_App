@@ -13,17 +13,9 @@ export class AppComponent
 {
   title = 'demoCrud';
 
-  curso: any [];
 
-  constructor(private http: HttpClient)
+  constructor()
   {
-    this.curso= [];
-
-    http.get<any>(`http://localhost:3000`).subscribe(response=> {
-      this.curso= response.results;
-    }
-
-    )
   }
 
 }

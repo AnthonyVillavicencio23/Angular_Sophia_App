@@ -47,6 +47,23 @@ module.exports = function () {
         }
       },
     ],
+    tarjeta: [
+      {
+        id: 1,
+        numero: "4587578",
+        tipo: "C",
+        tutor: {
+          id:1,
+          nombreTutor: "Aaron Moises",
+          apellidoPatTutor: "Cosquillo",
+          apellidoMatTutor:"Gara",
+          dniTutor:"12345678",
+          telefono:"992 941 621",
+          email:"u201911284@upc.edu.pe",
+          tipopersona:"Natural",
+        }
+      }
+    ],
     estado: [
       {
         id: 1,
