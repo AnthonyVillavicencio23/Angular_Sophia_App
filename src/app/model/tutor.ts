@@ -1,5 +1,5 @@
 export class Tutor{
-  id:number=0
+  idTutor:number=0
   nombreTutor: string= ""
   apellidoPatTutor: string=""
   apellidoMatTutor: string=""
