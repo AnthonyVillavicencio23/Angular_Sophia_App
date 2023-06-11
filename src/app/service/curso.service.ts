@@ -47,7 +47,7 @@ export class cursoService
 
   update(cur: curso)
   {
-    return this.http.put(this.url + "/" + cur.id, cur)
+    return this.http.put(this.url, cur);
   }
 
   delete(id: number) {

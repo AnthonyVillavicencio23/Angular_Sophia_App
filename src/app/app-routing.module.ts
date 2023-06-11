@@ -16,6 +16,8 @@ import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { ModuloComponent } from './component/modulo/modulo.component';
+import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/modulo-creaedita.component';
 
 const routes: Routes =
 [
@@ -35,7 +37,7 @@ const routes: Routes =
     path:'Curso',component:cursoComponent, children:
     [
       { path: 'Agregar', component:CursoCreaeditaComponent},
-      { path: 'Listar/edicion/:id', component: CursoCreaeditaComponent}
+      { path: 'Listar/edicion/:idcurso', component: CursoCreaeditaComponent}
     ]
   },
   {
@@ -87,6 +89,18 @@ const routes: Routes =
     path:'Estudiantes',component:EstudianteComponent, children:
     [
       { path: 'Agregar', component:EstudianteCreaeditaComponent}
+    ]
+  },
+  {
+    path:'Modulos',component:ModuloComponent, children:
+    [
+      { path: 'Listar', component:ModuloComponent}
+    ]
+  },
+  {
+    path:'Modulos',component:ModuloComponent, children:
+    [
+      { path: 'Agregar', component:ModuloCreaeditaComponent}
     ]
   }
 
