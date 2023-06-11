@@ -51,7 +51,7 @@ const routes: Routes =
     path:'Psicologo',component:PsicologoComponent, children:
     [
       { path: 'Agregar', component:PsicologoCreaeditaComponent},
-      { path: 'Listar/edicion/:id', component: PsicologoCreaeditaComponent}
+      { path: 'Listar/edicion/:idPsicologo', component: PsicologoCreaeditaComponent}
     ]
   },
   {
@@ -77,7 +77,7 @@ const routes: Routes =
     path:'Citas',component:CategoriaComponent, children:
     [
       { path: 'Agregar', component:CatCreaeditaComponent},
-      { path: 'Listar/edicion/:id', component: CatCreaeditaComponent}
+      { path: 'Listar/edicion/:idcatCita', component: CatCreaeditaComponent}
     ]
   },
   {

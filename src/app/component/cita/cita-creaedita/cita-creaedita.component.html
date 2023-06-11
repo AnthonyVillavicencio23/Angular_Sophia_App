@@ -20,7 +20,7 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>id</mat-label>
-        <input matInput placeholder="id" formControlName="id">
+        <input matInput placeholder="Código" formControlName="idCita">
       </mat-form-field>
 
       <br>
@@ -49,7 +49,7 @@
       <mat-form-field appearance="fill">
         <mat-label>CatCita</mat-label>
         <mat-select formControlName="CatCita" [(value)]="idcatCitaSeleccionado" required>
-          <mat-option *ngFor="let a of listacat" [value]="a.id">
+          <mat-option *ngFor="let a of listacat" [value]="a.idcatCita">
             {{a.nombreCita}}
           </mat-option>
         </mat-select>
@@ -59,7 +59,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Estudiante</mat-label>
         <mat-select formControlName="Estudiante" [(value)]="idEstudianteSeleccionado" required>
-          <mat-option *ngFor="let e of listaest" [value]="e.id">
+          <mat-option *ngFor="let e of listaest" [value]="e.idEstudiante">
             {{e.nombreEstudiante}}
           </mat-option>
         </mat-select>
@@ -69,7 +69,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Psicologo</mat-label>
         <mat-select formControlName="Psicologo" [(value)]="idPsicologoSeleccionado" required>
-          <mat-option *ngFor="let p of listapsi" [value]="p.id">
+          <mat-option *ngFor="let p of listapsi" [value]="p.idPsicologo">
             {{p.nombrePsico}}
           </mat-option>
         </mat-select>
@@ -79,7 +79,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Estado</mat-label>
         <mat-select formControlName="Estado" [(value)]="idEstadoSeleccionado" required>
-          <mat-option *ngFor="let t of listaesta" [value]="t.id">
+          <mat-option *ngFor="let t of listaesta" [value]="t.idEstado">
             {{t.description}}
           </mat-option>
         </mat-select>

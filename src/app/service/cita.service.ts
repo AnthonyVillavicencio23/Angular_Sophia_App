@@ -11,7 +11,7 @@ const base_url = environment.base
 })
 export class CitaService {
 
-  private url = `${base_url}/cita`
+  private url = `${base_url}/citas`
   private listaCambio = new Subject<Cita[]>()
 
   constructor(private http: HttpClient) { }

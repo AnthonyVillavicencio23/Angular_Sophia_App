@@ -28,7 +28,7 @@
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> id de la Cita </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.idCita}} </td>
         </ng-container>
 
         <ng-container matColumnDef="disponible">
@@ -53,17 +53,17 @@
 
         <ng-container matColumnDef="estudiante">
           <th mat-header-cell *matHeaderCellDef> Estudiante </th>
-          <td mat-cell *matCellDef="let element"> {{element.Estudiante.nombreEstudiante}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.estudiante.nombreEstudiante}} </td>
         </ng-container>
 
         <ng-container matColumnDef="psicologo">
           <th mat-header-cell *matHeaderCellDef> Psicologo </th>
-          <td mat-cell *matCellDef="let element"> {{element.Psicologo.nombrePsico}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.psicologo.nombrePsico}} </td>
         </ng-container>
 
         <ng-container matColumnDef="estado">
           <th mat-header-cell *matHeaderCellDef> Estado </th>
-          <td mat-cell *matCellDef="let element"> {{element.Estado.description}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.estado.description}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
