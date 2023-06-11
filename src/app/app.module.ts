@@ -19,6 +19,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { EstadoComponent } from './component/estado/estado.component';
@@ -48,6 +49,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 
 
 @NgModule({
@@ -77,7 +81,10 @@ import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-
     NavbarComponent,
     EstudianteComponent,
     EstudianteListarComponent,
-    EstudianteCreaeditaComponent
+    EstudianteCreaeditaComponent,
+    TarjetaComponent,
+    TarjetaListarComponent,
+    TarjetaCreaditaComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +104,8 @@ import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-
     MatDialogModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

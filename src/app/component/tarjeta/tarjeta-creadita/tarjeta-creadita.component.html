@@ -1,0 +1,42 @@
+<form [formGroup]="form">
+  <br>
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="idTarjeta" placeholder="Enter id" readonly="true">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Number</mat-label>
+    <input matInput formControlName="numeroTarjeta" placeholder="Enter number">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Tipo</mat-label>
+    <input matInput formControlName="tipoTarjeta" placeholder="Enter tipo">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Tutor</mat-label>
+    <mat-select formControlName="tutor">
+      <mat-option *ngFor="let tutor of tutores" [value]="tutor">
+        {{tutor.nombreTutor}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>
+
+<button
+color= "primary"
+mat-raised-button
+(click)="saveTarjeta()"
+>
+  Save
+</button>
+<button
+color = "warn"
+mat-raised-button
+routerLink="/Tarjeta/Lista"
+>
+  Cancel
+</button>

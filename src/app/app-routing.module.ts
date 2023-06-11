@@ -16,9 +16,20 @@ import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 
 const routes: Routes =
 [
+  {
+    path:'Tarjeta',component:TarjetaComponent, children:
+    [
+      { path: 'Listar', component:TarjetaListarComponent},
+      { path: 'Agregar', component:TarjetaCreaditaComponent},
+      { path: 'Editar/:id', component:TarjetaCreaditaComponent},
+    ]
+  },
   {
     path:'Estado',component:EstadoComponent, children:
     [
