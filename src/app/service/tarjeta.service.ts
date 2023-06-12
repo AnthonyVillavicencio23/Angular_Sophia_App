@@ -10,7 +10,7 @@ import { Tarjeta } from '../model/tarjeta';
   providedIn: 'root'
 })
 export class TarjetaService {
-  url: string = environment.base + "/tarjetas"
+  url: string = environment.base + "/tarjeta"
   constructor(private http: HttpClient){}
 
   getTarjetas(){

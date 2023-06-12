@@ -18,16 +18,16 @@ export class TarjetaCreaditaComponent {
   idTarjeta!: number;
   constructor(private fb: FormBuilder, private _snackbard : MatSnackBar, private tA : TarjetaService, private router: Router, private tS: TutorService, private route: ActivatedRoute) {}
   ngOnInit(){
-    this.idTarjeta = this.route.snapshot.params["idTarjeta"];
+    this.idTarjeta = this.route.snapshot.params["id"];
     this.tS.list().subscribe(
       (data: Tutor[]) => this.tutores = data
     )
     this.form = this.fb.group(
       {
         idTarjeta: [''],
-        numeroTarjeta: [''],
-        tipoTarjeta: [''],
-        tutor: ['']
+        numeroTarjeta: ['',[Validators.required, Validators.maxLength(16), Validators.minLength(16)]],
+        tipoTarjeta: ['',[Validators.required, Validators.maxLength(7)]],
+        tutor: ['',[Validators.required]]
       }
     )
     if(this.idTarjeta != null){
@@ -36,9 +36,9 @@ export class TarjetaCreaditaComponent {
           this.form = this.fb.group(
             {
               idTarjeta: [data.idTarjeta],
-              numeroTarjeta: [data.numeroTarjeta],
-              tipoTarjeta: [data.tipoTarjeta],
-              tutor: [data.tutor]
+              numeroTarjeta: [data.numeroTarjeta,[Validators.required, Validators.maxLength(16), Validators.minLength(16)]],
+              tipoTarjeta: [data.tipoTarjeta,[Validators.required, Validators.maxLength(7)]],
+              tutor: [data.tutor,[Validators.required]]
             }
           )
         }

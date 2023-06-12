@@ -13,6 +13,7 @@ import { MatTableModule } from '@angular/material/table';
 import { AuthorCreaeditaComponent } from './component/author/author-creaedita/author-creaedita.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -105,7 +106,8 @@ import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/t
     MatPaginatorModule,
     MatToolbarModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

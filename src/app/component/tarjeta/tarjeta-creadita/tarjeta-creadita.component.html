@@ -27,6 +27,7 @@
 </form>
 
 <button
+[disabled]="form.invalid"
 color= "primary"
 mat-raised-button
 (click)="saveTarjeta()"
