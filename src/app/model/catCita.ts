@@ -1,6 +1,6 @@
 export class catCita
 {
-  id:number = 0
+  idcatCita:number = 0
   nombreCita: string = " "
   descripcionCita: String = " "
 }

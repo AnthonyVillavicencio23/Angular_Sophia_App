@@ -8,7 +8,7 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class TutorService {
-  private url = `${base_url}/tutores`
+  private url = `${base_url}/Tutor`
   private confirmarEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Tutor[]>();
 
@@ -29,8 +29,11 @@ export class TutorService {
     return this.http.get<Tutor>(`${this.url}/${id}`);
   }
   update(aut: Tutor) {
-    return this.http.put(this.url + '/' + aut.id, aut);
+    return this.http.put(this.url, aut);
   }
+
+
+
   //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
   delete(id: number) {
     return this.http.delete(`${this.url}/${id}`)

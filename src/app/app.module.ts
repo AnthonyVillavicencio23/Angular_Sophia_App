@@ -48,6 +48,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { ModuloComponent } from './component/modulo/modulo.component';
+import { ModuloListarComponent } from './component/modulo/modulo-listar/modulo-listar.component';
+import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/modulo-creaedita.component';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
@@ -84,6 +87,9 @@ import { EvaluacionCreaeditaComponent } from './component/evaluacion/evaluacion-
     EstudianteComponent,
     EstudianteListarComponent,
     EstudianteCreaeditaComponent,
+    ModuloComponent,
+    ModuloListarComponent,
+    ModuloCreaeditaComponent,
     CitaComponent,
     CitaListarComponent,
     CitaCreaeditaComponent,

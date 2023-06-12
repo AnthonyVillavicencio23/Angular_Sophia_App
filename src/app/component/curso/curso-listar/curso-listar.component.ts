@@ -20,7 +20,7 @@ export class cursoListarComponent implements OnInit
 
   idMayor: number = 0
 
-  displayedColumns:string[]=['id','nombreCurso','CantCurso','accion01','acciones2']
+  displayedColumns:string[]=['idcurso','nombreCurso','CantCurso','accion01','acciones2']
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -65,9 +65,9 @@ export class cursoListarComponent implements OnInit
     }
 
 
-    confirm(id: number)
+    confirm(idcurso: number)
     {
-      this.idMayor = id;
+      this.idMayor = idcurso;
       this.dialog.open(CursoDialogoComponent);
     }
     eliminar(id: number)

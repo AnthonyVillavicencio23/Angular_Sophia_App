@@ -46,10 +46,16 @@ export class CitaCreaeditaComponent implements OnInit{
 
   ngOnInit(): void
   {
+
+    this.caS.list().subscribe(data => {this.listacat = data} );
+    this.eS.list().subscribe(data => {this.listaest = data} );
+    this.pS.list().subscribe(data => {this.listapsi = data} );
+    this.etS.list().subscribe(data => {this.listaesta = data} );
+
     this.form = new FormGroup
     (
       {
-        id: new FormControl(),
+        idCita: new FormControl(),
         disponible: new FormControl(),
         fecha: new FormControl(),
         hora: new FormControl(),
@@ -62,7 +68,7 @@ export class CitaCreaeditaComponent implements OnInit{
   }
 
   aceptar(): void {
-    this.cita.id = this.form.value['id'];
+    this.cita.idCita = this.form.value['idCita'];
     this.cita.disponible = this.form.value['disponible'];
     this.cita.fecha = this.form.value['fecha'];
     this.cita.hora = this.form.value['hora'];
@@ -71,23 +77,23 @@ export class CitaCreaeditaComponent implements OnInit{
       this.idPsicologoSeleccionado > 0 && this.idEstadoSeleccionado > 0) {
       //catCita
       let a = new catCita();
-      a.id = this.idcatCitaSeleccionado;
-      this.cita.CatCita = a;
+      a.idcatCita = this.idcatCitaSeleccionado;
+      this.cita.catCita = a;
 
       //Estudiante
       let e = new Estudiante();
-      e.id = this.idEstudianteSeleccionado;
-      this.cita.Estudiante = e;
+      e.idEstudiante = this.idEstudianteSeleccionado;
+      this.cita.estudiante = e;
 
       //Psicologo
       let p = new Psicologo();
-      p.id = this.idPsicologoSeleccionado;
-      this.cita.Psicologo = p;
+      p.idPsicologo = this.idPsicologoSeleccionado;
+      this.cita.psicologo = p;
 
       //Estado
       let t = new Estado();
-      t.id = this.idEstadoSeleccionado;
-      this.cita.Estado = t;
+      t.idEstado = this.idEstadoSeleccionado;
+      this.cita.estado = t;
 
       //Subcribe
       this.cS.insert(this.cita).subscribe(() => {
@@ -95,7 +101,7 @@ export class CitaCreaeditaComponent implements OnInit{
           this.cS.setList(data);
         })
       })
-      this.router.navigate(['Hola/Listar']);
+      this.router.navigate(['CitasProgramadas/Listar']);
     }
   }
 

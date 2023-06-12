@@ -2,30 +2,35 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { Cita } from '../model/cita';
+import { Modulo } from '../model/modulo';
 
 const base_url = environment.base
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class CitaService {
+export class moduloService
+{
 
-  private url = `${base_url}/citas`
-  private listaCambio = new Subject<Cita[]>()
+  private url = `${base_url}/modulo`
+  private listaCambio = new Subject<Modulo[]>()
 
   constructor(private http: HttpClient) { }
 
   list() {
-    return this.http.get<Cita[]>(this.url);
+    return this.http.get<Modulo[]>(this.url);
   }
-  insert(cita: Cita) {
-    return this.http.post(this.url, cita);
+  insert(modulo: Modulo) {
+    return this.http.post(this.url, modulo);
   }
-  setList(listaNueva: Cita[]) {
+
+
+  setList(listaNueva: Modulo[]) {
     this.listaCambio.next(listaNueva);
   }
   getLista() {
     return this.listaCambio.asObservable();
   }
+
 }
