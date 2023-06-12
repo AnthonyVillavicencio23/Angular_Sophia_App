@@ -31,7 +31,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Cita</mat-label>
         <mat-select formControlName="cita" [(value)]="idCitaSeleccionado" required>
-          <mat-option *ngFor="let c of listaCita" [value]="c.id">
+          <mat-option *ngFor="let c of listaCita" [value]="c.idCita">
             {{c.disponible}}
           </mat-option>
         </mat-select>

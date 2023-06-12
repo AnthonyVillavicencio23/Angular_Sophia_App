@@ -45,7 +45,7 @@ export class EvaluacionCreaeditaComponent implements OnInit {
     if (this.idCitaSeleccionado > 0 ) {
       //Cita
       let c = new Cita();
-      c.id = this.idCitaSeleccionado;
+      c.idCita = this.idCitaSeleccionado;
       this.evaluacion.Cita = c;
 
       //Subcribe
