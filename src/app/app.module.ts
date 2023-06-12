@@ -51,6 +51,9 @@ import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-
 import { ModuloComponent } from './component/modulo/modulo.component';
 import { ModuloListarComponent } from './component/modulo/modulo-listar/modulo-listar.component';
 import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/modulo-creaedita.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
 
 
 @NgModule({
@@ -83,7 +86,11 @@ import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/mo
     EstudianteCreaeditaComponent,
     ModuloComponent,
     ModuloListarComponent,
-    ModuloCreaeditaComponent
+    ModuloCreaeditaComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaCreaeditaComponent
+
   ],
   imports: [
     BrowserModule,

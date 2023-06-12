@@ -15,7 +15,7 @@ export class CatCreaeditaComponent implements OnInit {
   catcita: catCita = new catCita();
   mensaje: string = '';
 
-  id: number = 0;
+  idcatCita: number = 0;
   edicion: boolean = false;
 
   constructor(private cat: CategoriaService, private router: Router,
@@ -23,18 +23,18 @@ export class CatCreaeditaComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params)=>{
-      this.id = data['id'];
-      this.edicion =data['id']!=null;
+      this.idcatCita = data['idcatCita'];
+      this.edicion =data['idcatCita']!=null;
       this.init();
     })
     this.form = new FormGroup({
-      id: new FormControl(),
+      idcatCita: new FormControl(),
       nombreCita: new FormControl(),
       descripcionCita: new FormControl(),
     });
   }
   aceptar(): void {
-    this.catcita.id = this.form.value['id'];
+    this.catcita.idcatCita = this.form.value['idcatCita'];
     this.catcita.nombreCita = this.form.value['nombreCita'];
     this.catcita.descripcionCita = this.form.value['descripcionCita'];
     if (
@@ -63,9 +63,9 @@ export class CatCreaeditaComponent implements OnInit {
 
   init() {
     if (this.edicion) {
-      this.cat.listId(this.id).subscribe((data) => {
+      this.cat.listId(this.idcatCita).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          idcatCita: new FormControl(data.idcatCita),
           nombreCita: new FormControl(data.nombreCita),
           descripcionCita: new FormControl(data.descripcionCita)
         })
