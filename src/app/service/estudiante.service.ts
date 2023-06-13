@@ -25,7 +25,6 @@ export class EstudianteService
     return this.http.post(this.url, estudiante);
   }
 
-
   setList(listaNueva: Estudiante[]) {
     this.listaCambio.next(listaNueva);
   }

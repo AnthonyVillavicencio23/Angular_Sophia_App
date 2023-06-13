@@ -21,9 +21,20 @@ import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/mo
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 
 const routes: Routes =
 [
+  {
+    path:'Tarjeta',component:TarjetaComponent, children:
+    [
+      { path: 'Listar', component:TarjetaListarComponent},
+      { path: 'Agregar', component:TarjetaCreaditaComponent},
+      { path: 'Editar/:id', component:TarjetaCreaditaComponent},
+    ]
+  },
   {
     path:'Estado',component:EstadoComponent, children:
     [
