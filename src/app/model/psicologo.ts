@@ -1,6 +1,6 @@
 export class Psicologo
 {
-  id:number=0
+  idPsicologo:number=0
   nombrePsico: string = ""
   apPatPsicologo: string = ""
   apMatPsicologo: string = ""

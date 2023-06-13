@@ -16,9 +16,25 @@ import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.
 import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { ModuloComponent } from './component/modulo/modulo.component';
+import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/modulo-creaedita.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 
 const routes: Routes =
 [
+  {
+    path:'Tarjeta',component:TarjetaComponent, children:
+    [
+      { path: 'Listar', component:TarjetaListarComponent},
+      { path: 'Agregar', component:TarjetaCreaditaComponent},
+      { path: 'Editar/:id', component:TarjetaCreaditaComponent},
+    ]
+  },
   {
     path:'Estado',component:EstadoComponent, children:
     [
@@ -35,7 +51,7 @@ const routes: Routes =
     path:'Curso',component:cursoComponent, children:
     [
       { path: 'Agregar', component:CursoCreaeditaComponent},
-      { path: 'Listar/edicion/:id', component: CursoCreaeditaComponent}
+      { path: 'Listar/edicion/:idcurso', component: CursoCreaeditaComponent}
     ]
   },
   {
@@ -48,7 +64,7 @@ const routes: Routes =
     path:'Psicologo',component:PsicologoComponent, children:
     [
       { path: 'Agregar', component:PsicologoCreaeditaComponent},
-      { path: 'Listar/edicion/:id', component: PsicologoCreaeditaComponent}
+      { path: 'Listar/edicion/:idPsicologo', component: PsicologoCreaeditaComponent}
     ]
   },
   {
@@ -74,7 +90,7 @@ const routes: Routes =
     path:'Citas',component:CategoriaComponent, children:
     [
       { path: 'Agregar', component:CatCreaeditaComponent},
-      { path: 'Listar/edicion/:id', component: CatCreaeditaComponent}
+      { path: 'Listar/edicion/:idcatCita', component: CatCreaeditaComponent}
     ]
   },
   {
@@ -87,6 +103,30 @@ const routes: Routes =
     path:'Estudiantes',component:EstudianteComponent, children:
     [
       { path: 'Agregar', component:EstudianteCreaeditaComponent}
+    ]
+  },
+  {
+    path:'Modulos',component:ModuloComponent, children:
+    [
+      { path: 'Listar', component:ModuloComponent}
+    ]
+  },
+  {
+    path:'Modulos',component:ModuloComponent, children:
+    [
+      { path: 'Agregar', component:ModuloCreaeditaComponent}
+    ]
+  },
+  {
+    path:'CitasProgramadas',component:CitaComponent, children:
+    [
+      { path: 'Listar', component:CitaComponent}
+    ]
+  },
+  {
+    path:'CitasProgramadas',component:CitaComponent, children:
+    [
+      { path: 'Agregar', component:CitaCreaeditaComponent}
     ]
   }
 

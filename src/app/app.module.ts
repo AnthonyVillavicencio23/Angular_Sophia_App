@@ -13,12 +13,14 @@ import { MatTableModule } from '@angular/material/table';
 import { AuthorCreaeditaComponent } from './component/author/author-creaedita/author-creaedita.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { EstadoComponent } from './component/estado/estado.component';
@@ -48,6 +50,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { EstudianteComponent } from './component/estudiante/estudiante.component';
 import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
 import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
+import { ModuloComponent } from './component/modulo/modulo.component';
+import { ModuloListarComponent } from './component/modulo/modulo-listar/modulo-listar.component';
+import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/modulo-creaedita.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 
 
 @NgModule({
@@ -77,7 +88,16 @@ import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-
     NavbarComponent,
     EstudianteComponent,
     EstudianteListarComponent,
-    EstudianteCreaeditaComponent
+    EstudianteCreaeditaComponent,
+    ModuloComponent,
+    ModuloListarComponent,
+    ModuloCreaeditaComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaCreaeditaComponent,
+    TarjetaComponent,
+    TarjetaListarComponent,
+    TarjetaCreaditaComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +117,9 @@ import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-
     MatDialogModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

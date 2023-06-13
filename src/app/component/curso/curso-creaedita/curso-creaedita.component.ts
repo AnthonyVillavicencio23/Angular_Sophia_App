@@ -16,7 +16,7 @@ export class CursoCreaeditaComponent implements OnInit {
   curso: curso = new curso();
   mensaje: string = "";
 
-  id: number = 0;
+  idcurso: number = 0;
   edicion: boolean = false;
 
 
@@ -30,15 +30,15 @@ export class CursoCreaeditaComponent implements OnInit {
 
     this.route.params.subscribe((data: Params) =>
     {
-      this.id=data['id'];
-      this.edicion=data['id']!=null;
+      this.idcurso=data['idcurso'];
+      this.edicion=data['idcurso']!=null;
       this.init()
     })
 
     this.Form = new FormGroup
     (
       {
-        id: new FormControl(),
+        idcurso: new FormControl(),
         nombreCurso: new FormControl(),
         cantidadModulos: new FormControl(),
       }
@@ -48,7 +48,7 @@ export class CursoCreaeditaComponent implements OnInit {
 
   aceptar():void
   {
-    this.curso.id = this.Form.value['id'];
+    this.curso.idcurso = this.Form.value['idcurso'];
     this.curso.nameCurso = this.Form.value['nombreCurso'];
     this.curso.cantCurso = this.Form.value['cantidadModulos'];
 
@@ -89,9 +89,9 @@ export class CursoCreaeditaComponent implements OnInit {
   {
     if(this.edicion)
     {
-      this.as.listID(this.id).subscribe(data =>{
+      this.as.listID(this.idcurso).subscribe(data =>{
           this.Form = new FormGroup({
-            id:new FormControl(data.id),
+            idcurso:new FormControl(data.idcurso),
             nombreCurso:new FormControl(data.nameCurso),
             cantidadModulos:new FormControl(data.cantCurso),
           })

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+
+  <div>
+    <div class="container" style="text-align: center;">
+
+      <h1>Registro de Cita</h1>
+
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>id</mat-label>
+        <input matInput placeholder="Código" formControlName="idCita">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>disponible</mat-label>
+        <input matInput required placeholder="disponible" formControlName="disponible">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>hora</mat-label>
+        <input matInput required placeholder="hora" formControlName="hora">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CatCita</mat-label>
+        <mat-select formControlName="CatCita" [(value)]="idcatCitaSeleccionado" required>
+          <mat-option *ngFor="let a of listacat" [value]="a.idcatCita">
+            {{a.nombreCita}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estudiante</mat-label>
+        <mat-select formControlName="Estudiante" [(value)]="idEstudianteSeleccionado" required>
+          <mat-option *ngFor="let e of listaest" [value]="e.idEstudiante">
+            {{e.nombreEstudiante}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Psicologo</mat-label>
+        <mat-select formControlName="Psicologo" [(value)]="idPsicologoSeleccionado" required>
+          <mat-option *ngFor="let p of listapsi" [value]="p.idPsicologo">
+            {{p.nombrePsico}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="Estado" [(value)]="idEstadoSeleccionado" required>
+          <mat-option *ngFor="let t of listaesta" [value]="t.idEstado">
+            {{t.description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/CitasProgramadas/Listar">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

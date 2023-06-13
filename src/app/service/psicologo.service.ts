@@ -41,7 +41,7 @@ private listaCambio = new Subject<Psicologo[]>()
 
   update(aut: Psicologo)
   {
-    return this.http.put(this.url + "/" + aut.id, aut)
+    return this.http.put(this.url, aut);
   }
 
   delete(id: number) {
