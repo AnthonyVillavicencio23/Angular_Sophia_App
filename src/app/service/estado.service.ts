@@ -9,7 +9,7 @@ const base_url=environment.base
   providedIn: 'root'
 })
 export class EstadoService {
-  private url=`${base_url}/estado`
+  private url=`${base_url}/estados`
 
   private listacam = new Subject<Estado[]>()
 

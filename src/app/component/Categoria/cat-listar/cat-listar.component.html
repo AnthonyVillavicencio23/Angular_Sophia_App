@@ -46,7 +46,7 @@
       <!-- Position Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> Id.</th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.idcatCita}} </td>
       </ng-container>
 
       <!-- Name Column -->
@@ -64,13 +64,13 @@
       <ng-container matColumnDef="accionCat">
         <th mat-header-cell *matHeaderCellDef> Editar </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="primary" [routerLink]="['edicion',element.id]"><span class="material-icons">build</span></button>
+          <button mat-raised-button color="primary" [routerLink]="['edicion',element.idcatCita]"><span class="material-icons">build</span></button>
         </td>
       </ng-container>
       <ng-container matColumnDef="accionCat02">
         <th mat-header-cell *matHeaderCellDef> Eliminar </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="primary" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
+          <button mat-raised-button color="primary" (click)="confirm(element.idcatCita)"><span class="material-icons">delete</span></button>
        </td>
       </ng-container>
 
@@ -86,6 +86,11 @@
     showFirstLastButtons
     aria-label="Select page Artist">
     </mat-paginator>
+
+    <br>
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" routerLink="/CitasProgramadas/Listar">Ir a Registro de Citas</button>
+    </div><br><br>
 
   </div>
 </body>

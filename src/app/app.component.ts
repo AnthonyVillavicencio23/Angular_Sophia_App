@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
 
 
 @Component({
@@ -12,19 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent
 {
   title = 'demoCrud';
-
-  curso: any [];
-
-  constructor(private http: HttpClient)
-  {
-    this.curso= [];
-
-    http.get<any>(`http://localhost:3000`).subscribe(response=> {
-      this.curso= response.results;
-    }
-
-    )
-  }
 
 }
 

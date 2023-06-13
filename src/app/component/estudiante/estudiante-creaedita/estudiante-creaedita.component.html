@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+
+  <div>
+    <div class="container" style="text-align: center;">
+
+      <h1>Registro de Estudiantes</h1>
+
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id" formControlName="idEstudiante">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>nombreEstudiante</mat-label>
+        <input matInput required placeholder="nombreEstudiante" formControlName="nombreEstudiante">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>fechaNacimientoEstudiante</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaNacimientoEstudiante" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>apPatEstudiante</mat-label>
+        <input matInput required placeholder="apPatEstudiante" formControlName="apPatEstudiante">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>apMatEstudiante</mat-label>
+        <input matInput required placeholder="apMatEstudiante" formControlName="apMatEstudiante">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>dniEstudiante</mat-label>
+        <input matInput required placeholder="dniEstudiante" formControlName="dniEstudiante">
+      </mat-form-field>
+      <br>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Tutor</mat-label>
+        <mat-select formControlName="Tutor" [(value)]="idTutorSeleccionado" required>
+          <mat-option *ngFor="let a of lista" [value]="a.idTutor">
+            {{a.nombreTutor}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/Estudiantes/Listar">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

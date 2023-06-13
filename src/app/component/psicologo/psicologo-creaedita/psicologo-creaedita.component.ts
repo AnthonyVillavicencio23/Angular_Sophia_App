@@ -17,7 +17,7 @@ export class PsicologoCreaeditaComponent implements OnInit
   psicologo: Psicologo = new Psicologo();
   mensaje: string = "";
   maxFecha: Date = moment().add(-1,'days').toDate();
-  id: number = 0;
+  idPsicologo: number = 0;
   edicion: boolean = false;
 
   constructor(private as: PsicologoService, private router: Router,  private route: ActivatedRoute)
@@ -30,15 +30,15 @@ export class PsicologoCreaeditaComponent implements OnInit
 
       this.route.params.subscribe((data: Params) =>
       {
-        this.id=data['id'];
-        this.edicion=data['id']!=null;
+        this.idPsicologo=data['idPsicologo'];
+        this.edicion=data['idPsicologo']!=null;
         this.init()
       })
 
 
 
     this.form = new FormGroup({
-      id: new FormControl(),
+      idPsicologo: new FormControl(),
       nombrePsico: new FormControl(),
       apPatPsicologo: new FormControl(),
       apMatPsicologo: new FormControl(),
@@ -48,7 +48,7 @@ export class PsicologoCreaeditaComponent implements OnInit
   }
 
   aceptar(): void {
-    this.psicologo.id = this.form.value['id'];
+    this.psicologo.idPsicologo = this.form.value['idPsicologo'];
     this.psicologo.nombrePsico = this.form.value['nombrePsico'];
     this.psicologo.apPatPsicologo = this.form.value['apPatPsicologo'];
     this.psicologo.apMatPsicologo = this.form.value['apMatPsicologo'];
@@ -80,9 +80,9 @@ export class PsicologoCreaeditaComponent implements OnInit
 
   init() {
     if (this.edicion) {
-      this.as.listID(this.id).subscribe(data => {
+      this.as.listID(this.idPsicologo).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          idPsicologo: new FormControl(data.idPsicologo),
           nombrePsico: new FormControl(data.nombrePsico),
           apPatPsicologo: new FormControl(data.apPatPsicologo),
           apMatPsicologo: new FormControl(data.apMatPsicologo),

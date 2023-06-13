@@ -9,7 +9,7 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class CategoriaService {
-  private url = `${base_url}/catCita`;
+  private url = `${base_url}/Catcitas`;
   private listaCambio = new Subject<catCita[]>();
   private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http: HttpClient) {}
@@ -30,7 +30,7 @@ export class CategoriaService {
     return this.http.get<catCita>(`${this.url}/${id}`);
   }
   update(cate: catCita) {
-    return this.http.put(this.url + '/' + cate.id, cate);
+    return this.http.put(this.url, cate);
   }
 
   delete(id:number){
