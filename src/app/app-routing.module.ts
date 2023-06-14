@@ -23,9 +23,20 @@ import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-cre
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { EvaluacionComponent } from './component/evaluacion/evaluacion.component';
 import { EvaluacionCreaeditaComponent } from './component/evaluacion/evaluacion-creaedita/evaluacion-creaedita.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 
 const routes: Routes =
 [
+  {
+    path:'Tarjeta',component:TarjetaComponent, children:
+    [
+      { path: 'Listar', component:TarjetaListarComponent},
+      { path: 'Agregar', component:TarjetaCreaditaComponent},
+      { path: 'Editar/:id', component:TarjetaCreaditaComponent},
+    ]
+  },
   {
     path:'Estado',component:EstadoComponent, children:
     [

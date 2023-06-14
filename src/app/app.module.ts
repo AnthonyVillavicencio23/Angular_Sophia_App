@@ -13,12 +13,14 @@ import { MatTableModule } from '@angular/material/table';
 import { AuthorCreaeditaComponent } from './component/author/author-creaedita/author-creaedita.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { EstadoComponent } from './component/estado/estado.component';
@@ -54,6 +56,9 @@ import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/mo
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
+import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
+import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
+import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
 import { EvaluacionComponent } from './component/evaluacion/evaluacion.component';
 import { EvaluacionListarComponent } from './component/evaluacion/evaluacion-listar/evaluacion-listar.component';
 import { EvaluacionCreaeditaComponent } from './component/evaluacion/evaluacion-creaedita/evaluacion-creaedita.component';
@@ -95,8 +100,10 @@ import { EvaluacionCreaeditaComponent } from './component/evaluacion/evaluacion-
     CitaCreaeditaComponent,
     EvaluacionComponent,
     EvaluacionListarComponent,
-    EvaluacionCreaeditaComponent
-
+    EvaluacionCreaeditaComponent,
+    TarjetaComponent,
+    TarjetaListarComponent,
+    TarjetaCreaditaComponent
   ],
   imports: [
     BrowserModule,
@@ -116,7 +123,9 @@ import { EvaluacionCreaeditaComponent } from './component/evaluacion/evaluacion-
     MatDialogModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
