@@ -24,6 +24,14 @@ import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.co
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
 import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { ModsugeridosComponent } from './component/modsugeridos/modsugeridos.component';
+import { ModsugeridosListarComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-listar.component';
+import { ModsugeridosCreaeditaComponent } from './component/modsugeridos/modsugeridos-creaedita/modsugeridos-creaedita.component';
+import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
+import { ModinscritosComponent } from './component/modinscritos/modinscritos.component';
+import { ModinscritosListarComponent } from './component/modinscritos/modinscritos-listar/modinscritos-listar.component';
+import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
+import { ModuloListarComponent } from './component/modulo/modulo-listar/modulo-listar.component';
 
 const routes: Routes =
 [
@@ -96,7 +104,7 @@ const routes: Routes =
   {
     path:'Estudiantes',component:EstudianteComponent, children:
     [
-      { path: 'Listar', component:EstudianteComponent}
+      { path: 'Listar', component:EstudianteListarComponent}
     ]
   },
   {
@@ -108,7 +116,7 @@ const routes: Routes =
   {
     path:'Modulos',component:ModuloComponent, children:
     [
-      { path: 'Listar', component:ModuloComponent}
+      { path: 'Listar', component:ModuloListarComponent}
     ]
   },
   {
@@ -127,6 +135,30 @@ const routes: Routes =
     path:'CitasProgramadas',component:CitaComponent, children:
     [
       { path: 'Agregar', component:CitaCreaeditaComponent}
+    ]
+  },
+  {
+    path:'ModuSugeridos',component:ModsugeridosComponent, children:
+    [
+      { path: 'Listar', component:ModsugeridosListarComponent}
+    ]
+  },
+  {
+    path:'ModuSugeridos',component:ModsugeridosComponent, children:
+    [
+      { path: 'Agregar', component:ModsugeridosCreaeditaComponent}
+    ]
+  },
+  {
+    path:'ModuInscritos',component:ModinscritosComponent, children:
+    [
+      { path: 'Listar', component:ModinscritosListarComponent}
+    ]
+  },
+  {
+    path:'ModuInscritos',component:ModinscritosComponent, children:
+    [
+      { path: 'Agregar', component:ModinscritosCreaeditaComponent}
     ]
   }
 

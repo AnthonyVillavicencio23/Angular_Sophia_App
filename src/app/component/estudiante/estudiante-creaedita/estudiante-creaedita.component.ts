@@ -72,6 +72,4 @@ export class EstudianteCreaeditaComponent implements OnInit
 }
 
 
-
-
 }

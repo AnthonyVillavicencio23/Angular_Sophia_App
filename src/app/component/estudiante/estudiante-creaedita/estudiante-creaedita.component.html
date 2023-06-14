@@ -11,10 +11,13 @@
 
 <body>
 
+  <br>
+
   <div>
     <div class="container" style="text-align: center;">
 
       <h1>Registro de Estudiantes</h1>
+      <br>
 
       <form [formGroup]="form" (submit)="aceptar()">
 
@@ -70,8 +73,8 @@
       <br>
 
         <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
-
-        <button mat-raised-button color="warn" routerLink="/Estudiantes/Listar">Cancelar</button>
+        &nbsp; &nbsp; &nbsp;
+        <button mat-raised-button color="primary" routerLink="/Estudiantes/Listar">Cancelar</button>
       <p>{{mensaje}}</p>
 
       </form>

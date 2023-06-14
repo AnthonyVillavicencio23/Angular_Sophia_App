@@ -59,6 +59,12 @@ import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-cre
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
 import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { ModsugeridosComponent } from './component/modsugeridos/modsugeridos.component';
+import { ModsugeridosListarComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-listar.component';
+import { ModsugeridosCreaeditaComponent } from './component/modsugeridos/modsugeridos-creaedita/modsugeridos-creaedita.component';
+import { ModinscritosComponent } from './component/modinscritos/modinscritos.component';
+import { ModinscritosListarComponent } from './component/modinscritos/modinscritos-listar/modinscritos-listar.component';
+import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
 
 
 @NgModule({
@@ -97,7 +103,13 @@ import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/t
     CitaCreaeditaComponent,
     TarjetaComponent,
     TarjetaListarComponent,
-    TarjetaCreaditaComponent
+    TarjetaCreaditaComponent,
+    ModsugeridosComponent,
+    ModsugeridosListarComponent,
+    ModsugeridosCreaeditaComponent,
+    ModinscritosComponent,
+    ModinscritosListarComponent,
+    ModinscritosCreaeditaComponent
   ],
   imports: [
     BrowserModule,
