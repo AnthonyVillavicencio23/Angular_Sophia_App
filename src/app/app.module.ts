@@ -59,6 +59,12 @@ import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-cre
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
 import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { RendidoComponent } from './component/rendido/rendido.component';
+import { RendidoListarComponent } from './component/rendido/rendido-listar/rendido-listar.component';
+import { RendidoCreaeditaComponent } from './component/rendido/rendido-creaedita/rendido-creaedita.component';
+import { PruebaevaluacionComponent } from './component/pruebaevaluacion/pruebaevaluacion.component';
+import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
+import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
 
 
 @NgModule({
@@ -97,7 +103,13 @@ import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/t
     CitaCreaeditaComponent,
     TarjetaComponent,
     TarjetaListarComponent,
-    TarjetaCreaditaComponent
+    TarjetaCreaditaComponent,
+    RendidoComponent,
+    RendidoListarComponent,
+    RendidoCreaeditaComponent,
+    PruebaevaluacionComponent,
+    PruebaevaluacionListarComponent,
+    PruebaevaluacionCreaeditaComponent
   ],
   imports: [
     BrowserModule,

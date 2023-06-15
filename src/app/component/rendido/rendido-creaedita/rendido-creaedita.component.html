@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+  <br>
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="idRendido" placeholder="Enter id" readonly="true">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombreRendido" placeholder="Enter name">
+  </mat-form-field>
+
+</form>
+
+<button
+[disabled]="form.invalid"
+color= "primary"
+mat-raised-button
+(click)="saveRendido()"
+>
+  Save
+</button>
+<button
+color = "warn"
+mat-raised-button
+routerLink="/Rendido/Listar"
+>
+  Cancel
+</button>
