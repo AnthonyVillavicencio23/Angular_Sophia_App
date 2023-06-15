@@ -32,6 +32,12 @@ import { ModinscritosComponent } from './component/modinscritos/modinscritos.com
 import { ModinscritosListarComponent } from './component/modinscritos/modinscritos-listar/modinscritos-listar.component';
 import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
 import { ModuloListarComponent } from './component/modulo/modulo-listar/modulo-listar.component';
+import { RendidoComponent } from './component/rendido/rendido.component';
+import { RendidoListarComponent } from './component/rendido/rendido-listar/rendido-listar.component';
+import { RendidoCreaeditaComponent } from './component/rendido/rendido-creaedita/rendido-creaedita.component';
+import { PruebaevaluacionComponent } from './component/pruebaevaluacion/pruebaevaluacion.component';
+import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
+import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
 
 const routes: Routes =
 [
@@ -41,6 +47,22 @@ const routes: Routes =
       { path: 'Listar', component:TarjetaListarComponent},
       { path: 'Agregar', component:TarjetaCreaditaComponent},
       { path: 'Editar/:id', component:TarjetaCreaditaComponent},
+    ]
+  },
+  {
+    path:'Rendido',component:RendidoComponent, children:
+    [
+      { path: 'Listar', component:RendidoListarComponent},
+      { path: 'Agregar', component:RendidoCreaeditaComponent},
+      { path: 'Editar/:id', component:RendidoCreaeditaComponent},
+    ]
+  },
+  {
+    path:'PruebaEvaluacion',component:PruebaevaluacionComponent, children:
+    [
+      { path: 'Listar', component:PruebaevaluacionListarComponent},
+      { path: 'Agregar', component:PruebaevaluacionCreaeditaComponent},
+      { path: 'Editar/:id', component:PruebaevaluacionCreaeditaComponent},
     ]
   },
   {
