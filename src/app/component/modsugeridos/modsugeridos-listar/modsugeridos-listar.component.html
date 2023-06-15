@@ -48,9 +48,14 @@
           <td mat-cell *matCellDef="let element"> {{element.idModulosSugeridos}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="idprueba">
+          <th mat-header-cell *matHeaderCellDef> idprueba </th>
+          <td mat-cell *matCellDef="let element"> {{element.pruebaevaluacion.idPruebaEvaluacion}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="Prueba">
-          <th mat-header-cell *matHeaderCellDef> Prueba de evaluacion </th>
-          <td mat-cell *matCellDef="let element"> {{element.pruebaevaluacion}} </td>
+          <th mat-header-cell *matHeaderCellDef> Diagnostico </th>
+          <td mat-cell *matCellDef="let element"> {{element.pruebaevaluacion.diagnosticoPE}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Modulo">

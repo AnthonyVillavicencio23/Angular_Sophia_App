@@ -19,7 +19,7 @@ export class ModsugeridosListarComponent implements OnInit
   idMayor: number = 0
 
 
-  displayedColumns:string[]=[`id`,`Prueba`,`Modulo`,`accion01`,'acciones2']
+  displayedColumns:string[]=[`id`,`idprueba`,`Prueba`,`Modulo`,`accion01`,'acciones2']
 
   constructor(private as: ModuloSugeridoService, private dialog: MatDialog)
   {

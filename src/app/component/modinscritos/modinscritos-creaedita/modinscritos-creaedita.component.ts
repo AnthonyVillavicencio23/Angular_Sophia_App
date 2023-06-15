@@ -50,7 +50,7 @@ export class ModinscritosCreaeditaComponent implements OnInit
     this.modinscritos.idModulosInscritos = this.form.value['idModulosInscritos'];
     this.modinscritos.estadoModulo = this.form.value['estadoModulo'];
     this.modinscritos.aprobado = this.form.value['aprobado'];
-    this.modinscritos.modulos_sugeridos.pruebaevaluacion =this.form.value['modulos_sugeridos.pruebaevaluacion'];
+    this.modinscritos.modulos_sugeridos.idModulosSugeridos =this.form.value['modulos_sugeridos.idModulosSugeridos'];
 
     if (this.idmodSugeridoSeleccionado>0) {
       let a = new Modulos_Sugeridos();

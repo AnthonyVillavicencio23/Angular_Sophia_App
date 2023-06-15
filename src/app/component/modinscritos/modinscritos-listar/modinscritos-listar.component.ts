@@ -14,7 +14,7 @@ export class ModinscritosListarComponent implements OnInit
   lista: Modulos_Inscritos[] = [];
   dataSource: MatTableDataSource<Modulos_Inscritos>=new MatTableDataSource();
 
-  displayedColumns:string[]=[`id`,`Estado`,`Situacion`,`PruebadeEvaluacion`]
+  displayedColumns:string[]=[`id`,`Estado`,`Situacion`,`idmodsuge`, `nombremodulo`]
 
   constructor(private as: ModuloInscritoService)
   {

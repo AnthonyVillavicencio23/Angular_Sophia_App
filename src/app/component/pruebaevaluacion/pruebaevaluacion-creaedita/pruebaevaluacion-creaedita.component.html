@@ -9,7 +9,7 @@
     <mat-label>Cita</mat-label>
     <mat-select formControlName="cita">
       <mat-option *ngFor="let cita of citas" [value]="cita">
-        {{cita.disponible}}
+        {{cita.idCita}}
       </mat-option>
     </mat-select>
   </mat-form-field>

@@ -26,16 +26,20 @@
 
       <br>
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="fill">
         <mat-label>pruebaevaluacion</mat-label>
-        <input matInput required placeholder="pruebaevaluacion" formControlName="pruebaevaluacion">
+        <mat-select formControlName="pruebaevaluacion" [(value)]="idpruebaevaluacionSeleccionado" required>
+          <mat-option *ngFor="let b of listapruebaevaluacion" [value]="b.idPruebaEvaluacion">
+            {{b.diagnosticoPE}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <br>
 
       <mat-form-field appearance="fill">
         <mat-label>modulo</mat-label>
         <mat-select formControlName="modulo" [(value)]="idmoduloSeleccionado" required>
-          <mat-option *ngFor="let a of lista" [value]="a.idModulo">
+          <mat-option *ngFor="let a of listamod" [value]="a.idModulo">
             {{a.nombreModulo}}
           </mat-option>
         </mat-select>

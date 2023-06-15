@@ -41,7 +41,7 @@
         <mat-label>PruebaEvaluacion</mat-label>
         <mat-select formControlName="PruebaEvaluacion" [(value)]="idmodSugeridoSeleccionado" required>
           <mat-option *ngFor="let a of lista" [value]="a.idModulosSugeridos">
-            {{a.pruebaevaluacion}}
+            {{a.idModulosSugeridos}}
           </mat-option>
         </mat-select>
       </mat-form-field>

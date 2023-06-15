@@ -3,8 +3,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Modulo } from 'src/app/model/modulo';
 import { Modulos_Sugeridos } from 'src/app/model/modulos_sugeridos';
+import { PruebaEvaluacion } from 'src/app/model/pruebaevaluacion';
 import { ModuloSugeridoService } from 'src/app/service/modulo-sugerido.service';
 import { moduloService } from 'src/app/service/modulo.service';
+import { PruebaevaluacionService } from 'src/app/service/pruebaevaluacion.service';
 
 @Component({
   selector: 'app-modsugeridos-creaedita',
@@ -18,15 +20,21 @@ export class ModsugeridosCreaeditaComponent implements OnInit
   modsugeridos: Modulos_Sugeridos = new Modulos_Sugeridos();
   mensaje: string = "";
 
-  lista: Modulo[] = [];
+  listamod: Modulo[] = [];
   idmoduloSeleccionado: number = 0;
-
   idModulosSugeridos: number = 0;
+
+  listapruebaevaluacion: PruebaEvaluacion[] = [];
+  idpruebaevaluacionSeleccionado: number = 0;
+  idPruebaEvaluacion: number = 0;
+
+
+
   edicion: boolean = false;
 
 
   constructor(private msS: ModuloSugeridoService, private router: Router,
-    private route: ActivatedRoute, private mS: moduloService)
+    private route: ActivatedRoute, private mS: moduloService, private peS: PruebaevaluacionService)
   {
 
   }
@@ -38,10 +46,18 @@ export class ModsugeridosCreaeditaComponent implements OnInit
     {
       this.idModulosSugeridos=data['idModulosSugeridos'];
       this.edicion=data['idModulosSugeridos']!=null;
+
+      this.init();
+
+      this.idpruebaevaluacionSeleccionado=data['idpruebaevaluacionSeleccionado'];
+      this.edicion=data['idpruebaevaluacionSeleccionado']!=null;
+
       this.init();
     })
 
-    this.mS.list().subscribe(data => {this.lista = data});
+    this.mS.list().subscribe(data => {this.listamod = data});
+    this.peS.getPruebaEvaluaciones().subscribe(data => {this.listapruebaevaluacion = data});
+
 
     this.form = new FormGroup
     (
@@ -56,10 +72,10 @@ export class ModsugeridosCreaeditaComponent implements OnInit
   aceptar(): void
   {
     this.modsugeridos.idModulosSugeridos = this.form.value['idModulosSugeridos'];
-    this.modsugeridos.pruebaevaluacion = this.form.value['pruebaevaluacion'];
+    this.modsugeridos.pruebaevaluacion.diagnosticoPE = this.form.value['pruebaevaluacion.diagnosticoPE'];
     this.modsugeridos.modulo.nombreModulo=this.form.value['modulo.nombreModulo'];
 
-    if(this.form.value['pruebaevaluacion'].length>0)
+    if(5==5)
     {
       if(this.edicion)
       {
@@ -93,9 +109,19 @@ export class ModsugeridosCreaeditaComponent implements OnInit
     if (this.idmoduloSeleccionado>0)
 
   {
+
+    let b = new PruebaEvaluacion();
+    b.idPruebaEvaluacion = this.idpruebaevaluacionSeleccionado;
+    this.modsugeridos.pruebaevaluacion=b;
+
       let a = new Modulo();
       a.idModulo = this.idmoduloSeleccionado;
       this.modsugeridos.modulo=a;
+
+
+
+
+
       this.msS.insert(this.modsugeridos).subscribe(() => {
       this.msS.list().subscribe(data => {
             this.msS.setList(data);
@@ -114,7 +140,7 @@ init()
       this.msS.listID(this.idModulosSugeridos).subscribe(data =>{
           this.form = new FormGroup({
             idModulosSugeridos:new FormControl(data.idModulosSugeridos),
-            pruebaevaluacion:new FormControl(data.pruebaevaluacion),
+            pruebaevaluacion:new FormControl(data.pruebaevaluacion.diagnosticoPE),
             nombreModulo :new FormControl(data.modulo.nombreModulo),
           })
         })
