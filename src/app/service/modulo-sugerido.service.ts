@@ -15,6 +15,8 @@ export class ModuloSugeridoService {
 
   private url = `${base_url}/modulos_sugeridos`
   private listaCambio = new Subject<Modulos_Sugeridos[]>()
+  private confirmarEliminacion = new Subject<Boolean>()
+
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +32,27 @@ export class ModuloSugeridoService {
   }
   getLista() {
     return this.listaCambio.asObservable();
+  }
+
+  listID(id:number)
+  {
+    return this.http.get<Modulos_Sugeridos>(`${this.url}/${id}`);
+  }
+
+  update(modsuge: Modulos_Sugeridos)
+  {
+    return this.http.put(this.url, modsuge);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
   }
 
 }

@@ -12,6 +12,7 @@ const base_url = environment.base
 export class ModuloInscritoService {
 
   private url = `${base_url}/modulos_inscritos`
+  private confirmarEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Modulos_Inscritos[]>()
 
   constructor(private http: HttpClient) { }
@@ -29,6 +30,28 @@ export class ModuloInscritoService {
   getLista() {
     return this.listaCambio.asObservable();
   }
+
+  listID(id:number)
+  {
+    return this.http.get<Modulos_Inscritos>(`${this.url}/${id}`);
+  }
+
+  update(modinscri: Modulos_Inscritos)
+  {
+    return this.http.put(this.url, modinscri);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
+  }
+
 }
 
 

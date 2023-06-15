@@ -110,7 +110,8 @@ const routes: Routes =
   {
     path:'Estudiantes',component:EstudianteComponent, children:
     [
-      { path: 'Agregar', component:EstudianteCreaeditaComponent}
+      { path: 'Agregar', component:EstudianteCreaeditaComponent},
+      { path: 'Listar/edicion/:idEstudiante', component: EstudianteCreaeditaComponent}
     ]
   },
   {
@@ -146,7 +147,8 @@ const routes: Routes =
   {
     path:'ModuSugeridos',component:ModsugeridosComponent, children:
     [
-      { path: 'Agregar', component:ModsugeridosCreaeditaComponent}
+      { path: 'Agregar', component:ModsugeridosCreaeditaComponent},
+      { path: 'Listar/edicion/:idModulosSugeridos', component: ModsugeridosCreaeditaComponent}
     ]
   },
   {
@@ -158,7 +160,8 @@ const routes: Routes =
   {
     path:'ModuInscritos',component:ModinscritosComponent, children:
     [
-      { path: 'Agregar', component:ModinscritosCreaeditaComponent}
+      { path: 'Agregar', component:ModinscritosCreaeditaComponent},
+      { path: 'Listar/edicion/:idModulosInscritos', component: ModinscritosCreaeditaComponent}
     ]
   }
 

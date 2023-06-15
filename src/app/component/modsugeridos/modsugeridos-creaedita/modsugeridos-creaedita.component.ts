@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Modulo } from 'src/app/model/modulo';
 import { Modulos_Sugeridos } from 'src/app/model/modulos_sugeridos';
 import { ModuloSugeridoService } from 'src/app/service/modulo-sugerido.service';
@@ -21,6 +21,10 @@ export class ModsugeridosCreaeditaComponent implements OnInit
   lista: Modulo[] = [];
   idmoduloSeleccionado: number = 0;
 
+  idModulosSugeridos: number = 0;
+  edicion: boolean = false;
+
+
   constructor(private msS: ModuloSugeridoService, private router: Router,
     private route: ActivatedRoute, private mS: moduloService)
   {
@@ -29,6 +33,13 @@ export class ModsugeridosCreaeditaComponent implements OnInit
 
   ngOnInit(): void
   {
+
+    this.route.params.subscribe((data: Params) =>
+    {
+      this.idModulosSugeridos=data['idModulosSugeridos'];
+      this.edicion=data['idModulosSugeridos']!=null;
+      this.init();
+    })
 
     this.mS.list().subscribe(data => {this.lista = data});
 
@@ -42,12 +53,46 @@ export class ModsugeridosCreaeditaComponent implements OnInit
     )
   }
 
-  aceptar(): void {
+  aceptar(): void
+  {
     this.modsugeridos.idModulosSugeridos = this.form.value['idModulosSugeridos'];
     this.modsugeridos.pruebaevaluacion = this.form.value['pruebaevaluacion'];
     this.modsugeridos.modulo.nombreModulo=this.form.value['modulo.nombreModulo'];
 
-    if (this.idmoduloSeleccionado>0) {
+    if(this.form.value['pruebaevaluacion'].length>0)
+    {
+      if(this.edicion)
+      {
+        this.msS.update(this.modsugeridos).subscribe(()=>
+        {
+            this.msS.list().subscribe(data =>
+              {
+                this.msS.setList(data);
+              })
+        })
+      }else
+      {
+
+        this.msS.insert(this.modsugeridos).subscribe(data=>
+        {
+          this.msS.list().subscribe(data =>
+          {
+            this.msS.setList(data);
+          })
+        })
+      }
+
+      this.router.navigate(['ModuSugeridos/Listar']);
+    }
+    else
+    {
+      this.mensaje = "Complete los campos !!";
+    }
+
+
+    if (this.idmoduloSeleccionado>0)
+
+  {
       let a = new Modulo();
       a.idModulo = this.idmoduloSeleccionado;
       this.modsugeridos.modulo=a;
@@ -61,6 +106,20 @@ export class ModsugeridosCreaeditaComponent implements OnInit
 
   }
 }
+
+init()
+  {
+    if(this.edicion)
+    {
+      this.msS.listID(this.idModulosSugeridos).subscribe(data =>{
+          this.form = new FormGroup({
+            idModulosSugeridos:new FormControl(data.idModulosSugeridos),
+            pruebaevaluacion:new FormControl(data.pruebaevaluacion),
+            nombreModulo :new FormControl(data.modulo.nombreModulo),
+          })
+        })
+      }
+    }
 
 
 }

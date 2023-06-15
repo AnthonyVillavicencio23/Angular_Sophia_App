@@ -19,8 +19,22 @@
 
 
         <div style="text-align: right;">
-          <button mat-raised-button color="primary" routerLink="/ModuInscritos/Agregar">Ir a Registro de Modulos Inscritos</button>
-        </div><br><br>
+          <button mat-raised-button color="primary" routerLink="/ModuInscritos/Agregar">Ir a Registro de Modulos Inscritos de Estudiantes</button>
+        </div><br>
+
+
+        <div style="text-align: left;">
+          <mat-form-field>
+            <input matInput (keyup)="filtrar($event)" placeholder="Buscar" >
+          </mat-form-field>
+          </div>
+
+          <div style="text-align: right;">
+            <button mat-raised-button color="primary" routerLink="/ModuSugeridos/Listar"><span class="material-icons">arrow_back</span></button>
+            &nbsp;&nbsp;
+            <button mat-raised-button color="primary" routerLink="/"><span class="material-icons">home</span></button>
+          </div>
+          <br>
 
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

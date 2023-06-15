@@ -65,6 +65,8 @@ import { ModsugeridosCreaeditaComponent } from './component/modsugeridos/modsuge
 import { ModinscritosComponent } from './component/modinscritos/modinscritos.component';
 import { ModinscritosListarComponent } from './component/modinscritos/modinscritos-listar/modinscritos-listar.component';
 import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
+import { ModsugeridosDialogComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-dialog/modsugeridos-dialog.component';
+import { EstudianteDialogComponent } from './component/estudiante/estudiante-listar/estudiante-dialog/estudiante-dialog.component';
 
 
 @NgModule({
@@ -109,7 +111,9 @@ import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinsc
     ModsugeridosCreaeditaComponent,
     ModinscritosComponent,
     ModinscritosListarComponent,
-    ModinscritosCreaeditaComponent
+    ModinscritosCreaeditaComponent,
+    ModsugeridosDialogComponent,
+    EstudianteDialogComponent
   ],
   imports: [
     BrowserModule,
