@@ -55,6 +55,7 @@ edicion: boolean=false;
     this.tutor.telefono = this.form.value['telefono'];
     this.tutor.email = this.form.value['email'];
     this.tutor.tipopersona = this.form.value['tipopersona'];
+
     if (this.form.value['nombreTutor'].length > 0 &&
       this.form.value['apellidoPatTutor'].length > 0 &&
       this.form.value['apellidoMatTutor'].length > 0 &&

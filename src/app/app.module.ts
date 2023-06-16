@@ -59,6 +59,13 @@ import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-cre
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
 import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { PagodemoduloComponent } from './component/pagodemodulo/pagodemodulo.component';
+import { PagodemoduloListarComponent } from './component/pagodemodulo/pagodemodulo-listar/pagodemodulo-listar.component';
+import { PagodemoduloCreaeditaComponent } from './component/pagodemodulo/pagodemodulo-creaedita/pagodemodulo-creaedita.component';
+import { ComprobantepagoComponent } from './component/comprobantepago/comprobantepago.component';
+import { ComprobantepagoListarComponent } from './component/comprobantepago/comprobantepago-listar/comprobantepago-listar.component';
+import { ComprobantepagoCreaeditaComponent } from './component/comprobantepago/comprobantepago-creaedita/comprobantepago-creaedita.component';
+import { PagodemoduloDialogoComponent } from './component/pagodemodulo/pagodemodulo-listar/pagodemodulo-dialogo/pagodemodulo-dialogo.component';
 
 
 @NgModule({
@@ -97,7 +104,14 @@ import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/t
     CitaCreaeditaComponent,
     TarjetaComponent,
     TarjetaListarComponent,
-    TarjetaCreaditaComponent
+    TarjetaCreaditaComponent,
+    PagodemoduloComponent,
+    PagodemoduloListarComponent,
+    PagodemoduloCreaeditaComponent,
+    ComprobantepagoComponent,
+    ComprobantepagoListarComponent,
+    ComprobantepagoCreaeditaComponent,
+    PagodemoduloDialogoComponent
   ],
   imports: [
     BrowserModule,

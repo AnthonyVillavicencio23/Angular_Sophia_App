@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+
+  <div>
+    <div class="container" style="text-align: center;">
+
+      <h1>Registro Comrpobante de Pago</h1>
+
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>id</mat-label>
+        <input matInput placeholder="Código" formControlName="idComprobantePago">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>IGV</mat-label>
+        <input matInput required placeholder="IGV" formControlName="montoIGV">
+      </mat-form-field>
+      <br>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Documeto</mat-label>
+        <input matInput required placeholder="Documento" formControlName="tipoDocumento">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>RUC</mat-label>
+        <input matInput required placeholder="RUC" formControlName="ruc">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Razón Social</mat-label>
+        <input matInput required placeholder="Razón Social" formControlName="razonSocial">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Boleta</mat-label>
+        <input matInput required placeholder="Boleta" formControlName="numBoletaFactura">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Modulo</mat-label>
+        <mat-select formControlName="Modulo" [(value)]="idpagomoduloSeleccionado" required>
+          <mat-option *ngFor="let m of listapagomodulo" [value]="m.idPagodeModulo">
+            {{m.montopormodulo}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/ComprobantePago/Listar">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

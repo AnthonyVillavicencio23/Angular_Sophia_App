@@ -24,6 +24,11 @@ import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.co
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
 import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { PagodemoduloComponent } from './component/pagodemodulo/pagodemodulo.component';
+import { PagodemoduloCreaeditaComponent } from './component/pagodemodulo/pagodemodulo-creaedita/pagodemodulo-creaedita.component';
+import { ComprobantepagoComponent } from './component/comprobantepago/comprobantepago.component';
+import { ComprobantepagoCreaeditaComponent } from './component/comprobantepago/comprobantepago-creaedita/comprobantepago-creaedita.component';
+import { PagodemoduloListarComponent } from './component/pagodemodulo/pagodemodulo-listar/pagodemodulo-listar.component';
 
 const routes: Routes =
 [
@@ -127,6 +132,30 @@ const routes: Routes =
     path:'CitasProgramadas',component:CitaComponent, children:
     [
       { path: 'Agregar', component:CitaCreaeditaComponent}
+    ]
+  },
+  {
+    path:'PagoDeModulo',component:PagodemoduloComponent, children:
+    [
+      { path: 'Listar', component:PagodemoduloComponent}
+    ]
+  },
+  {
+    path:'PagoDeModulo',component:PagodemoduloComponent, children:
+    [
+      { path: 'Agregar', component:PagodemoduloCreaeditaComponent}
+    ]
+  },
+  {
+    path:'ComprobantePago',component:ComprobantepagoComponent, children:
+    [
+      { path: 'Listar', component:ComprobantepagoComponent}
+    ]
+  },
+  {
+    path:'ComprobantePago',component:ComprobantepagoComponent, children:
+    [
+      { path: 'Agregar', component:ComprobantepagoCreaeditaComponent}
     ]
   }
 

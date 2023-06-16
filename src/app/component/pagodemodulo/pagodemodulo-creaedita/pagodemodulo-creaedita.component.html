@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+
+  <div>
+    <div class="container" style="text-align: center;">
+
+      <h1>Registro de Pago de Módulo</h1>
+
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id" formControlName="idPagodeModulo">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>montopormodulo</mat-label>
+        <input matInput required placeholder="montopormodulo" formControlName="montopormodulo">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>fechapago</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechapago" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>pagado</mat-label>
+        <input matInput required placeholder="pagado" formControlName="pagado">
+      </mat-form-field>
+      <br>
+
+
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Tarjeta</mat-label>
+        <mat-select formControlName="Tarjeta" [(value)]="idtarjetaSeleccionado" required>
+          <mat-option *ngFor="let t of listatarjeta" [value]="t.idTarjeta">
+            {{t.numeroTarjeta}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Modulo</mat-label>
+        <mat-select formControlName="Modulo" [(value)]="idmoduloSeleccionado" required>
+          <mat-option *ngFor="let m of listamodulo" [value]="m.idModulo">
+            {{m.nombreModulo}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/PagoDeModulo/Listar">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>
