@@ -73,6 +73,7 @@ import { RendidoCreaeditaComponent } from './component/rendido/rendido-creaedita
 import { PruebaevaluacionComponent } from './component/pruebaevaluacion/pruebaevaluacion.component';
 import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
 import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
+import { ModinscritosDialogComponent } from './component/modinscritos/modinscritos-listar/modinscritos-dialog/modinscritos-dialog.component';
 
 
 @NgModule({
@@ -125,7 +126,8 @@ import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion
     RendidoCreaeditaComponent,
     PruebaevaluacionComponent,
     PruebaevaluacionListarComponent,
-    PruebaevaluacionCreaeditaComponent
+    PruebaevaluacionCreaeditaComponent,
+    ModinscritosDialogComponent
   ],
   imports: [
     BrowserModule,
