@@ -4,4 +4,4 @@ export const environment =
   base: "http://localhost:8080"
 }
 
-// Respaldo Curso
+// Fecha actualizada 17/06/2023
