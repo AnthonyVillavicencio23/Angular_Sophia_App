@@ -13,7 +13,7 @@ import { PruebaevaluacionService } from 'src/app/service/pruebaevaluacion.servic
   styleUrls: ['./pruebaevaluacion-listar.component.css']
 })
 export class PruebaevaluacionListarComponent {
-  displayedColumns: string[] = ['idPruebaEvaluacion', 'cita', 'diagnosticoPE', 'calificacionPE','rendido','actions'];
+  displayedColumns: string[] = ['idPruebaEvaluacion', 'cita', 'diagnosticoPE', 'calificacionPE','rendido','action1','action2'];
   dataSource = new MatTableDataSource<PruebaEvaluacion>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

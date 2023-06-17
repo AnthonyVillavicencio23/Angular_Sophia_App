@@ -14,7 +14,7 @@ import { RendidoService } from 'src/app/service/rendido.service';
   styleUrls: ['./rendido-listar.component.css']
 })
 export class RendidoListarComponent {
-  displayedColumns: string[] = ['idRendido', 'nombreRendido','actions'];
+  displayedColumns: string[] = ['idRendido', 'nombreRendido','action1','action2'];
   dataSource = new MatTableDataSource<Rendido>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
