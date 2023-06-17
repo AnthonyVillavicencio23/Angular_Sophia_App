@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+
+  <div>
+    <div class="container" style="text-align: center;">
+
+      <h1>Registro de Videoclases</h1>
+
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="idVideoClase" formControlName="idVideoClase">
+      </mat-form-field>
+
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>descripcion</mat-label>
+        <input matInput required placeholder="descripcion" formControlName="descripcion">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>nombreVideo</mat-label>
+        <input matInput required placeholder="nombreVideo" formControlName="nombreVideo">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>duracionVideo</mat-label>
+        <input matInput required placeholder="duracionVideo" formControlName="duracionVideo">
+      </mat-form-field>
+      <br>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Modulo</mat-label>
+        <mat-select formControlName="Modulo" [(value)]="idModuloSeleccionado" required>
+          <mat-option *ngFor="let a of lista" [value]="a.idModulo">
+            {{a.nombreModulo}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/Videoclase/Listar">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+      </form>
+    </div>
+  </div>

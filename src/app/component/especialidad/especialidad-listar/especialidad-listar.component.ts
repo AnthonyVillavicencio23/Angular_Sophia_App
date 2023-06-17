@@ -1,59 +1,59 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Psicologo } from 'src/app/model/psicologo';
+import { Especialidad } from 'src/app/model/especialidad';
 import {MatTableDataSource} from '@angular/material/table'
-import { PsicologoService } from 'src/app/service/psicologo.service';
+import { EspecialidadService } from 'src/app/service/especialidad.service';
 import { MatDialog } from '@angular/material/dialog'
-import { PsicologoDialogoComponent } from './psicologo-dialogo/psicologo-dialogo-component';
+import { EspecialidadDialogoComponent } from './especialidad-dialogo/especialidad-dialogo.component';
 import { MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
-  selector: 'app-psicologo-listar',
-  templateUrl: './psicologo-listar.component.html',
-  styleUrls: ['./psicologo-listar.component.css']
+  selector: 'app-especialidad-listar',
+  templateUrl: './especialidad-listar.component.html',
+  styleUrls: ['./especialidad-listar.component.css']
 })
-export class PsicologoListarComponent implements OnInit
+export class EspecialidadListarComponent implements OnInit
 {
-  lista:Psicologo[]=[]
-  dataSource:MatTableDataSource<Psicologo>=new MatTableDataSource();
+  lista:Especialidad[]=[]
+  dataSource:MatTableDataSource<Especialidad>=new MatTableDataSource();
   idMayor: number = 0
-  displayedColumns: String[]=['id','nombre','apellidopaterno','apellidomaterno','fecha','Especialidad','acciones1','acciones2']
+  displayedColumns: String[]=['idEspecialidad','nombre','acciones1','acciones2']
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit(): void
     {
-    this.aS.list().subscribe(data=>{
+    this.as.list().subscribe(data=>{
       this.dataSource.paginator = this.paginator;
     })
   }
 
 
-  constructor(private aS:PsicologoService, private dialog: MatDialog)
+  constructor(private as:EspecialidadService, private dialog: MatDialog)
  {
 
  }
   ngOnInit(): void
   {
-    this.aS.list().subscribe(data=>
+    this.as.list().subscribe(data=>
       {
         this.dataSource.paginator = this.paginator;
         this.dataSource = new MatTableDataSource(data);
       })
 
-      this.aS.getList().subscribe(data=>{
+      this.as.getList().subscribe(data=>{
         this.dataSource.paginator = this.paginator;
         this.dataSource=new MatTableDataSource(data);
 
       })
 
-      this.aS.getConfirmDelete().subscribe(data => {
+      this.as.getConfirmDelete().subscribe(data => {
         data == true ? this.eliminar(this.idMayor) : false;
       })
       this.loadData();
   }
 
   loadData(): void {
-    this.aS.getList().subscribe(data => {
+    this.as.getList().subscribe(data => {
       this.dataSource.data = data;
       this.dataSource.paginator = this.paginator;
     });
@@ -61,12 +61,12 @@ export class PsicologoListarComponent implements OnInit
 
   confirm(id: number) {
     this.idMayor = id;
-    this.dialog.open(PsicologoDialogoComponent);
+    this.dialog.open(EspecialidadDialogoComponent);
   }
   eliminar(id: number) {
-    this.aS.delete(id).subscribe(() => {
-      this.aS.list().subscribe(data => {
-        this.aS.setList(data);
+    this.as.delete(id).subscribe(() => {
+      this.as.list().subscribe(data => {
+        this.as.setList(data);
       })
     })
   }

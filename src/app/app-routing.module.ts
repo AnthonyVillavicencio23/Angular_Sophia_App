@@ -24,6 +24,12 @@ import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.co
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
 import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { EspecialidadComponent } from './component/especialidad/especialidad.component';
+import { EspecialidadCreaeditaComponent } from './component/especialidad/especialidad-creaedita/especialidad-creaedita.component';
+import { EspecialidadListarComponent } from './component/especialidad/especialidad-listar/especialidad-listar.component';
+import { VideoClaseComponent } from './component/videoClase/videoClase.component';
+import { VideoclaseCreaeditaComponent } from './component/videoClase/videoClase-creaedita/videoClase-creaedita.component';
+import { VideoclaseListarComponent } from './component/videoClase/videoClase-listar/videoClase-listar.component';
 
 const routes: Routes =
 [
@@ -128,8 +134,34 @@ const routes: Routes =
     [
       { path: 'Agregar', component:CitaCreaeditaComponent}
     ]
+  },
+  {
+    path:'Especialidad',component:EspecialidadComponent, children:
+    [
+      { path: 'Listar', component:EspecialidadListarComponent}
+    ]
+  },
+  {
+    path:'Especialidad',component:EspecialidadComponent, children:
+    [
+      { path: 'Agregar', component:EspecialidadCreaeditaComponent},
+      { path: 'Listar/edicion/:idEspecialidad', component: EspecialidadCreaeditaComponent}
+    ]
+  },
+  {
+    path:'Videoclase',component:VideoClaseComponent, children:
+    [
+      { path: 'Listar', component:VideoclaseListarComponent}
+    ]
+  },
+  {
+    path:'Videoclase',component:VideoClaseComponent, children:
+    [
+      { path: 'Agregar', component:VideoclaseCreaeditaComponent},
+      { path: 'Listar/edicion/:idVideoClase', component: VideoclaseCreaeditaComponent}
+    ]
   }
-
+  
 
 
 ];

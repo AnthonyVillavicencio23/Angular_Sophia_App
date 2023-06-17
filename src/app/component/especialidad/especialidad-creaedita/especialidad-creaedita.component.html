@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div style="text-align: center;" class="container">
+    <br><br>
+
+          <h1>Registro de Especialidades</h1>
+          <br><br>
+
+
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input matInput required placeholder="idEspecialidad" formControlName="idEspecialidad">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre de Especialidad</mat-label>
+          <input matInput required placeholder="nombre" formControlName="nombre">
+        </mat-form-field>
+        <br>
+
+        <div style="text-align: center;">
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+        &nbsp;&nbsp;
+        <button mat-raised-button color="primary" routerLink="/Especialidad/Listar">Cancelar</button>
+        <br>
+        </div>
+        <p>{{mensaje}}</p>
+
+      </form>
+
+
+      <br><br>
+  </div>
+
+ </body>
+</html>

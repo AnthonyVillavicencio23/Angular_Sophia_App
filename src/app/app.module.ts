@@ -59,6 +59,14 @@ import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-cre
 import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
 import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
 import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
+import { VideoClaseComponent } from './component/videoClase/videoClase.component';
+import { VideoclaseListarComponent } from './component/videoClase/videoClase-listar/videoClase-listar.component';
+import { VideoclaseCreaeditaComponent } from './component/videoClase/videoClase-creaedita/videoClase-creaedita.component';
+import { VideoClaseDialogoComponent } from './component/videoClase/videoClase-listar/videoClase-dialogo/videoClase-dialogo-component';
+import { EspecialidadComponent } from './component/especialidad/especialidad.component';
+import { EspecialidadCreaeditaComponent } from './component/especialidad/especialidad-creaedita/especialidad-creaedita.component';
+import { EspecialidadListarComponent } from './component/especialidad/especialidad-listar/especialidad-listar.component';
+import { EspecialidadDialogoComponent } from './component/especialidad/especialidad-listar/especialidad-dialogo/especialidad-dialogo.component';
 
 
 @NgModule({
@@ -97,7 +105,15 @@ import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/t
     CitaCreaeditaComponent,
     TarjetaComponent,
     TarjetaListarComponent,
-    TarjetaCreaditaComponent
+    TarjetaCreaditaComponent,
+    VideoClaseComponent,
+    VideoclaseListarComponent,
+    VideoclaseCreaeditaComponent,
+    VideoClaseDialogoComponent,
+    EspecialidadComponent,
+    EspecialidadCreaeditaComponent,
+    EspecialidadListarComponent,
+    EspecialidadDialogoComponent
   ],
   imports: [
     BrowserModule,

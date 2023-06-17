@@ -52,9 +52,13 @@
         </mat-form-field>
         <br>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field appearance="fill">
           <mat-label>Especialidad</mat-label>
-          <input matInput required placeholder="Especialidad" formControlName="especialidad">
+          <mat-select formControlName="Especialidad" [(value)]="idEspecialidadSeleccionado" required>
+            <mat-option *ngFor="let a of lista" [value]="a.idEspecialidad">
+              {{a.nombre}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <br>
 
