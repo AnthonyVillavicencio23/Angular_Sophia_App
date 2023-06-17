@@ -10,3 +10,30 @@ table {
 td, th {
   width: 25%;
 }
+.container{
+  color: rgb(0, 0, 0);
+  width: 90%;
+  background-color:linen;
+  font-style: bold;
+  font-weight: bold;
+  font-family: 'Gill Sans';
+
+}
+
+h1
+{
+  background-color: black;
+  color: aliceblue;
+  font-style:normal;
+  font-size: 200%;
+  text-align: center;
+}
+
+body
+{
+  background-color:linen;
+}
+.mat-elevation-z8{
+  background-color: rgb(64, 72, 179);
+  font-size: 18px;
+}

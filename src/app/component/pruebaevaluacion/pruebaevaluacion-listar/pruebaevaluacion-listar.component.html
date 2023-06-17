@@ -41,11 +41,18 @@
       <td mat-cell *matCellDef="let row"> {{row.rendido.nombreRendido}} </td>
     </ng-container>
 
-    <!-- Agregar y Borrar Column -->
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+    <!-- Agregar Column -->
+    <ng-container matColumnDef="action1">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
       <td mat-cell *matCellDef="let row">
-        <button mat-icon-button routerLink="/PruebaEvaluacion/Editar/{{row.idPruebaEvaluacion}}"> <mat-icon fontIcon="edit"></mat-icon></button>
+        <button mat-icon-button routerLink="/PruebaEvaluacion/Editar/{{row.idPruebaEvaluacion}}"> <mat-icon fontIcon="build"></mat-icon></button>
+      </td>
+    </ng-container>
+
+    <!-- Borrar Column -->
+    <ng-container matColumnDef="action2">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Eliminar </th>
+      <td mat-cell *matCellDef="let row">
         <button (click)="deletePruebaEvaluacion(row.idPruebaEvaluacion)" mat-icon-button> <mat-icon fontIcon="delete"></mat-icon></button>
       </td>
     </ng-container>

@@ -13,7 +13,7 @@ import { TarjetaService } from 'src/app/service/tarjeta.service';
   styleUrls: ['./tarjeta-listar.component.css']
 })
 export class TarjetaListarComponent {
-  displayedColumns: string[] = ['idTarjeta', 'numeroTarjeta', 'tipoTarjeta', 'tutor','actions'];
+  displayedColumns: string[] = ['idTarjeta', 'numeroTarjeta', 'tipoTarjeta', 'tutor','action1','action2'];
   dataSource = new MatTableDataSource<Tarjeta>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
