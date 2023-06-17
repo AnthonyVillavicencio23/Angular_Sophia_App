@@ -1,6 +1,6 @@
 .container
 {
-  width: 100%;
+  width: 80%;
   background-color:linen;
   font-style: bold;
   font-weight: bold;
@@ -19,18 +19,13 @@ h1
   text-align: center;
 }
 
-td {
-  font-size: 120%;
-  border: 2px solid black;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  background-color:white;
-  text-align: center;
+body
+{
+  background:linen;
 }
 
 th {
-  font-size: 100%;
+  font-size: 90%;
   overflow: hidden;
   border: 2px solid black;
   white-space: nowrap;
@@ -39,13 +34,19 @@ th {
   color:white;
 }
 
+/* Estas son las celdas*/
 
-body
-{
-  background-color:linen;
+td {
+  font-size: 100%;
+  border: 2px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color:white;
+  text-align: center;
 }
 
-.mat-elevation-z8
-{
+.mat-elevation-z8{
   background-color: rgb(64, 72, 179);
+  font-size: 18px;
 }
