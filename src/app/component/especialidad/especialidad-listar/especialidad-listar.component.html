@@ -1,0 +1,64 @@
+<body>
+
+    <br><br>
+  
+    <div class="container">
+    <div style="text-align:center;">
+      <h1>Lista de Especialidades</h1>
+    </div>
+  
+  
+    <div style="text-align: right;">
+      <button mat-raised-button color="primary" routerLink="/Especialidad/Agregar">Ir a Registro</button>
+    </div>
+    <mat-form-field>
+    <input matInput (keyup)=filter($event) placeholder="buscar"/>
+    </mat-form-field>
+  
+    <div style="text-align: right;">
+      <button mat-raised-button color="primary" routerLink="/"><span class="material-icons">home</span></button>
+    </div>
+    <br>
+  
+  
+  <table mat-table [dataSource] = "dataSource" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="idEspecialidad">
+  
+     <th mat-header-cell *matHeaderCellDef> idEspecialidad </th>
+     <td mat-cell *matCellDef="let element"> {{element.idEspecialidad}} </td>
+  
+    </ng-container>
+  
+     <ng-container matColumnDef="nombre">
+  
+      <th mat-header-cell *matHeaderCellDef> nombre de Especialidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  
+     </ng-container>
+  
+     <ng-container matColumnDef="acciones1">
+      <th mat-header-cell *matHeaderCellDef> Editar </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" [routerLink]="['edicion',element.idEspecialidad]"><span class="material-icons">build</span></button>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="acciones2">
+      <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="confirm(element.idEspecialidad)"><span class="material-icons">delete</span></button>
+      </td>
+    </ng-container>
+  
+     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+     </table>
+     <br>
+     <mat-paginator [pageSizeOptions]="[2, 4, 6]" [pageSize]="2" [length]="dataSource.data.length"></mat-paginator>
+  
+  
+     <br><br>
+    </div>
+  </body>
+  

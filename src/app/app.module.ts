@@ -82,6 +82,14 @@ import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pr
 import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
 import { ModinscritosDialogComponent } from './component/modinscritos/modinscritos-listar/modinscritos-dialog/modinscritos-dialog.component';
 import { ComprobantepagoDialogoComponent } from './component/comprobantepago/comprobantepago-listar/comprobantepago-dialogo/comprobantepago-dialogo.component';
+import { VideoClaseComponent } from './component/videoClase/videoClase.component';
+import { VideoclaseListarComponent } from './component/videoClase/videoClase-listar/videoClase-listar.component';
+import { VideoclaseCreaeditaComponent } from './component/videoClase/videoClase-creaedita/videoClase-creaedita.component';
+import { VideoClaseDialogoComponent } from './component/videoClase/videoClase-listar/videoClase-dialogo/videoClase-dialogo-component';
+import { EspecialidadComponent } from './component/especialidad/especialidad.component';
+import { EspecialidadCreaeditaComponent } from './component/especialidad/especialidad-creaedita/especialidad-creaedita.component';
+import { EspecialidadListarComponent } from './component/especialidad/especialidad-listar/especialidad-listar.component';
+import { EspecialidadDialogoComponent } from './component/especialidad/especialidad-listar/especialidad-dialogo/especialidad-dialogo.component';
 
 
 @NgModule({
@@ -143,7 +151,15 @@ import { ComprobantepagoDialogoComponent } from './component/comprobantepago/com
     PruebaevaluacionListarComponent,
     PruebaevaluacionCreaeditaComponent,
     ModinscritosDialogComponent,
-    ComprobantepagoDialogoComponent
+    ComprobantepagoDialogoComponent,
+    VideoClaseComponent,
+    VideoclaseListarComponent,
+    VideoclaseCreaeditaComponent,
+    VideoClaseDialogoComponent,
+    EspecialidadComponent,
+    EspecialidadCreaeditaComponent,
+    EspecialidadListarComponent,
+    EspecialidadDialogoComponent
   ],
   imports: [
     BrowserModule,

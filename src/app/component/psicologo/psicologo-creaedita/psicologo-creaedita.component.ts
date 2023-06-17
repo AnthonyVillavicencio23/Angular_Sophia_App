@@ -5,6 +5,8 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import * as moment from 'moment';
 import { PsicologoService } from 'src/app/service/psicologo.service';
 import { Route, Router, ActivatedRoute, Params} from '@angular/router';
+import { Especialidad } from 'src/app/model/especialidad';
+import { EspecialidadService } from 'src/app/service/especialidad.service';
 
 @Component({
   selector: 'app-psicologo-creaedita',
@@ -20,13 +22,17 @@ export class PsicologoCreaeditaComponent implements OnInit
   idPsicologo: number = 0;
   edicion: boolean = false;
 
-  constructor(private as: PsicologoService, private router: Router,  private route: ActivatedRoute)
+  lista: Especialidad[] = [];
+  idEspecialidadSeleccionado: number = 0;
+
+  constructor(private as: PsicologoService, private router: Router,  private route: ActivatedRoute, private eS: EspecialidadService)
   {
 
   }
 
   ngOnInit(): void {
 
+    this.eS.list().subscribe(data => {this.lista = data});
 
       this.route.params.subscribe((data: Params) =>
       {
@@ -43,7 +49,7 @@ export class PsicologoCreaeditaComponent implements OnInit
       apPatPsicologo: new FormControl(),
       apMatPsicologo: new FormControl(),
       fechaNacimiento: new FormControl(),
-      especialidad: new FormControl()
+      especialidad: new FormControl(),
     });
   }
 
@@ -53,11 +59,10 @@ export class PsicologoCreaeditaComponent implements OnInit
     this.psicologo.apPatPsicologo = this.form.value['apPatPsicologo'];
     this.psicologo.apMatPsicologo = this.form.value['apMatPsicologo'];
     this.psicologo.fechaNacimiento = this.form.value['fechaNacimiento'];
-    this.psicologo.especialidad = this.form.value['especialidad'];
+    this.psicologo.especialidad.nombre = this.form.value['especialidad.nombre'];
 
     if (this.form.value['nombrePsico'].length>0 && this.form.value['apPatPsicologo'].length>0 &&
-      this.form.value['apMatPsicologo'].length>0 &&
-      this.form.value['especialidad'].length>0) {
+      this.form.value['apMatPsicologo'].length>0 ) {
 
         if (this.edicion) {
           this.as.update(this.psicologo).subscribe((data) => {
@@ -76,7 +81,23 @@ export class PsicologoCreaeditaComponent implements OnInit
     } else {
       this.mensaje = "¡Complete los campos!";
     }
+    
+    if (this.idEspecialidadSeleccionado>0) {
+      let a = new Especialidad();
+      a.idEspecialidad = this.idEspecialidadSeleccionado;
+      this.psicologo.especialidad=a;
+      this.as.insert(this.psicologo).subscribe(() => {
+      this.as.list().subscribe(data => {
+            this.as.setList(data);
+          })
+        })
+  
+      this.router.navigate(['Psicologo/Listar']);
+  
   }
+
+  }
+
 
   init() {
     if (this.edicion) {
@@ -87,7 +108,7 @@ export class PsicologoCreaeditaComponent implements OnInit
           apPatPsicologo: new FormControl(data.apPatPsicologo),
           apMatPsicologo: new FormControl(data.apMatPsicologo),
           fechaNacimiento: new FormControl(data.fechaNacimiento),
-          especialidad: new FormControl(data.especialidad)
+          especialidad: new FormControl(data.especialidad.nombre)
         })
       })
     }

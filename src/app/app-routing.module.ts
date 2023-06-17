@@ -43,6 +43,12 @@ import { RendidoCreaeditaComponent } from './component/rendido/rendido-creaedita
 import { PruebaevaluacionComponent } from './component/pruebaevaluacion/pruebaevaluacion.component';
 import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
 import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
+import { EspecialidadComponent } from './component/especialidad/especialidad.component';
+import { EspecialidadCreaeditaComponent } from './component/especialidad/especialidad-creaedita/especialidad-creaedita.component';
+import { EspecialidadListarComponent } from './component/especialidad/especialidad-listar/especialidad-listar.component';
+import { VideoClaseComponent } from './component/videoClase/videoClase.component';
+import { VideoclaseCreaeditaComponent } from './component/videoClase/videoClase-creaedita/videoClase-creaedita.component';
+import { VideoclaseListarComponent } from './component/videoClase/videoClase-listar/videoClase-listar.component';
 
 const routes: Routes =
 [
@@ -217,6 +223,32 @@ const routes: Routes =
     [
       { path: 'Agregar', component:ModinscritosCreaeditaComponent},
       { path: 'Listar/edicion/:idModulosInscritos', component: ModinscritosCreaeditaComponent}
+    ]
+  },
+  {
+    path:'Especialidad',component:EspecialidadComponent, children:
+    [
+      { path: 'Listar', component:EspecialidadListarComponent}
+    ]
+  },
+  {
+    path:'Especialidad',component:EspecialidadComponent, children:
+    [
+      { path: 'Agregar', component:EspecialidadCreaeditaComponent},
+      { path: 'Listar/edicion/:idEspecialidad', component: EspecialidadCreaeditaComponent}
+    ]
+  },
+  {
+    path:'Videoclase',component:VideoClaseComponent, children:
+    [
+      { path: 'Listar', component:VideoclaseListarComponent}
+    ]
+  },
+  {
+    path:'Videoclase',component:VideoClaseComponent, children:
+    [
+      { path: 'Agregar', component:VideoclaseCreaeditaComponent},
+      { path: 'Listar/edicion/:idVideoClase', component: VideoclaseCreaeditaComponent}
     ]
   }
 
