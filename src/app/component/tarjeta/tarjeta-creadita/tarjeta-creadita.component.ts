@@ -16,7 +16,9 @@ export class TarjetaCreaditaComponent {
   form !: FormGroup
   tutores !: Tutor[]
   idTarjeta!: number;
-  constructor(private fb: FormBuilder, private _snackbard : MatSnackBar, private tA : TarjetaService, private router: Router, private tS: TutorService, private route: ActivatedRoute) {}
+  constructor(private fb: FormBuilder, private _snackbard : MatSnackBar,
+    private tA : TarjetaService, private router: Router, private tS: TutorService,
+    private route: ActivatedRoute) {}
   ngOnInit(){
     this.idTarjeta = this.route.snapshot.params["id"];
     this.tS.list().subscribe(

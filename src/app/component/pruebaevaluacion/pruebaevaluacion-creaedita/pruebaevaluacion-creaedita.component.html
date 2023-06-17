@@ -1,0 +1,52 @@
+<form [formGroup]="form">
+  <br>
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="idPruebaEvaluacion" placeholder="Enter id" readonly="true">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Cita</mat-label>
+    <mat-select formControlName="cita">
+      <mat-option *ngFor="let cita of citas" [value]="cita">
+        {{cita.idCita}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Diagnostico</mat-label>
+    <input matInput formControlName="diagnosticoPE" placeholder="Enter diagnostico">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Calificacion</mat-label>
+    <input matInput formControlName="calificacionPE" placeholder="Enter calificacion">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Rendido</mat-label>
+    <mat-select formControlName="rendido">
+      <mat-option *ngFor="let rendido of rendidos" [value]="rendido">
+        {{rendido.nombreRendido}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>
+
+<button
+[disabled]="form.invalid"
+color= "primary"
+mat-raised-button
+(click)="savePrueba()"
+>
+  Save
+</button>
+<button
+color = "warn"
+mat-raised-button
+routerLink="/PruebaEvaluacion/Listar"
+>
+  Cancel
+</button>

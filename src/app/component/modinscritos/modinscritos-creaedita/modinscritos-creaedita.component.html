@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+  <br>  <br>
+  <div>
+    <div class="container" style="text-align: center;">
+
+      <h1>Registro de Modulos Sugeridos</h1>
+      <br>
+
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id" formControlName="idModulosInscritos">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>estadoModulo</mat-label>
+        <input matInput required placeholder="estadoModulo" formControlName="estadoModulo">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>aprobado</mat-label>
+        <input matInput required placeholder="aprobado" formControlName="aprobado">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>PruebaEvaluacion</mat-label>
+        <mat-select formControlName="PruebaEvaluacion" [(value)]="idmodSugeridoSeleccionado" required>
+          <mat-option *ngFor="let a of lista" [value]="a.idModulosSugeridos">
+            {{a.idModulosSugeridos}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+        &nbsp; &nbsp; &nbsp;
+        <button mat-raised-button color="primary" routerLink="/ModuInscritos/Listar">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

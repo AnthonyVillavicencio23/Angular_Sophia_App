@@ -29,6 +29,20 @@ import { PagodemoduloCreaeditaComponent } from './component/pagodemodulo/pagodem
 import { ComprobantepagoComponent } from './component/comprobantepago/comprobantepago.component';
 import { ComprobantepagoCreaeditaComponent } from './component/comprobantepago/comprobantepago-creaedita/comprobantepago-creaedita.component';
 import { PagodemoduloListarComponent } from './component/pagodemodulo/pagodemodulo-listar/pagodemodulo-listar.component';
+import { ModsugeridosComponent } from './component/modsugeridos/modsugeridos.component';
+import { ModsugeridosListarComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-listar.component';
+import { ModsugeridosCreaeditaComponent } from './component/modsugeridos/modsugeridos-creaedita/modsugeridos-creaedita.component';
+import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
+import { ModinscritosComponent } from './component/modinscritos/modinscritos.component';
+import { ModinscritosListarComponent } from './component/modinscritos/modinscritos-listar/modinscritos-listar.component';
+import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
+import { ModuloListarComponent } from './component/modulo/modulo-listar/modulo-listar.component';
+import { RendidoComponent } from './component/rendido/rendido.component';
+import { RendidoListarComponent } from './component/rendido/rendido-listar/rendido-listar.component';
+import { RendidoCreaeditaComponent } from './component/rendido/rendido-creaedita/rendido-creaedita.component';
+import { PruebaevaluacionComponent } from './component/pruebaevaluacion/pruebaevaluacion.component';
+import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
+import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
 
 const routes: Routes =
 [
@@ -38,6 +52,22 @@ const routes: Routes =
       { path: 'Listar', component:TarjetaListarComponent},
       { path: 'Agregar', component:TarjetaCreaditaComponent},
       { path: 'Editar/:id', component:TarjetaCreaditaComponent},
+    ]
+  },
+  {
+    path:'Rendido',component:RendidoComponent, children:
+    [
+      { path: 'Listar', component:RendidoListarComponent},
+      { path: 'Agregar', component:RendidoCreaeditaComponent},
+      { path: 'Editar/:id', component:RendidoCreaeditaComponent},
+    ]
+  },
+  {
+    path:'PruebaEvaluacion',component:PruebaevaluacionComponent, children:
+    [
+      { path: 'Listar', component:PruebaevaluacionListarComponent},
+      { path: 'Agregar', component:PruebaevaluacionCreaeditaComponent},
+      { path: 'Editar/:id', component:PruebaevaluacionCreaeditaComponent},
     ]
   },
   {
@@ -101,19 +131,20 @@ const routes: Routes =
   {
     path:'Estudiantes',component:EstudianteComponent, children:
     [
-      { path: 'Listar', component:EstudianteComponent}
+      { path: 'Listar', component:EstudianteListarComponent}
     ]
   },
   {
     path:'Estudiantes',component:EstudianteComponent, children:
     [
-      { path: 'Agregar', component:EstudianteCreaeditaComponent}
+      { path: 'Agregar', component:EstudianteCreaeditaComponent},
+      { path: 'Listar/edicion/:idEstudiante', component: EstudianteCreaeditaComponent}
     ]
   },
   {
     path:'Modulos',component:ModuloComponent, children:
     [
-      { path: 'Listar', component:ModuloComponent}
+      { path: 'Listar', component:ModuloListarComponent}
     ]
   },
   {
@@ -143,7 +174,10 @@ const routes: Routes =
   {
     path:'PagoDeModulo',component:PagodemoduloComponent, children:
     [
-      { path: 'Agregar', component:PagodemoduloCreaeditaComponent}
+      { path: 'Agregar', component:PagodemoduloCreaeditaComponent},
+      { path: 'Listar/edicion/:idPagodeModulo', component: PagodemoduloCreaeditaComponent }
+
+
     ]
   },
   {
@@ -155,7 +189,34 @@ const routes: Routes =
   {
     path:'ComprobantePago',component:ComprobantepagoComponent, children:
     [
-      { path: 'Agregar', component:ComprobantepagoCreaeditaComponent}
+      { path: 'Agregar', component:ComprobantepagoCreaeditaComponent},
+      { path: 'Listar/edicion/:idComprobantePago', component: ComprobantepagoCreaeditaComponent }
+    ]
+  },
+  {
+      path:'ModuSugeridos',component:ModsugeridosComponent, children:
+    [
+      { path: 'Listar', component:ModsugeridosListarComponent}
+    ]
+  },
+  {
+    path:'ModuSugeridos',component:ModsugeridosComponent, children:
+    [
+      { path: 'Agregar', component:ModsugeridosCreaeditaComponent},
+      { path: 'Listar/edicion/:idModulosSugeridos', component: ModsugeridosCreaeditaComponent}
+    ]
+  },
+  {
+    path:'ModuInscritos',component:ModinscritosComponent, children:
+    [
+      { path: 'Listar', component:ModinscritosListarComponent}
+    ]
+  },
+  {
+    path:'ModuInscritos',component:ModinscritosComponent, children:
+    [
+      { path: 'Agregar', component:ModinscritosCreaeditaComponent},
+      { path: 'Listar/edicion/:idModulosInscritos', component: ModinscritosCreaeditaComponent}
     ]
   }
 

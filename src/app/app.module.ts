@@ -66,6 +66,22 @@ import { ComprobantepagoComponent } from './component/comprobantepago/comprobant
 import { ComprobantepagoListarComponent } from './component/comprobantepago/comprobantepago-listar/comprobantepago-listar.component';
 import { ComprobantepagoCreaeditaComponent } from './component/comprobantepago/comprobantepago-creaedita/comprobantepago-creaedita.component';
 import { PagodemoduloDialogoComponent } from './component/pagodemodulo/pagodemodulo-listar/pagodemodulo-dialogo/pagodemodulo-dialogo.component';
+import { ModsugeridosComponent } from './component/modsugeridos/modsugeridos.component';
+import { ModsugeridosListarComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-listar.component';
+import { ModsugeridosCreaeditaComponent } from './component/modsugeridos/modsugeridos-creaedita/modsugeridos-creaedita.component';
+import { ModinscritosComponent } from './component/modinscritos/modinscritos.component';
+import { ModinscritosListarComponent } from './component/modinscritos/modinscritos-listar/modinscritos-listar.component';
+import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
+import { ModsugeridosDialogComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-dialog/modsugeridos-dialog.component';
+import { EstudianteDialogComponent } from './component/estudiante/estudiante-listar/estudiante-dialog/estudiante-dialog.component';
+import { RendidoComponent } from './component/rendido/rendido.component';
+import { RendidoListarComponent } from './component/rendido/rendido-listar/rendido-listar.component';
+import { RendidoCreaeditaComponent } from './component/rendido/rendido-creaedita/rendido-creaedita.component';
+import { PruebaevaluacionComponent } from './component/pruebaevaluacion/pruebaevaluacion.component';
+import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
+import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
+import { ModinscritosDialogComponent } from './component/modinscritos/modinscritos-listar/modinscritos-dialog/modinscritos-dialog.component';
+import { ComprobantepagoDialogoComponent } from './component/comprobantepago/comprobantepago-listar/comprobantepago-dialogo/comprobantepago-dialogo.component';
 
 
 @NgModule({
@@ -111,7 +127,23 @@ import { PagodemoduloDialogoComponent } from './component/pagodemodulo/pagodemod
     ComprobantepagoComponent,
     ComprobantepagoListarComponent,
     ComprobantepagoCreaeditaComponent,
-    PagodemoduloDialogoComponent
+    PagodemoduloDialogoComponent,
+    ModsugeridosComponent,
+    ModsugeridosListarComponent,
+    ModsugeridosCreaeditaComponent,
+    ModinscritosComponent,
+    ModinscritosListarComponent,
+    ModinscritosCreaeditaComponent,
+    ModsugeridosDialogComponent,
+    EstudianteDialogComponent,
+    RendidoComponent,
+    RendidoListarComponent,
+    RendidoCreaeditaComponent,
+    PruebaevaluacionComponent,
+    PruebaevaluacionListarComponent,
+    PruebaevaluacionCreaeditaComponent,
+    ModinscritosDialogComponent,
+    ComprobantepagoDialogoComponent
   ],
   imports: [
     BrowserModule,

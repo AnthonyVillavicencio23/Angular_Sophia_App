@@ -12,7 +12,7 @@
 
 
       <br>
-      <div class = "container" style="text-align: center">
+      <div class = "container">
 
         <div style = "text-align: center;">
               <h1>Lista de Comprobante de Pago</h1>
@@ -23,6 +23,10 @@
           <button mat-raised-button color="primary" routerLink="/ComprobantePago/Agregar">Ir a Registro de Comprobante de Pago</button>
         </div><br><br>
 
+
+        <mat-form-field>
+          <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+        </mat-form-field>
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -63,9 +67,23 @@
           <td mat-cell *matCellDef="let element"> {{element.pagoModulo.montopormodulo}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="accion01">
+          <th mat-header-cell *matHeaderCellDef>Editar</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="primary" [routerLink]="['edicion', element.idComprobantePago]"><span class="material-icons">build</span></button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="accion2">
+          <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="primary" (click)="confirm(element.idComprobantePago)"><span class="material-icons">delete</span></button>
+          </td>
+        </ng-container>
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+      <mat-paginator [pageSizeOptions]="[3, 6, 9]" [pageSize]="3" [length]="dataSource.data.length"></mat-paginator>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>

@@ -14,6 +14,8 @@ export class ComprobantepagoService {
   private url = `${base_url}/comprobantepago`
   private listaCambio = new Subject<ComprobantePago[]>()
 
+  private confirmarEliminacion = new Subject<Boolean>()
+
   constructor(private http: HttpClient) { }
 
   list() {
@@ -28,5 +30,23 @@ export class ComprobantepagoService {
   }
   getLista() {
     return this.listaCambio.asObservable();
+  }
+  listId(id: number) {
+    return this.http.get<ComprobantePago>(`${this.url}/${id}`);
+  }
+  update(aut: ComprobantePago) {
+    return this.http.put(this.url, aut);
+  }
+
+
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
   }
 }
