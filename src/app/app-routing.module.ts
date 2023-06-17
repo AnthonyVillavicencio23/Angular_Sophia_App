@@ -162,7 +162,7 @@ const routes: Routes =
   {
     path:'CitasProgramadas',component:CitaComponent, children:
     [
-      { path: 'Listar', component:CitaComponent}
+      { path: 'Listar', component:CitaListarComponent}
     ]
   },
   {
