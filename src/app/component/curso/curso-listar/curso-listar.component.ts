@@ -5,6 +5,7 @@ import { cursoService } from 'src/app/service/curso.service';
 import { MatDialog } from '@angular/material/dialog'
 import { CursoDialogoComponent } from './curso-dialogo/curso-dialogo.component';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { LoginService } from 'src/app/service/login.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 export class cursoListarComponent implements OnInit
 {
-
+  role:string="";
   lista:curso[] = []
   dataSource:MatTableDataSource<curso>=new MatTableDataSource();
 
@@ -32,13 +33,15 @@ export class cursoListarComponent implements OnInit
     }
 
 
-    constructor(private as:cursoService, private dialog: MatDialog)
+    constructor(private as:cursoService, private dialog: MatDialog, private ls:LoginService)
     {
 
     }
 
     ngOnInit(): void
     {
+      this.role=this.ls.showRole();
+      console.log(this.role);
       this.as.list().subscribe(data=>
         {
           this.dataSource = new MatTableDataSource(data);
