@@ -256,6 +256,38 @@ catCita: [
         description: "Postergado",
         }
       }
+    ],
+    evaluacion:[
+      {
+        id: 1,
+        diagnostico: "El estudiante evaluado, muestra deficit de atención, y un promedio más bajo en los cursos de Matematica, se le habilitaran los cursos del modulo 3",
+        cita:{
+          id:1,
+          disponible: "Sí",
+          fecha: "2023-06-04",
+          hora: "07:30 PM"
+        }
+      },
+      {
+        id: 2,
+        diagnostico: "Se le asignaran cursos de lenguaje del modulo 2",
+        cita:{
+          id:3,
+          disponible: "Sí",
+          fecha: "2023-04-04",
+          hora: "10:30 PM"
+        }
+      },
+      {
+        id: 3,
+        diagnostico: "El estudiante tomara cursos de nivelación secundaria",
+        cita:{
+          id:2,
+          disponible: "No",
+          fecha: "2023-06-04",
+          hora: "09:45 AM"
+        }
+      },
     ]
 
 

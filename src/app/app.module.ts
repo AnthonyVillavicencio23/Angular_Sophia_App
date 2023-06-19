@@ -3,185 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { HttpClientModule } from '@angular/common/http';
-import { AuthorComponent } from './component/author/author.component';
-import { AuthorListarComponent } from './component/author/author-listar/author-listar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
-import { MatTableModule } from '@angular/material/table';
-import { AuthorCreaeditaComponent } from './component/author/author-creaedita/author-creaedita.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog'
-import { MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-
-
-import { EstadoComponent } from './component/estado/estado.component';
-import { EstadoListarComponent } from './component/estado/estado-listar/estado-listar.component'
-import { RouterModule } from '@angular/router';
-import { cursoComponent } from './component/curso/curso.component';
-import { cursoListarComponent } from './component/curso/curso-listar/curso-listar.component';
-import { CursoCreaeditaComponent } from './component/curso/curso-creaedita/curso-creaedita.component';
-import { PsicologoComponent } from './component/psicologo/psicologo.component';
-import { PsicologoCreaeditaComponent } from './component/psicologo/psicologo-creaedita/psicologo-creaedita.component';
-import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
-import { PsicologoDialogoComponent } from './component/psicologo/psicologo-listar/psicologo-dialogo/psicologo-dialogo-component';
-import { TutorComponent } from './component/tutor/tutor.component';
-import { TutorListarComponent } from './component/tutor/tutor-listar/tutor-listar.component';
-import { TutorCreaeditaComponent } from './component/tutor/tutor-creaedita/tutor-creaedita.component';
-import { CategoriaComponent } from './component/Categoria/categoria.component';
-import { CatListarComponent } from './component/Categoria/cat-listar/cat-listar.component';
-import { CatCreaeditaComponent } from './component/Categoria/cat-creaedita/cat-creaedita.component';
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
-import { CursoDialogoComponent } from './component/curso/curso-listar/curso-dialogo/curso-dialogo.component'
-import { CatDiialogComponent } from './component/Categoria/cat-listar/cat-diialog/cat-diialog.component'
-import { TutorDialogoComponent } from './component/tutor/tutor-listar/tutor-dialogo/tutor-dialogo.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { NavbarComponent } from './component/navbar/navbar.component';
-
-import { MatSelectModule } from '@angular/material/select';
-import { EstudianteComponent } from './component/estudiante/estudiante.component';
-import { EstudianteListarComponent } from './component/estudiante/estudiante-listar/estudiante-listar.component';
-import { EstudianteCreaeditaComponent } from './component/estudiante/estudiante-creaedita/estudiante-creaedita.component';
-import { ModuloComponent } from './component/modulo/modulo.component';
-import { ModuloListarComponent } from './component/modulo/modulo-listar/modulo-listar.component';
-import { ModuloCreaeditaComponent } from './component/modulo/modulo-creaedita/modulo-creaedita.component';
-import { CitaComponent } from './component/cita/cita.component';
-import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
-import { CitaCreaeditaComponent } from './component/cita/cita-creaedita/cita-creaedita.component';
-import { TarjetaComponent } from './component/tarjeta/tarjeta.component';
-import { TarjetaListarComponent } from './component/tarjeta/tarjeta-listar/tarjeta-listar.component';
-import { TarjetaCreaditaComponent } from './component/tarjeta/tarjeta-creadita/tarjeta-creadita.component';
-import { PagodemoduloComponent } from './component/pagodemodulo/pagodemodulo.component';
-import { PagodemoduloListarComponent } from './component/pagodemodulo/pagodemodulo-listar/pagodemodulo-listar.component';
-import { PagodemoduloCreaeditaComponent } from './component/pagodemodulo/pagodemodulo-creaedita/pagodemodulo-creaedita.component';
-import { ComprobantepagoComponent } from './component/comprobantepago/comprobantepago.component';
-import { ComprobantepagoListarComponent } from './component/comprobantepago/comprobantepago-listar/comprobantepago-listar.component';
-import { ComprobantepagoCreaeditaComponent } from './component/comprobantepago/comprobantepago-creaedita/comprobantepago-creaedita.component';
-import { PagodemoduloDialogoComponent } from './component/pagodemodulo/pagodemodulo-listar/pagodemodulo-dialogo/pagodemodulo-dialogo.component';
-import { ModsugeridosComponent } from './component/modsugeridos/modsugeridos.component';
-import { ModsugeridosListarComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-listar.component';
-import { ModsugeridosCreaeditaComponent } from './component/modsugeridos/modsugeridos-creaedita/modsugeridos-creaedita.component';
-import { ModinscritosComponent } from './component/modinscritos/modinscritos.component';
-import { ModinscritosListarComponent } from './component/modinscritos/modinscritos-listar/modinscritos-listar.component';
-import { ModinscritosCreaeditaComponent } from './component/modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
-import { ModsugeridosDialogComponent } from './component/modsugeridos/modsugeridos-listar/modsugeridos-dialog/modsugeridos-dialog.component';
-import { EstudianteDialogComponent } from './component/estudiante/estudiante-listar/estudiante-dialog/estudiante-dialog.component';
-import { RendidoComponent } from './component/rendido/rendido.component';
-import { RendidoListarComponent } from './component/rendido/rendido-listar/rendido-listar.component';
-import { RendidoCreaeditaComponent } from './component/rendido/rendido-creaedita/rendido-creaedita.component';
-import { PruebaevaluacionComponent } from './component/pruebaevaluacion/pruebaevaluacion.component';
-import { PruebaevaluacionListarComponent } from './component/pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
-import { PruebaevaluacionCreaeditaComponent } from './component/pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
-import { ModinscritosDialogComponent } from './component/modinscritos/modinscritos-listar/modinscritos-dialog/modinscritos-dialog.component';
-import { ComprobantepagoDialogoComponent } from './component/comprobantepago/comprobantepago-listar/comprobantepago-dialogo/comprobantepago-dialogo.component';
-import { VideoClaseComponent } from './component/videoClase/videoClase.component';
-import { VideoclaseListarComponent } from './component/videoClase/videoClase-listar/videoClase-listar.component';
-import { VideoclaseCreaeditaComponent } from './component/videoClase/videoClase-creaedita/videoClase-creaedita.component';
-import { VideoClaseDialogoComponent } from './component/videoClase/videoClase-listar/videoClase-dialogo/videoClase-dialogo-component';
-import { EspecialidadComponent } from './component/especialidad/especialidad.component';
-import { EspecialidadCreaeditaComponent } from './component/especialidad/especialidad-creaedita/especialidad-creaedita.component';
-import { EspecialidadListarComponent } from './component/especialidad/especialidad-listar/especialidad-listar.component';
-import { EspecialidadDialogoComponent } from './component/especialidad/especialidad-listar/especialidad-dialogo/especialidad-dialogo.component';
-
-
+import { LoginComponent } from './component/login/login.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorComponent,
-    AuthorListarComponent,
-    AuthorCreaeditaComponent,
-    EstadoComponent,
-    EstadoListarComponent,
-    cursoComponent,
-    cursoListarComponent,
-    CursoCreaeditaComponent,
-    PsicologoComponent,
-    PsicologoCreaeditaComponent,
-    PsicologoListarComponent,
-    PsicologoDialogoComponent,
-    TutorComponent,
-    TutorListarComponent,
-    TutorCreaeditaComponent,
-    TutorDialogoComponent,
-    CategoriaComponent,
-    CatListarComponent,
-    CatCreaeditaComponent,
-    CursoDialogoComponent,
-    CatDiialogComponent,
-    NavbarComponent,
-    EstudianteComponent,
-    EstudianteListarComponent,
-    EstudianteCreaeditaComponent,
-    ModuloComponent,
-    ModuloListarComponent,
-    ModuloCreaeditaComponent,
-    CitaComponent,
-    CitaListarComponent,
-    CitaCreaeditaComponent,
-    TarjetaComponent,
-    TarjetaListarComponent,
-    TarjetaCreaditaComponent,
-    PagodemoduloComponent,
-    PagodemoduloListarComponent,
-    PagodemoduloCreaeditaComponent,
-    ComprobantepagoComponent,
-    ComprobantepagoListarComponent,
-    ComprobantepagoCreaeditaComponent,
-    PagodemoduloDialogoComponent,
-    ModsugeridosComponent,
-    ModsugeridosListarComponent,
-    ModsugeridosCreaeditaComponent,
-    ModinscritosComponent,
-    ModinscritosListarComponent,
-    ModinscritosCreaeditaComponent,
-    ModsugeridosDialogComponent,
-    EstudianteDialogComponent,
-    RendidoComponent,
-    RendidoListarComponent,
-    RendidoCreaeditaComponent,
-    PruebaevaluacionComponent,
-    PruebaevaluacionListarComponent,
-    PruebaevaluacionCreaeditaComponent,
-    ModinscritosDialogComponent,
-    ComprobantepagoDialogoComponent,
-    VideoClaseComponent,
-    VideoclaseListarComponent,
-    VideoclaseCreaeditaComponent,
-    VideoClaseDialogoComponent,
-    EspecialidadComponent,
-    EspecialidadCreaeditaComponent,
-    EspecialidadListarComponent,
-    EspecialidadDialogoComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    ReactiveFormsModule,
     FormsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    RouterModule,
+    BrowserAnimationsModule,
     MatFormFieldModule,
-    MatDialogModule,
-    MatPaginatorModule,
+    MatInputModule,
+    AppRoutingModule,
+    MatButtonModule,
+    MatSnackBarModule,
     MatToolbarModule,
-    MatSelectModule,
     MatIconModule,
-    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
