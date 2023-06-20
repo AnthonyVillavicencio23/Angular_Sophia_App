@@ -5,6 +5,7 @@ import { TutorService } from 'src/app/service/tutor.service';
 import { TutorDialogoComponent } from './tutor-dialogo/tutor-dialogo.component';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-tutor-listar',
@@ -12,7 +13,8 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./tutor-listar.component.css']
 })
 export class TutorListarComponent implements OnInit {
- lista:Tutor[]=[]
+  role:string="";
+  lista:Tutor[]=[]
  dataSource:MatTableDataSource<Tutor>=new MatTableDataSource();
  idMayor: number = 0
  displayedColumns:string[]=['id','nombre','Apellido_Paterno','Apellido_Materno','DNI','telefono','Email','Tipo_de_persona','accion01','accion2']
@@ -22,10 +24,12 @@ export class TutorListarComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   })
 }
- constructor(private aS:TutorService, private dialog: MatDialog){
+ constructor(private aS:TutorService, private dialog: MatDialog, private ls:LoginService){
 
  }
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+      console.log(this.role);
 this.aS.list().subscribe(data=>{
   this.dataSource.paginator = this.paginator;
   this.dataSource=new MatTableDataSource(data);

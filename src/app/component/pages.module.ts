@@ -1,5 +1,3 @@
-
-
 import { AuthorComponent } from './author/author.component';
 import { AuthorListarComponent } from './author/author-listar/author-listar.component';
 import { AuthorCreaeditaComponent } from './author/author-creaedita/author-creaedita.component';
@@ -55,6 +53,38 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { EstudianteDialogComponent } from './estudiante/estudiante-listar/estudiante-dialog/estudiante-dialog.component';
+import { ComprobantePago } from '../model/comprobantepago';
+import { ComprobantepagoComponent } from './comprobantepago/comprobantepago.component';
+import { ComprobantepagoListarComponent } from './comprobantepago/comprobantepago-listar/comprobantepago-listar.component';
+import { ComprobantepagoCreaeditaComponent } from './comprobantepago/comprobantepago-creaedita/comprobantepago-creaedita.component';
+import { ComprobantepagoDialogoComponent } from './comprobantepago/comprobantepago-listar/comprobantepago-dialogo/comprobantepago-dialogo.component';
+import { EspecialidadComponent } from './especialidad/especialidad.component';
+import { EspecialidadListarComponent } from './especialidad/especialidad-listar/especialidad-listar.component';
+import { EspecialidadCreaeditaComponent } from './especialidad/especialidad-creaedita/especialidad-creaedita.component';
+import { EspecialidadDialogoComponent } from './especialidad/especialidad-listar/especialidad-dialogo/especialidad-dialogo.component';
+import { ModinscritosComponent } from './modinscritos/modinscritos.component';
+import { ModinscritosListarComponent } from './modinscritos/modinscritos-listar/modinscritos-listar.component';
+import { ModinscritosCreaeditaComponent } from './modinscritos/modinscritos-creaedita/modinscritos-creaedita.component';
+import { ModinscritosDialogComponent } from './modinscritos/modinscritos-listar/modinscritos-dialog/modinscritos-dialog.component';
+import { ModsugeridosComponent } from './modsugeridos/modsugeridos.component';
+import { ModsugeridosListarComponent } from './modsugeridos/modsugeridos-listar/modsugeridos-listar.component';
+import { ModsugeridosCreaeditaComponent } from './modsugeridos/modsugeridos-creaedita/modsugeridos-creaedita.component';
+import { ModsugeridosDialogComponent } from './modsugeridos/modsugeridos-listar/modsugeridos-dialog/modsugeridos-dialog.component';
+import { PagodemoduloComponent } from './pagodemodulo/pagodemodulo.component';
+import { PagodemoduloListarComponent } from './pagodemodulo/pagodemodulo-listar/pagodemodulo-listar.component';
+import { PagodemoduloCreaeditaComponent } from './pagodemodulo/pagodemodulo-creaedita/pagodemodulo-creaedita.component';
+import { PagodemoduloDialogoComponent } from './pagodemodulo/pagodemodulo-listar/pagodemodulo-dialogo/pagodemodulo-dialogo.component';
+import { PruebaevaluacionComponent } from './pruebaevaluacion/pruebaevaluacion.component';
+import { PruebaevaluacionListarComponent } from './pruebaevaluacion/pruebaevaluacion-listar/pruebaevaluacion-listar.component';
+import { PruebaevaluacionCreaeditaComponent } from './pruebaevaluacion/pruebaevaluacion-creaedita/pruebaevaluacion-creaedita.component';
+import { RendidoComponent } from './rendido/rendido.component';
+import { RendidoListarComponent } from './rendido/rendido-listar/rendido-listar.component';
+import { RendidoCreaeditaComponent } from './rendido/rendido-creaedita/rendido-creaedita.component';
+import { VideoClaseComponent } from './videoClase/videoClase.component';
+import { VideoclaseListarComponent } from './videoClase/videoClase-listar/videoClase-listar.component';
+import { VideoclaseCreaeditaComponent } from './videoClase/videoClase-creaedita/videoClase-creaedita.component';
+import { VideoClaseDialogoComponent } from './videoClase/videoClase-listar/videoClase-dialogo/videoClase-dialogo-component';
 
 
 @NgModule({
@@ -62,40 +92,71 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     AuthorComponent,
     AuthorListarComponent,
     AuthorCreaeditaComponent,
-    EstadoComponent,
-    EstadoListarComponent,
     cursoComponent,
     cursoListarComponent,
     CursoCreaeditaComponent,
-    PsicologoComponent,
-    PsicologoCreaeditaComponent,
-    PsicologoListarComponent,
-    PsicologoDialogoComponent,
-    TutorComponent,
-    TutorListarComponent,
-    TutorCreaeditaComponent,
-    TutorDialogoComponent,
     CategoriaComponent,
     CatListarComponent,
     CatCreaeditaComponent,
     CursoDialogoComponent,
     CatDiialogComponent,
-    NavbarComponent,
-    EstudianteComponent,
-    EstudianteListarComponent,
-    EstudianteCreaeditaComponent,
-    ModuloComponent,
-    ModuloListarComponent,
-    ModuloCreaeditaComponent,
     CitaComponent,
     CitaListarComponent,
     CitaCreaeditaComponent,
+    ComprobantepagoComponent,
+    ComprobantepagoListarComponent,
+    ComprobantepagoCreaeditaComponent,
+    ComprobantepagoDialogoComponent,
+    EspecialidadComponent,
+    EspecialidadListarComponent,
+    EspecialidadCreaeditaComponent,
+    EspecialidadDialogoComponent,
+    EstadoComponent,
+    EstadoListarComponent,
+    EstudianteComponent,
+    EstudianteListarComponent,
+    EstudianteCreaeditaComponent,
+    EstudianteDialogComponent,
     EvaluacionComponent,
     EvaluacionListarComponent,
     EvaluacionCreaeditaComponent,
+    ModinscritosComponent,
+    ModinscritosListarComponent,
+    ModinscritosCreaeditaComponent,
+    ModinscritosDialogComponent,
+    ModsugeridosComponent,
+    ModsugeridosListarComponent,
+    ModsugeridosCreaeditaComponent,
+    ModsugeridosDialogComponent,
+    ModuloComponent,
+    ModuloListarComponent,
+    ModuloCreaeditaComponent,
+    NavbarComponent,
+    PagodemoduloComponent,
+    PagodemoduloListarComponent,
+    PagodemoduloCreaeditaComponent,
+    PagodemoduloDialogoComponent,
+    PruebaevaluacionComponent,
+    PruebaevaluacionListarComponent,
+    PruebaevaluacionCreaeditaComponent,
+    PsicologoComponent,
+    PsicologoCreaeditaComponent,
+    PsicologoListarComponent,
+    PsicologoDialogoComponent,
+    RendidoComponent,
+    RendidoListarComponent,
+    RendidoCreaeditaComponent,
     TarjetaComponent,
     TarjetaListarComponent,
     TarjetaCreaditaComponent,
+    TutorComponent,
+    TutorListarComponent,
+    TutorCreaeditaComponent,
+    TutorDialogoComponent,
+    VideoClaseComponent,
+    VideoclaseListarComponent,
+    VideoclaseCreaeditaComponent,
+    VideoClaseDialogoComponent,
   ],
   imports: [
     CommonModule,

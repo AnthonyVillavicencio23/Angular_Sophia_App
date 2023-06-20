@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { catCita } from '../model/catCita';
@@ -14,10 +14,16 @@ export class CategoriaService {
   private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http: HttpClient) {}
   list() {
-    return this.http.get<catCita[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<catCita[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(catcita: catCita) {
-    return this.http.post(this.url, catcita);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, catcita, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(ListaNueva: catCita[]) {
@@ -27,14 +33,23 @@ export class CategoriaService {
     return this.listaCambio.asObservable();
   }
   listId(id: number) {
-    return this.http.get<catCita>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<catCita>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(cate: catCita) {
-    return this.http.put(this.url, cate);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, cate, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   delete(id:number){
-    return this.http.delete(`${this.url}/${id}`)
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getConfirmDelete(){

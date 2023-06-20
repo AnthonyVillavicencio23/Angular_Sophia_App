@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Tutor } from '../model/tutor';
@@ -14,10 +14,16 @@ export class TutorService {
 
   constructor(private http: HttpClient) {}
   list() {
-    return this.http.get<Tutor[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Tutor[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(tutor: Tutor) {
-    return this.http.post(this.url, tutor);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, tutor, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   setList(listaNueva: Tutor[]) {
     this.listaCambio.next(listaNueva);
@@ -26,17 +32,26 @@ export class TutorService {
     return this.listaCambio.asObservable();
   }
   listId(id: number) {
-    return this.http.get<Tutor>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Tutor>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(aut: Tutor) {
-    return this.http.put(this.url, aut);
+    let token = sessionStorage.getItem("token");
+   return this.http.put(this.url, aut, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
   }
 
 
 
   //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`)
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getConfirmDelete(){

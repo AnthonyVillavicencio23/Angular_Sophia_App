@@ -1,11 +1,11 @@
 <p>
   <mat-toolbar *ngIf="verificar()">
       <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
-       *ngIf="validarRol()" routerLink="/pages/Curso/Listar">
+       *ngIf="validarRol()" routerLink="/pages/Navbar">
           <span>Autores</span>
       </button>
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
-      *ngIf="role=='TUTOR'"  routerLink="/pages/CitasProgramadas/Listar">
+      *ngIf="role=='ADMIN'"  routerLink="/pages/CitasProgramadas/Listar">
           <span>Libros</span>
       </button>
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"

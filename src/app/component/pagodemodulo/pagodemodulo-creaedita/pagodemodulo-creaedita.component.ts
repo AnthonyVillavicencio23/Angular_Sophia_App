@@ -92,7 +92,7 @@ export class PagodemoduloCreaeditaComponent implements OnInit {
           })
         }
       }
-      this.router.navigate(['PagoDeModulo/Listar']);
+      this.router.navigate(['pages/PagoDeModulo/Listar']);
     } else {
       this.mensaje = "Complete los campos requeridos!!!";
     }

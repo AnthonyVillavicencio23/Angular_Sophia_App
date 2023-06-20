@@ -79,7 +79,7 @@ edicion: boolean=false;
         })
       }
 
-      this.router.navigate(['Tutor/Listar']);
+      this.router.navigate(['pages/Tutor/Listar']);
     } else {
       this.mensaje = "Complete los campos requeridos!!!";
     }

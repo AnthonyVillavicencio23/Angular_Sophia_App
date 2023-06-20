@@ -86,7 +86,7 @@ export class ModinscritosCreaeditaComponent implements OnInit
         })
       }
 
-      this.router.navigate(['ModuInscritos/Listar']);
+      this.router.navigate(['pages/ModuInscritos/Listar']);
     }
     else
     {
@@ -103,7 +103,7 @@ export class ModinscritosCreaeditaComponent implements OnInit
           })
         })
 
-      this.router.navigate(['ModuInscritos/Listar']);
+      this.router.navigate(['pages/ModuInscritos/Listar']);
 
   }
 }

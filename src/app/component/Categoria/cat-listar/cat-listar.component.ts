@@ -6,6 +6,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { CatDiialogComponent } from './cat-diialog/cat-diialog.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { LoginService } from 'src/app/service/login.service';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class CatListarComponent implements OnInit {
 
+  role:string="";
   lista: catCita[] = []
   dataSource:MatTableDataSource<catCita>=new MatTableDataSource();
   idMayor: number =0;
@@ -22,12 +24,14 @@ export class CatListarComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor (private cat:CategoriaService, private dialog: MatDialog)
+  constructor (private cat:CategoriaService, private dialog: MatDialog, private ls:LoginService)
   {
 
   }
   ngOnInit(): void
   {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.cat.list().subscribe(data=>
       {
         this.dataSource = new MatTableDataSource(data);

@@ -11,8 +11,7 @@ import { EstudianteService } from 'src/app/service/estudiante.service';
 })
 export class EstudianteDialogComponent  implements OnInit {
   constructor(private as: EstudianteService,
-    private dialogRef: MatDialogRef<EstudianteDialogComponent>)
-     { }
+    private dialogRef: MatDialogRef<EstudianteDialogComponent>) { }
 
 
   ngOnInit(): void {}

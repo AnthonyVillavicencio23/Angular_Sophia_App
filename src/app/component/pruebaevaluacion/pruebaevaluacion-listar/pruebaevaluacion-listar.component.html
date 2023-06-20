@@ -2,9 +2,9 @@
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Enter Filter" #input>
 </mat-form-field>
-<button mat-raised-button color="accent" routerLink="/PruebaEvaluacion/Agregar"> Nueva Prueba</button>
+<button mat-raised-button color="accent" routerLink="/pages/PruebaEvaluacion/Agregar"> Nueva Prueba</button>
 <div style="text-align: right;">
-  <button mat-raised-button color="primary" routerLink="/Citas/Listar"><span class="material-icons">arrow_back</span></button>
+  <button mat-raised-button color="primary" routerLink="/pages/Citas/Listar"><span class="material-icons">arrow_back</span></button>
 </div>
 
 
@@ -45,7 +45,7 @@
     <ng-container matColumnDef="action1">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
       <td mat-cell *matCellDef="let row">
-        <button mat-icon-button routerLink="/PruebaEvaluacion/Editar/{{row.idPruebaEvaluacion}}"> <mat-icon fontIcon="build"></mat-icon></button>
+        <button mat-icon-button routerLink="/pages/PruebaEvaluacion/Editar/{{row.idPruebaEvaluacion}}"> <mat-icon fontIcon="build"></mat-icon></button>
       </td>
     </ng-container>
 
@@ -72,7 +72,7 @@
 <br>
 <br>
 <div style="text-align: right">
-  <button mat-raised-button color="primary" routerLink="/Rendido/Listar">Rendido</button>
+  <button mat-raised-button color="primary" routerLink="/pages/Rendido/Listar">Rendido</button>
 </div>
 
 

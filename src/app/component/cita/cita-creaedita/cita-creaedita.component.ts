@@ -101,7 +101,7 @@ export class CitaCreaeditaComponent implements OnInit{
           this.cS.setList(data);
         })
       })
-      this.router.navigate(['CitasProgramadas/Listar']);
+      this.router.navigate(['pages/CitasProgramadas/Listar']);
     }
   }
 

@@ -42,14 +42,14 @@ export class RendidoCreaeditaComponent {
         this.rE.updateRendido(this.form.value).subscribe(
           (rendido: Rendido) => {
             this._snackbard.open("Se actualizo", "Ok");
-            this.router.navigate(['Rendido/Listar']);
+            this.router.navigate(['pages/Rendido/Listar']);
           }
         )
       } else {
         this.rE.addRendido(this.form.value).subscribe(
           (rendido: Rendido) => {
             this._snackbard.open("Se agrego", "Ok");
-            this.router.navigate(['Rendido/Listar']);
+            this.router.navigate(['pages/Rendido/Listar']);
           }
         )
       }

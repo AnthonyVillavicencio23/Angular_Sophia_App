@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Tarjeta } from '../model/tarjeta';
@@ -10,23 +10,47 @@ import { Tarjeta } from '../model/tarjeta';
   providedIn: 'root'
 })
 export class TarjetaService {
+  private listacam = new Subject<Tarjeta[]>()
   url: string = environment.base + "/tarjeta"
   constructor(private http: HttpClient){}
 
   getTarjetas(){
-    return this.http.get<Tarjeta[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Tarjeta[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
+  setList(ListaNew:Tarjeta[])
+  {
+    this.listacam.next(ListaNew);
+  }
+  getList()
+  {
+    return this.listacam.asObservable();
   }
   getTarjeta(idTarjeta: number){
-    return this.http.get<Tarjeta>(this.url + "/" + idTarjeta);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Tarjeta>(`${this.url}/${idTarjeta}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   deleteTarjeta(idTarjeta: number){
-    return this.http.delete<Tarjeta>(this.url + "/" + idTarjeta);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${idTarjeta}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   addTarjeta(tarjeta: Tarjeta){
-    return this.http.post<Tarjeta>(this.url, tarjeta);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, tarjeta, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   updateTarjeta(tarjeta: Tarjeta){
-    return this.http.put<Tarjeta>(this.url, tarjeta);
+    let token = sessionStorage.getItem("token");
+   return this.http.put(this.url, tarjeta, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
   }
 }
 

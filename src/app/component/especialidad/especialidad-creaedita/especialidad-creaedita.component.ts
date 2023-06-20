@@ -62,7 +62,7 @@ export class EspecialidadCreaeditaComponent implements OnInit
             })
           })
         }
-      this.router.navigate(['Especialidad/Listar']);
+      this.router.navigate(['pages/Especialidad/Listar']);
     } else {
       this.mensaje = "¡Complete los campos!";
     }

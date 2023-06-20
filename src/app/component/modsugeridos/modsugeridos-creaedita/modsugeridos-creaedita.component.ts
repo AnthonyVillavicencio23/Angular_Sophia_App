@@ -98,7 +98,7 @@ export class ModsugeridosCreaeditaComponent implements OnInit
         })
       }
 
-      this.router.navigate(['ModuSugeridos/Listar']);
+      this.router.navigate(['pages/ModuSugeridos/Listar']);
     }
     else
     {
@@ -128,7 +128,7 @@ export class ModsugeridosCreaeditaComponent implements OnInit
           })
         })
 
-      this.router.navigate(['ModuSugeridos/Listar']);
+      this.router.navigate(['pages/ModuSugeridos/Listar']);
 
   }
 }

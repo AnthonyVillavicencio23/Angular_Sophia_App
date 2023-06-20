@@ -54,7 +54,7 @@ export class EvaluacionCreaeditaComponent implements OnInit {
           this.evS.setList(data);
         })
       })
-      this.router.navigate(['PruebaEvaluacion']);
+      this.router.navigate(['pages/PruebaEvaluacion']);
     }
   }
 

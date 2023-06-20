@@ -55,7 +55,7 @@ export class CatCreaeditaComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['Citas/Listar']);
+      this.router.navigate(['pages/Citas/Listar']);
     } else {
       this.mensaje = 'Complete todo los campos obligatorios!!';
     }

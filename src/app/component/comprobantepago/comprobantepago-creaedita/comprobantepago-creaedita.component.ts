@@ -94,7 +94,7 @@ export class ComprobantepagoCreaeditaComponent implements OnInit{
           })
         }
       }
-      this.router.navigate(['ComprobantePago/Listar']);
+      this.router.navigate(['pages/ComprobantePago/Listar']);
     } else {
       this.mensaje = "Complete los campos requeridos!!!";
     }

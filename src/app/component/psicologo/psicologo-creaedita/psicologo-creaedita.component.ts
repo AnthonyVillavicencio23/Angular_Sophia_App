@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Psicologo } from 'src/app/model/psicologo';
-import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import * as moment from 'moment';
 import { PsicologoService } from 'src/app/service/psicologo.service';
 import { Route, Router, ActivatedRoute, Params} from '@angular/router';
@@ -77,11 +76,11 @@ export class PsicologoCreaeditaComponent implements OnInit
             })
           })
         }
-      this.router.navigate(['Psicologo/Listar']);
+      this.router.navigate(['pages/Psicologo/Listar']);
     } else {
       this.mensaje = "¡Complete los campos!";
     }
-    
+
     if (this.idEspecialidadSeleccionado>0) {
       let a = new Especialidad();
       a.idEspecialidad = this.idEspecialidadSeleccionado;
@@ -91,9 +90,9 @@ export class PsicologoCreaeditaComponent implements OnInit
             this.as.setList(data);
           })
         })
-  
-      this.router.navigate(['Psicologo/Listar']);
-  
+
+      this.router.navigate(['pages/Psicologo/Listar']);
+
   }
 
   }

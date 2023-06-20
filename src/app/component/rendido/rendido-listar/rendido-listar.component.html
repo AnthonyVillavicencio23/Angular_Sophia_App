@@ -2,9 +2,9 @@
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Enter Filter" #input>
 </mat-form-field>
-<button mat-raised-button color="accent" routerLink="/Rendido/Agregar"> Nuevo</button>
+<button mat-raised-button color="accent" routerLink="/pages/Rendido/Agregar"> Nuevo</button>
 <div style="text-align: right;">
-  <button mat-raised-button color="primary" routerLink="/PruebaEvaluacion/Listar"><span class="material-icons">arrow_back</span></button>
+  <button mat-raised-button color="primary" routerLink="/pages/PruebaEvaluacion/Listar"><span class="material-icons">arrow_back</span></button>
 </div>
 
 <div class="mat-elevation-z8">
@@ -26,7 +26,7 @@
     <ng-container matColumnDef="action1">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
       <td mat-cell *matCellDef="let row">
-        <button mat-icon-button routerLink="/Rendido/Editar/{{row.idRendido}}"> <mat-icon fontIcon="build"></mat-icon></button>
+        <button mat-icon-button routerLink="/pages/Rendido/Editar/{{row.idRendido}}"> <mat-icon fontIcon="build"></mat-icon></button>
       </td>
     </ng-container>
 

@@ -60,14 +60,14 @@ export class PruebaevaluacionCreaeditaComponent {
       this.pE.updatePruebaEvaluacion(this.form.value).subscribe(
         (pruebaevaluacion: PruebaEvaluacion) => {
           this._snackbard.open("Se actualizo la nueva prueba de evaluacion", "Ok");
-          this.router.navigate(['PruebaEvaluacion/Listar']);
+          this.router.navigate(['pages/PruebaEvaluacion/Listar']);
         }
       )
     } else {
       this.pE.addPruebaEvaluacion(this.form.value).subscribe(
         (pruebaevaluacion: PruebaEvaluacion) => {
           this._snackbard.open("Se agrego una nueva evaluacion", "Ok");
-          this.router.navigate(['PruebaEvaluacion/Listar']);
+          this.router.navigate(['pages/PruebaEvaluacion/Listar']);
         }
       )
     }

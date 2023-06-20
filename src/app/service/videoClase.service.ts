@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Videoclase } from '../model/videoClase';
 
@@ -17,10 +17,16 @@ export class VideoClaseService
   constructor(private http: HttpClient) { }
 
   list() {
-    return this.http.get<Videoclase[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Videoclase[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(videoClase: Videoclase) {
-    return this.http.post(this.url, videoClase);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, videoClase, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva: Videoclase[]) {
@@ -32,17 +38,26 @@ export class VideoClaseService
 
   listID(id:number)
   {
-    return this.http.get<Videoclase>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Videoclase>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
 
   update(aut: Videoclase)
   {
-    return this.http.put(this.url, aut);
+    let token = sessionStorage.getItem("token");
+   return this.http.put(this.url, aut, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
   }
 
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`)
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getConfirmDelete(){

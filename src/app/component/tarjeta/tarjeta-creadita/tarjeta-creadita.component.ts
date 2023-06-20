@@ -52,14 +52,14 @@ export class TarjetaCreaditaComponent {
         this.tA.updateTarjeta(this.form.value).subscribe(
           (tarjeta: Tarjeta) => {
             this._snackbard.open("Se actualizo la nueva tarjeta", "Ok");
-            this.router.navigate(['Tarjeta/Listar']);
+            this.router.navigate(['pages/Tarjeta/Listar']);
           }
           )
       } else{
         this.tA.addTarjeta(this.form.value).subscribe(
           (tarjeta: Tarjeta) => {
             this._snackbard.open("Se agrego la nueva tarjeta", "Ok");
-            this.router.navigate(['Tarjeta/Listar']);
+            this.router.navigate(['pages/Tarjeta/Listar']);
           }
           )
       }

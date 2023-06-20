@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Modulo } from '../model/modulo';
 
@@ -19,10 +19,16 @@ export class moduloService
   constructor(private http: HttpClient) { }
 
   list() {
-    return this.http.get<Modulo[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Modulo[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(modulo: Modulo) {
-    return this.http.post(this.url, modulo);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, modulo, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
 

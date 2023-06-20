@@ -60,7 +60,7 @@ export class VideoclaseCreaeditaComponent implements OnInit
     this.videoc.nombreVideo = this.form.value['nombreVideo'];
     this.videoc.duracionVideo=this.form.value['duracionVideo'];
 
-    if (this.form.value['descripcion'].length>0 && this.form.value['nombreVideo'].length>0 
+    if (this.form.value['descripcion'].length>0 && this.form.value['nombreVideo'].length>0
     && this.form.value['duracionVideo'].length>0) {
 
       if (this.edicion) {
@@ -76,7 +76,7 @@ export class VideoclaseCreaeditaComponent implements OnInit
           })
         })
       }
-    this.router.navigate(['Videoclase/Listar']);
+    this.router.navigate(['pages/Videoclase/Listar']);
   } else {
     this.mensaje = "¡Complete los campos!";
   }
@@ -94,7 +94,7 @@ export class VideoclaseCreaeditaComponent implements OnInit
           })
         })
 
-      this.router.navigate(['Videoclase/Listar']);
+      this.router.navigate(['pages/Videoclase/Listar']);
 
   }
 }

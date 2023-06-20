@@ -58,7 +58,7 @@ export class ModuloCreaeditaComponent implements OnInit
           })
         })
 
-      this.router.navigate(['Modulos/Listar']);
+      this.router.navigate(['pages/Modulos/Listar']);
 
   }
 }

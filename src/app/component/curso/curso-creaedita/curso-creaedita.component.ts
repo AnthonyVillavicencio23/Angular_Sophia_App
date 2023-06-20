@@ -76,7 +76,7 @@ export class CursoCreaeditaComponent implements OnInit {
         })
       }
 
-      this.router.navigate(['Curso/Listar']);
+      this.router.navigate(['pages/Curso/Listar']);
     }
     else
     {

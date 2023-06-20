@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Modulos_Sugeridos } from '../model/modulos_sugeridos';
+import { moduloService } from './modulo.service';
 
 
 const base_url = environment.base
@@ -21,10 +22,16 @@ export class ModuloSugeridoService {
   constructor(private http: HttpClient) { }
 
   list() {
-    return this.http.get<Modulos_Sugeridos[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Modulos_Sugeridos[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(mod_sugerido: Modulos_Sugeridos) {
-    return this.http.post(this.url, mod_sugerido);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, mod_sugerido, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva: Modulos_Sugeridos[]) {
@@ -36,16 +43,25 @@ export class ModuloSugeridoService {
 
   listID(id:number)
   {
-    return this.http.get<Modulos_Sugeridos>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Modulos_Sugeridos>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   update(modsuge: Modulos_Sugeridos)
   {
-    return this.http.put(this.url, modsuge);
+    let token = sessionStorage.getItem("token");
+   return this.http.put(this.url, modsuge, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
   }
 
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`)
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getConfirmDelete(){

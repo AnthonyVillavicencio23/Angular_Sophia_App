@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Cita } from '../model/cita';
 
@@ -17,10 +17,16 @@ export class CitaService {
   constructor(private http: HttpClient) { }
 
   list() {
-    return this.http.get<Cita[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Cita[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(cita: Cita) {
-    return this.http.post(this.url, cita);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, cita, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   setList(listaNueva: Cita[]) {
     this.listaCambio.next(listaNueva);
