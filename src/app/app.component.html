@@ -1,12 +1,25 @@
 <p>
-  <mat-toolbar *ngIf="verificar()">
-      <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
+  <mat-toolbar color="primary" *ngIf="verificar()">
+    <span>Menu de la app "SOPHIA"</span>
+    <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
        *ngIf="validarRol()" routerLink="/pages/Navbar">
-          <span>Autores</span>
+          <span>Papa Francis</span>
+      </button>
+      <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
+       *ngIf="validarRol()" routerLink="/pages/Curso">
+          <span>Cursos</span>
       </button>
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
-      *ngIf="role=='ADMIN'"  routerLink="/pages/CitasProgramadas/Listar">
-          <span>Libros</span>
+      *ngIf="role=='ADMIN'"  routerLink="/pages/Psicologo/Listar">
+          <span>Psicologos</span>
+      </button>
+      <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
+      *ngIf="role=='ADMIN'"  routerLink="/pages/Tutor/Listar">
+          <span>Tutores</span>
+      </button>
+      <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
+      *ngIf="role=='ADMIN'"  routerLink="/pages/Cita/Listar">
+          <span>Citas</span>
       </button>
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
       routerLink="/login" (click)="cerrar()">

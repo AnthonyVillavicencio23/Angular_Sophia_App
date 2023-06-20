@@ -2,26 +2,27 @@
 {
 
   width: 40%;
-  background-color:linen;
+  background-color:rgb(33, 49, 193);
 }
+
 
 
 /* etiqueta esa*/
 
 h1
 {
-  background-color: black;
-  color: aliceblue;
-  font-style:normal;
-  font-size: 200%;
+  color: rgb(255, 255, 255);
+  font-style: bold;
+  font-size: 100%;
   text-align: center;
+
 
 }
 
 
 button
 {
-  color: aliceblue;
+  color: rgb(19, 6, 46);
   width: 50%;
   border: 2px solid black;
 
@@ -29,5 +30,5 @@ button
 
 body
 {
-  background-color:linen;
+  background-color:rgb(34, 34, 202);
 }

@@ -52,11 +52,25 @@ import { EspecialidadCreaeditaComponent } from './especialidad/especialidad-crea
 import { VideoClaseComponent } from './videoClase/videoClase.component';
 import { VideoclaseListarComponent } from './videoClase/videoClase-listar/videoClase-listar.component';
 import { VideoclaseCreaeditaComponent } from './videoClase/videoClase-creaedita/videoClase-creaedita.component';
+import { AuthorComponent } from './author/author.component';
+import { AuthorListarComponent } from './author/author-listar/author-listar.component';
+import { AuthorCreaeditaComponent } from './author/author-creaedita/author-creaedita.component';
 
 
 const routes: Routes = [
   {
     path:'Navbar', component:NavbarComponent
+  },
+  {
+    path:'autores', component:AuthorComponent, children:
+    [
+      {
+        path: 'Listar', component:AuthorListarComponent
+      },
+      {
+        path:'Agregar', component: AuthorCreaeditaComponent
+      }
+    ]
   },
   {
     path:'Tarjeta',component:TarjetaComponent, children:

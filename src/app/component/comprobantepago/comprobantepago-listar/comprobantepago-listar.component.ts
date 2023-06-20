@@ -5,6 +5,7 @@ import { ComprobantepagoService } from 'src/app/service/comprobantepago.service'
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
 import { ComprobantepagoDialogoComponent } from './comprobantepago-dialogo/comprobantepago-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-comprobantepago-listar',
@@ -12,6 +13,7 @@ import { ComprobantepagoDialogoComponent } from './comprobantepago-dialogo/compr
   styleUrls: ['./comprobantepago-listar.component.css']
 })
 export class ComprobantepagoListarComponent implements OnInit{
+  role:string="";
   lista: ComprobantePago[] = []
   dataSource: MatTableDataSource<ComprobantePago>=new MatTableDataSource();
   idMayor: number = 0
@@ -22,12 +24,14 @@ export class ComprobantepagoListarComponent implements OnInit{
      this.dataSource.paginator = this.paginator;
    })
  }
-  constructor(private as: ComprobantepagoService , private dialog: MatDialog,)
+  constructor(private as: ComprobantepagoService , private dialog: MatDialog,private ls:LoginService)
   {
 
   }
   ngOnInit(): void
   {
+    this.role=this.ls.showRole();
+      console.log(this.role);
     this.as.list ().subscribe(data=>
       {
         this.dataSource.paginator = this.paginator;
