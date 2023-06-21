@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Modulo } from '../model/modulo';
+import { moduloxCursoDTO } from '../model/moduloxCursoDTO';
 
 const base_url = environment.base
 
@@ -37,6 +38,13 @@ export class moduloService
   }
   getLista() {
     return this.listaCambio.asObservable();
+  }
+
+  contarModulosxCursos(): Observable<moduloxCursoDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<moduloxCursoDTO[]>(`${this.url}/modulo-contar`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
 }
