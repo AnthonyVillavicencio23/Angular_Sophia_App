@@ -47,4 +47,11 @@ export class moduloService
     });
   }
 
+  BuscarCurso_menos_Modulos(): Observable<moduloxCursoDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<moduloxCursoDTO[]>(`${this.url}/modulo-menos-cursos`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
+
 }

@@ -1,33 +1,48 @@
-<p>
+
   <mat-toolbar color="primary" *ngIf="verificar()">
+
+    <mat-toolbar-row>
+
     <span>Menu de la app "SOPHIA"</span>
-    <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
-       *ngIf="validarRol()" routerLink="/pages/Navbar">
+    <span class="example-spacer"></span>
+
+    <button routerLink="/pages/Navbar" mat-raised-button color="primary">Ver LandingPage </button> &nbsp;&nbsp;
+
+    <button mat-menu-item class="example-icon"  aria-label="Example icon-button with menu icon"
+       *ngIf="validarRol()" routerLink="/pages/Estado/Listar" mat-raised-button color="primary" >
           <span>Papa Francis</span>
-      </button>
+      </button> &nbsp;&nbsp;
+
       <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
-       *ngIf="validarRol()" routerLink="/pages/Curso">
+       *ngIf="validarRol()" routerLink="/pages/Curso/Listar" mat-raised-button color="primary">
           <span>Cursos</span>
-      </button>
+      </button> &nbsp;&nbsp;
+
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
-      *ngIf="role=='ADMIN'"  routerLink="/pages/Psicologo/Listar">
+      *ngIf="role=='ADMIN'"  routerLink="/pages/Psicologo/Listar" mat-raised-button color="primary">
           <span>Psicologos</span>
-      </button>
+      </button> &nbsp;&nbsp;
+
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
-      *ngIf="role=='ADMIN'"  routerLink="/pages/Tutor/Listar">
+      *ngIf="role=='ADMIN'"  routerLink="/pages/Tutor/Listar" mat-raised-button color="primary">
           <span>Tutores</span>
-      </button>
+      </button> &nbsp;&nbsp;
+
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
-      *ngIf="role=='ADMIN'"  routerLink="/pages/Cita/Listar">
+      *ngIf="role=='ADMIN'"  routerLink="/pages/Citas/Listar" mat-raised-button color="primary">
           <span>Citas</span>
-      </button>
+      </button> &nbsp;&nbsp;
+
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
-      routerLink="/login" (click)="cerrar()">
+      routerLink="/login"  (click)="cerrar()">
           <mat-icon>logout</mat-icon>
           <span>Cerrar sesiòn</span>
-      </button>
-      <span class="example-spacer"></span>
+      </button> &nbsp;&nbsp;
+
+    </mat-toolbar-row>
+
+
   </mat-toolbar>
-</p>
+
 <router-outlet></router-outlet>
 <!--padres para navegar hacia sus hijos-->

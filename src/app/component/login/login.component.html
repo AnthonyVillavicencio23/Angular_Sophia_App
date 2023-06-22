@@ -1,10 +1,27 @@
+
+<body style=" background:url(./assets/LoginSophia.jpg) no-repeat; background-position: center;">
+
+
+
+<div class="container" style="text-align: center" >
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <mat-form-field class="example-full-width">
   <mat-label>Usuario</mat-label>
   <input matInput  placeholder="Username" [(ngModel)]="username">
 </mat-form-field>
+
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <mat-form-field class="example-full-width">
   <mat-label>Password</mat-label>
   <input type="password" matInput  placeholder="Password" [(ngModel)]="password">
 </mat-form-field>
-<br>
-<button mat-raised-button color="warn" (click)="login()">Ingresar</button>
+<br><br>
+
+
+<button mat-raised-button color="primary" (click)="login()">Ingresar</button>
+
+</div>
+
+</body>
