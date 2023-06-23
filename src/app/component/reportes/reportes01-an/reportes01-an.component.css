@@ -1,8 +1,9 @@
+
 /* Container, lo que encapusala todo */
 
 .container
 {
-  width: 50%;
+  width: 40%;
   background-color:linen;
   font-style: bold;
   font-weight: bold;
@@ -40,7 +41,7 @@ th {
 /* Estas son las celdas*/
 
 td {
-  font-size: 120%;
+  font-size: 100%;
   border: 2px solid black;
   overflow: hidden;
   white-space: nowrap;
@@ -51,7 +52,7 @@ td {
 
 
 
-.tablagrilla{
+.mat-elevation-z8{
   background-color: rgb(64, 72, 179);
   font-size: 18px;
 }

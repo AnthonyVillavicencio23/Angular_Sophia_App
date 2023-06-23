@@ -88,6 +88,7 @@ import { VideoClaseDialogoComponent } from './videoClase/videoClase-listar/video
 import { ReportesComponent } from './reportes/reportes.component';
 import { Reportes01ElComponent } from './reportes/reportes01-el/reportes01-el.component';
 import { Reportes02ElComponent } from './reportes/reportes02-el/reportes02-el.component';
+import { Reportes02anComponent } from './reportes/reportes02an/reportes02an.component';
 
 
 @NgModule({
@@ -163,6 +164,7 @@ import { Reportes02ElComponent } from './reportes/reportes02-el/reportes02-el.co
     ReportesComponent,
     Reportes01ElComponent,
     Reportes02ElComponent,
+    Reportes02anComponent,
   ],
   imports: [
     CommonModule,

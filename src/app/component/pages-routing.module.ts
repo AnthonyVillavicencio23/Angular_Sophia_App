@@ -56,6 +56,8 @@ import { AuthorComponent } from './author/author.component';
 import { AuthorListarComponent } from './author/author-listar/author-listar.component';
 import { AuthorCreaeditaComponent } from './author/author-creaedita/author-creaedita.component';
 import { ReportesComponent } from './reportes/reportes.component';
+import { Reportes01AnComponent } from './reportes/reportes01-an/reportes01-an.component';
+import { Reportes02anComponent } from './reportes/reportes02an/reportes02an.component';
 import { Reportes01ElComponent } from './reportes/reportes01-el/reportes01-el.component';
 
 
@@ -280,7 +282,17 @@ const routes: Routes = [
       { path: 'Agregar', component:VideoclaseCreaeditaComponent},
       { path: 'Listar/edicion/:idVideoClase', component: VideoclaseCreaeditaComponent}
     ]
+  },
+  {
+    path:'reportes',component:ReportesComponent,children:[
+
+    { path: 'modulo-contar-curso', component: Reportes01AnComponent },
+    { path: 'modulo-menos-cursos', component: Reportes02anComponent }
+  ]
   }
+
+
+
 ]
 
 @NgModule({

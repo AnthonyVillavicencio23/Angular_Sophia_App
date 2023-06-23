@@ -1,8 +1,71 @@
-.example-spacer {
-  flex: 1 1 auto;
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
 }
 
-button
+h1
 {
-  border: 3px solid white;;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: linen;
+}
+
+h5
+{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  color:rgb(59, 55, 55);
+}
+
+.container {
+  min-height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tmn{
+  width: 500px;
+  height: 400px;
+  margin-right: 20px ;
+}
+.tmncontainer {
+  display: flex;
+  justify-content: center;
+}
+
+
+header, footer {
+  padding: 10px 0;
+  text-align: center;
+}
+
+main {
+  flex-grow: 1;
+}
+
+section {
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.textcontainer {
+  margin-bottom: 10px;
+}
+
+img {
+  width: 15CM;
+  display: block;
+  margin: 0 auto;
+
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
 }
