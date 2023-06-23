@@ -55,11 +55,21 @@ import { VideoclaseCreaeditaComponent } from './videoClase/videoClase-creaedita/
 import { AuthorComponent } from './author/author.component';
 import { AuthorListarComponent } from './author/author-listar/author-listar.component';
 import { AuthorCreaeditaComponent } from './author/author-creaedita/author-creaedita.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { Reportes01ElComponent } from './reportes/reportes01-el/reportes01-el.component';
 
 
 const routes: Routes = [
   {
     path:'Navbar', component:NavbarComponent
+  },
+  {
+    path:'Reportes', component:ReportesComponent, children:
+    [
+      {
+        path:'popularPsico', component:Reportes01ElComponent
+      }
+    ]
   },
   {
     path:'autores', component:AuthorComponent, children:
