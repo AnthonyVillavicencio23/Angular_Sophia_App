@@ -10,7 +10,7 @@
   <br><br>
   <div class="container">
     <div style=" text-align: center;">
-      <h1>Cantidad de psicologos por especialidad </h1>
+      <h1> Nombre de la Especialidad con más Psicologos </h1>
     </div>
     <br>
 
@@ -31,14 +31,6 @@
         <th mat-header-cell *matHeaderCellDef> Nombre de los Psicologos</th>
         <td mat-cell *matCellDef="let element"> {{element.nombrePsico}}</td>
       </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="cantidad">
-        <th mat-header-cell *matHeaderCellDef> Cantidad de <br> Psicologos en total </th>
-        <td mat-cell *matCellDef="let element"> {{element.psicologoContar}} </td>
-      </ng-container>
-
-
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

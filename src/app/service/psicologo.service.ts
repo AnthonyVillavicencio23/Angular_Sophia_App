@@ -77,4 +77,10 @@ private listaCambio = new Subject<Psicologo[]>()
     });
   }
 
+  getContar_mayor_Especialidad(): Observable<EspecialidadPsicologoDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<EspecialidadPsicologoDTO[]>(`${this.url}/especialidades-count`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
 }

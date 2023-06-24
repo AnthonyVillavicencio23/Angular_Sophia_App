@@ -14,7 +14,7 @@ export class Reporte01stComponent {
   psicologoContar: EspecialidadPsicologoDTO[] = [];
   dataSource: MatTableDataSource<EspecialidadPsicologoDTO> = new MatTableDataSource();
 
-  displayedColumns: string[] = ['especialidad', 'psicologo','cantidad']
+  displayedColumns: string[] = ['especialidad', 'psicologo']
 
   constructor(private pS: PsicologoService, private ls:LoginService) { }
 
