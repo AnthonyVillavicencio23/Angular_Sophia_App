@@ -26,7 +26,7 @@ edicion: boolean=false;
 
   }
 
-
+  tiposPersona: string[] = ['Natural', 'Jurídica'];
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {

@@ -57,7 +57,9 @@
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Tipo de Persona:</mat-label>
-        <input matInput required="true" placeholder="Tipo de Persona" formControlName="tipopersona">
+        <mat-select required formControlName="tipopersona">
+          <mat-option *ngFor="let tipo of tiposPersona" [value]="tipo">{{ tipo }}</mat-option>
+        </mat-select>
       </mat-form-field>
       <br>
 
