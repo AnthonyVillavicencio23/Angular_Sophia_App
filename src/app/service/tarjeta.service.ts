@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Tarjeta } from '../model/tarjeta';
+import { TarjetaTutorDTO } from '../model/tarjetaTutorDTO';
 
 
 @Injectable({
@@ -49,6 +50,18 @@ export class TarjetaService {
   updateTarjeta(tarjeta: Tarjeta){
     let token = sessionStorage.getItem("token");
    return this.http.put(this.url, tarjeta, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+  }
+  getCantidadTarjetasCredito(){
+    let token = sessionStorage.getItem("token");
+   return this.http.get(this.url + "/countTarjetasDebito", {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+  }
+  getCantidadTarjetasPorTutor(){
+    let token = sessionStorage.getItem("token");
+   return this.http.get<TarjetaTutorDTO[]>(this.url + "/cantidadTarjetasPorTutor", {
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   });
   }

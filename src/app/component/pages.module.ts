@@ -46,6 +46,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -185,7 +186,8 @@ import { Reportes02AaComponent } from './reportes/reportes02-aa/reportes02-aa.co
     MatToolbarModule,
     MatSelectModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   exports: [
     MatFormFieldModule

@@ -55,6 +55,8 @@ import { VideoclaseCreaeditaComponent } from './videoClase/videoClase-creaedita/
 import { AuthorComponent } from './author/author.component';
 import { AuthorListarComponent } from './author/author-listar/author-listar.component';
 import { AuthorCreaeditaComponent } from './author/author-creaedita/author-creaedita.component';
+import { Reportes01AaComponent } from './reportes/reportes01-aa/reportes01-aa.component';
+import { Reportes02AaComponent } from './reportes/reportes02-aa/reportes02-aa.component';
 
 
 const routes: Routes = [
@@ -269,6 +271,18 @@ const routes: Routes = [
     [
       { path: 'Agregar', component:VideoclaseCreaeditaComponent},
       { path: 'Listar/edicion/:idVideoClase', component: VideoclaseCreaeditaComponent}
+    ]
+  },
+  {
+    path:'reporte01',component:Reportes01AaComponent, children:
+    [
+      {path: 'countTarjetasDebito', component:Reportes01AaComponent}
+    ]
+  },
+  {
+    path:'reporte02',component:Reportes02AaComponent, children:
+    [
+      {path: 'cantidadTarjetasPorTutor', component:Reportes02AaComponent}
     ]
   }
 ]
