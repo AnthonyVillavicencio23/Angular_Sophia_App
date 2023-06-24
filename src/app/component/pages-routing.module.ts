@@ -60,6 +60,7 @@ import { Reportes01AnComponent } from './reportes/reportes01-an/reportes01-an.co
 import { Reportes02anComponent } from './reportes/reportes02an/reportes02an.component';
 import { Reportes01elComponent } from './reportes/reportes01el/reportes01el.component';
 import { Reportes02elComponent } from './reportes/reportes02el/reportes02el.component';
+import { Reporte01stComponent } from './reportes/reporte01st/reporte01st.component';
 
 
 const routes: Routes = [
@@ -283,6 +284,7 @@ const routes: Routes = [
     { path: 'modulo-menos-cursos', component: Reportes02anComponent },
     { path: 'modulo-contar-citasByCat', component: Reportes01elComponent},
     { path: 'modulo-contar-citasByPsico', component: Reportes02elComponent},
+    { path: 'modulo-contar-psicoByEspe', component: Reporte01stComponent},
   ]
   }
 
