@@ -6,11 +6,10 @@
     <span>Menu de la app "SOPHIA"</span>
     <span class="example-spacer"></span>
 
-    <button routerLink="/pages/Navbar" mat-raised-button color="primary">Ver LandingPage </button> &nbsp;&nbsp;
 
     <button mat-menu-item class="example-icon"  aria-label="Example icon-button with menu icon"
        *ngIf="validarRol()" routerLink="/pages/Estado/Listar" mat-raised-button color="primary" >
-          <span>Papa Francis</span>
+          <span>Estado</span>
       </button> &nbsp;&nbsp;
 
       <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
@@ -30,7 +29,7 @@
 
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
       *ngIf="role=='ADMIN'"  routerLink="/pages/Citas/Listar" mat-raised-button color="primary">
-          <span>Citas</span>
+          <span>Cat. de Citas</span>
       </button> &nbsp;&nbsp;
 
       <button mat-menu-item  class="example-icon" aria-label="Example icon-button with menu icon"
