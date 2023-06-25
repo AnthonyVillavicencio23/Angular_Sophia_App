@@ -95,6 +95,8 @@ import { Reporte01stComponent } from './reportes/reporte01st/reporte01st.compone
 import { Reporte02stComponent } from './reportes/reporte02st/reporte02st.component';
 import { Reportes01AaComponent } from './reportes/reportes01-aa/reportes01-aa.component';
 import { Reportes02AaComponent } from './reportes/reportes02-aa/reportes02-aa.component';
+import { Reportes01paComponent } from './reportes/reportes01pa/reportes01pa.component';
+import { Reportes02paComponent } from './reportes/reportes02pa/reportes02pa.component';
 
 
 @NgModule({
@@ -176,6 +178,8 @@ import { Reportes02AaComponent } from './reportes/reportes02-aa/reportes02-aa.co
     Reporte02stComponent,
     Reportes01AaComponent,
     Reportes02AaComponent,
+    Reportes01paComponent,
+    Reportes02paComponent,
   ],
   imports: [
     CommonModule,
