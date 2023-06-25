@@ -1,9 +1,36 @@
 
-<mat-form-field>
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Enter Filter" #input>
-</mat-form-field>
-<button mat-raised-button color="accent" routerLink="/pages/Tarjeta/Agregar"> Nueva Tarjeta</button>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<body>
+  <div class="container" style="text-align: center" >
+
+    <br>
+    <div style="text-align:center;">
+      <h1>Lista de Tarjetas</h1>
+  </div>
+
+    <br>
+<div style="text-align: right;">
+<button mat-raised-button color="primary" routerLink="/pages/Tarjeta/Agregar"> Nueva Tarjeta</button>
+</div>
+<br>
+
+<div style="text-align: left;">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Enter Filter" #input>
+  </mat-form-field>
+  </div>
+
 <div style="text-align: right;">
   <button mat-raised-button color="primary" routerLink="/pages/Tutor/Listar"><span class="material-icons">arrow_back</span></button>
 </div>
@@ -68,7 +95,20 @@
 
 </div>
 
-<br><br>
+<br>
 <div style="text-align: center">
  <button mat-raised-button color="primary" routerLink="/pages/PagoDeModulo/Listar">Lista de Pago de Modulos</button>
 </div>
+
+<br>
+<div style="text-align: center">
+ <button mat-raised-button color="primary" routerLink="/pages/reportes/countTarjetasDebito">Cantidad de Tarjetas de Debito</button>
+</div>
+
+<br>
+<div style="text-align: center">
+ <button mat-raised-button color="primary" routerLink="/pages/reportes/cantidadTarjetasPorTutor">Cantidad de Tarjetas por Tutor</button>
+</div>
+
+</div>
+</body>

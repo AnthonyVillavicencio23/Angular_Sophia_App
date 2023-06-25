@@ -62,6 +62,9 @@ import { Reportes01elComponent } from './reportes/reportes01el/reportes01el.comp
 import { Reportes02elComponent } from './reportes/reportes02el/reportes02el.component';
 import { Reporte01stComponent } from './reportes/reporte01st/reporte01st.component';
 import { Reporte02stComponent } from './reportes/reporte02st/reporte02st.component';
+import { Reportes01AaComponent } from './reportes/reportes01-aa/reportes01-aa.component';
+import { Reportes02AaComponent } from './reportes/reportes02-aa/reportes02-aa.component';
+
 
 const routes: Routes = [
   {
@@ -286,9 +289,10 @@ const routes: Routes = [
     { path: 'modulo-contar-citasByPsico', component: Reportes02elComponent},
     { path: 'modulo-contar-psicoByEspe', component: Reporte01stComponent},
     { path: 'modulo-menos-especialidad', component: Reporte02stComponent},
+    { path: 'countTarjetasDebito', component:Reportes01AaComponent},
+    { path: 'cantidadTarjetasPorTutor', component:Reportes02AaComponent}
   ]
-  }
-
+}
 
 
 ]
