@@ -87,6 +87,8 @@ import { VideoclaseCreaeditaComponent } from './videoClase/videoClase-creaedita/
 import { VideoClaseDialogoComponent } from './videoClase/videoClase-listar/videoClase-dialogo/videoClase-dialogo-component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { Reportes01AnComponent } from './reportes/reportes01-an/reportes01-an.component';
+import { Reportes01paComponent } from './reportes/reportes01pa/reportes01pa.component';
+import { Reportes02paComponent } from './reportes/reportes02pa/reportes02pa.component';
 
 
 @NgModule({
@@ -161,6 +163,8 @@ import { Reportes01AnComponent } from './reportes/reportes01-an/reportes01-an.co
     VideoClaseDialogoComponent,
     ReportesComponent,
     Reportes01AnComponent,
+    Reportes01paComponent,
+    Reportes02paComponent,
   ],
   imports: [
     CommonModule,
