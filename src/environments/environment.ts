@@ -4,4 +4,4 @@ export const environment =
   base: "https://intellij-backend-sophia-app.onrender.com"
 }
 
-// Fecha actualizada y termianada 24/06/2023
+// Fecha actualizada y termianada 24/06/2023 hola
