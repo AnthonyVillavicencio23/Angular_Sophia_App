@@ -1,7 +1,7 @@
 export const environment =
 {
-  production:false,
-  base: "http://localhost:8086"
+  production:true,
+  base: "https://intellij-backend-sophia-app.onrender.com"
 }
 
 // Fecha actualizada y termianada 24/06/2023
