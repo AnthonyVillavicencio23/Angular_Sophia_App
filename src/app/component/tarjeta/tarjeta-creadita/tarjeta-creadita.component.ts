@@ -19,6 +19,10 @@ export class TarjetaCreaditaComponent {
   constructor(private fb: FormBuilder, private _snackbard : MatSnackBar,
     private tA : TarjetaService, private router: Router, private tS: TutorService,
     private route: ActivatedRoute) {}
+
+    tipoTarjeta: string[] = ['Debito', 'Credito'];
+
+
   ngOnInit(){
     this.idTarjeta = this.route.snapshot.params["id"];
     this.tS.list().subscribe(

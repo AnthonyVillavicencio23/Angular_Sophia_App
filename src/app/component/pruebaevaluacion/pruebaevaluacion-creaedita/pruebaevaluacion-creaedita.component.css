@@ -1,5 +1,24 @@
-:host {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+mat-form-field {
+  width: 100%;
+  }
+
+  h1
+{
+  background-color: black;
+  color: aliceblue;
+  font-style:normal;
+  font-size: 200%;
+  text-align: center;
+}
+
+
+.container
+{
+  width: 35%;
+  background-color:linen;
+}
+
+body
+{
+  background: linen;
 }

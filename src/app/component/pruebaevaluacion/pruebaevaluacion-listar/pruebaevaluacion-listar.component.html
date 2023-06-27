@@ -1,8 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container" style="text-align: center" >
+    <br>
+    <div style="text-align:center;">
+      <h1>Lista de Pruebas de Evaluacion</h1>
+  </div>
+  <br>
+  <br>
+
+
+  <div style="text-align: right;">
+<button mat-raised-button color="primary" routerLink="/pages/PruebaEvaluacion/Agregar"> Nueva Prueba</button>
+</div>
+
+<div style="text-align: left;">
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Enter Filter" #input>
 </mat-form-field>
-<button mat-raised-button color="accent" routerLink="/pages/PruebaEvaluacion/Agregar"> Nueva Prueba</button>
+</div>
+
+
 <div style="text-align: right;">
   <button mat-raised-button color="primary" routerLink="/pages/Citas/Listar"><span class="material-icons">arrow_back</span></button>
 </div>
@@ -75,5 +103,16 @@
   <button mat-raised-button color="primary" routerLink="/pages/Rendido/Listar">Rendido</button>
 </div>
 
+<br>
+<div style="text-align: center">
+ <button mat-raised-button color="primary" routerLink="/pages/reportes/evaluacion-contar">Reporte 09. Contar Evaluaciones</button>
+</div>
+
+<br>
+<div style="text-align: center">
+<button mat-raised-button color="primary" routerLink="/pages/reportes/evaluacion-menos-rendido">Reporte 10. Contar evaluaciones con menor Rendido</button>
+</div>
 
 
+</div>
+</body>

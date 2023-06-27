@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+<br>
+  <div class="container" style="text-align: center;">
+
+    <div style="text-align: center;">
+
+      <h1>Registro de Tarjetas</h1>
+    </div>
+
 <form [formGroup]="form">
   <br>
   <mat-form-field>
@@ -10,11 +30,16 @@
     <input matInput formControlName="numeroTarjeta" placeholder="Enter number">
   </mat-form-field>
   <br>
-  <mat-form-field>
-    <mat-label>Tipo</mat-label>
-    <input matInput formControlName="tipoTarjeta" placeholder="Enter tipo">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Tipo de Tarjeta:</mat-label>
+    <mat-select required formControlName="tipoTarjeta">
+      <mat-option *ngFor="let tipo of tipoTarjeta" [value]="tipo">{{ tipo }}</mat-option>
+    </mat-select>
   </mat-form-field>
   <br>
+
+
   <mat-form-field>
     <mat-label>Tutor</mat-label>
     <mat-select formControlName="tutor">
@@ -33,11 +58,11 @@ mat-raised-button
 (click)="saveTarjeta()"
 >
   Save
-</button>
-<button
-color = "warn"
-mat-raised-button
-routerLink="/pages/Tarjeta/Listar"
->
+</button>     &nbsp; &nbsp; &nbsp;
+<button color = "primary" mat-raised-button routerLink="/pages/Tarjeta/Listar">
   Cancel
 </button>
+
+
+  </div>
+</body>

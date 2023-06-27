@@ -1,11 +1,38 @@
-<mat-form-field>
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Enter Filter" #input>
-</mat-form-field>
-<button mat-raised-button color="accent" routerLink="/pages/Rendido/Agregar"> Nuevo</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container" style="text-align: center" >
+    <br>
+    <div style="text-align:center;">
+      <h1>Lista de Estado de la Prueba</h1>
+  </div>
+  <br>
+  <br>
+
+
+  <div style="text-align: right;">
+<button mat-raised-button color="primary" routerLink="/pages/Rendido/Agregar"> Nuevo</button>
+</div>  <br>
+
+  <div style="text-align: left;">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Enter Filter" #input>
+  </mat-form-field>
+</div>
+
 <div style="text-align: right;">
   <button mat-raised-button color="primary" routerLink="/pages/PruebaEvaluacion/Listar"><span class="material-icons">arrow_back</span></button>
-</div>
+</div>  <br>
+
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
@@ -51,3 +78,6 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" aria-label="Select page of users"></mat-paginator>
 </div>
 
+
+</div>
+</body>
